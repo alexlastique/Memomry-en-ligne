@@ -59,7 +59,19 @@ header button{
 }
 
 /*header contact*/
-
+.align{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+.align div{
+    text-align: center;
+    width: 20%;
+    margin: 2%;
+}
+.left{
+    text-align:start;
+}
 
 /*header login*/
 header.login{
@@ -102,16 +114,4 @@ div{
 }
 ::placeholder{
     color: lightgray;
-}.align{
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
-}
-.align div{
-    text-align: center;
-    width: 20%;
-    margin: 2%;
-}
-.left{
-    text-align:start;
 }
