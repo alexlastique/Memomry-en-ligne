@@ -62,7 +62,6 @@ header button{
 .align{
     display: flex;
     justify-content: center;
-    margin-top: 100px;
 }
 .align div{
     text-align: center;
@@ -122,6 +121,56 @@ input, textarea{
 .pInput{
     margin: 3px;
     margin-left: 40%;
+}
+::placeholder{
+    color: lightgray;
+}
+/*header login*/
+.Submit{
+    background-color: #EC9123;
+    color: white;
+    border-color: #EC9123;
+    width: 15%;
+    margin: 10px auto 10px;
+}
+.SubmitEspace{
+    background-color: #EC9123;
+    color: white;
+    border-color: #EC9123;
+    width: 60%;
+    margin: 10px auto 10px;
+}
+input, textarea{
+    background-color: #373367;
+    width: 70%;
+    border: 0.5rem solid;
+    border-color: #373367;
+    margin: 5px auto 5px;
+    border-radius: 5px;
+    color: white;
+}
+.align form{
+    width: 50%;
+    color: white;
+}
+.formEspace{
+    margin: 50px;
+    text-align: center;
+
+}
+.formEspace2{
+    margin: 50px;
+    text-align: center;
+
+}
+.pEspace{
+    margin: 3px;
+    margin-left: 50%;
+}
+
+.pEspace2{
+    margin: 3px;
+    margin-right: 50%;
 }
 ::placeholder{
     color: lightgray;
