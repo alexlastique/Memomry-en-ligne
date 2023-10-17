@@ -56,3 +56,32 @@ header button{
     font-size: 15px;
 
 }
+
+
+header.login{
+    display: flex;
+    flex-direction: column;
+    background: url(../images/loginbackground.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+header h2.connexion{
+    font-size: 50px;
+    width: 40%;
+    font-weight: bold;
+    margin: 50px auto 50px;
+}
+.SubmitConnexion{
+    background-color: orange;
+    color: white;
+    border: transparent;
+    margin: 10px auto 10px;
+}
+input{
+    background-color: gray;
+    margin: 5px auto 5px;
+    border-radius: 5px;
+}
+::placeholder{
+    color: lightgray;
+}
