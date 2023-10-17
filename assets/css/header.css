@@ -59,7 +59,19 @@ header button{
 }
 
 /*header contact*/
-
+.align{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+.align div{
+    text-align: center;
+    width: 20%;
+    margin: 2%;
+}
+.left{
+    text-align:start;
+}
 
 /*header login*/
 header.login{
@@ -83,13 +95,18 @@ header h2.connexion{
     width: 15%;
     margin: 10px auto 10px;
 }
-input{
-    background-color: gray;
+input, textarea{
+    background-color: #373367;
     width: 30%;
     border: 0.5rem solid;
-    border-color: gray;
+    border-color: #373367;
     margin: 5px auto 5px;
     border-radius: 5px;
+}
+.divInput{
+    margin: 50px;
+    text-align: left;
+
 }
 .pInput{
     margin: 3px;
@@ -97,16 +114,4 @@ input{
 }
 ::placeholder{
     color: lightgray;
-}.align{
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
-}
-.align div{
-    text-align: center;
-    width: 20%;
-    margin: 2%;
-}
-.left{
-    text-align:start;
 }
