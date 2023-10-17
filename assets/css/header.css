@@ -1,4 +1,4 @@
-h1{
+#logo{
     text-decoration: none;
     color: white;
 }
@@ -32,13 +32,13 @@ header ul{
     display: flex;
     
 }
-header h2{
+header h1{
     font-size: 50px;
     width: 40%;
     font-weight: bold;
     margin: 30vh auto 0;
 }
-header h2 + p{
+header h1 + p{
     color: rgba(255, 255, 255, 0.8);
 }
 header li{
@@ -91,7 +91,7 @@ header.login{
     background-position: center;
 }
 
-header h2.connexion{
+header h1.connexion{
     font-size: 50px;
     width: 40%;
     font-weight: bold;

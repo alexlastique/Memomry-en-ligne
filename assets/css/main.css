@@ -1,5 +1,5 @@
 main{
-    width: 70%;
+    width: 74%;
     margin: auto;
 }
 main section:first-of-type{
@@ -50,4 +50,81 @@ main section:first-of-type #blockText div{
 main section:first-of-type #blockText div div{
     display: flex;
     flex-direction: column;
+}
+main section:nth-of-type(2){
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+main section:nth-of-type(2) img{
+    width: 530px;
+    border-radius: 5px;
+}
+main section:nth-of-type(2) div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+}
+main section:nth-of-type(2) div article{
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    border-radius: 5px;
+}
+main section:nth-of-type(2) div article h5{
+    font-size: 32px;
+    margin: 0;
+}
+main section:nth-of-type(2) div article p{
+    font-size: 18px;
+    margin: 0;
+}
+main section:nth-of-type(2) div article:first-of-type{
+    background-color: #3724A0;
+}
+main section:nth-of-type(2) div article:nth-of-type(2){
+    background-color: #16A15F;
+        margin-right: 0;
+}
+main section:nth-of-type(2) div article:nth-of-type(3){
+    background-color: #B91CA8;
+
+}
+main section:nth-of-type(2) div article:last-of-type{
+    background-color: #EB9122;
+    margin-right: 0;
+}
+main section:last-of-type{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+main section:last-of-type #blockArticle{
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 75%;
+}
+main section:last-of-type article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0E0B26;
+    padding: 30px;
+    margin: 10px;
+}
+main section:last-of-type article img:not(main section:last-of-type article div img){
+    width: 250px;
+}
+main section:last-of-type article div{
+    display: flex;
+    justify-content: space-evenly;
+}
+main section:last-of-type article div img{
+    width: 25px;
 }
