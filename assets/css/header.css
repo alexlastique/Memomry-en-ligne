@@ -58,6 +58,7 @@ header button{
 
 }
 
+/*header contact*/
 header.contact{
     display: flex;
     flex-direction: column;
@@ -65,6 +66,9 @@ header.contact{
     background-size: cover;
     background-position: center;
 }
+
+
+/*header login*/
 header.login{
     display: flex;
     flex-direction: column;
