@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="assets/css/normalize.css">
         <link rel="stylesheet" href="assets/css/footer.css">
         <link rel="stylesheet" href="assets/css/header.css">
+        <link rel="stylesheet" href="assets/css/main.css">
     </head>
     <body class="contact">
         <header class="login"> 
@@ -16,6 +17,7 @@
                     <li><a href="" >Jeu</a></li>
                     <li><a href="" >Scores</a></li>
                     <li><a href="" >Nous Contacter</a></li>
+                    <li><a href="#" id="LienConditionnel">Mon Espace</a></li>
                 </ul>
             </nav>
             <h2 class="connexion">Nous Contacter</h2>
@@ -33,15 +35,15 @@
                 <a href=""><img src="assets/images/apple-98-964x1024.png"width="48px"height="48px"/></a>
                 <p>Paris</p>
             </div>
-        </section>`
-        <form method="POST" class="left">
+        </section>
+        <form method="POST" class="form">
             <p>
-                <input type="text" name="name" id="name" placeholder="Nom">
-                <input type="email" name="mail" id="mail" placeholder="Email">
+                <input type="text" name="name" id="name" placeholder="Nom" class="inputpetit">
+                <input type="email" name="mail" id="mail" placeholder="Email" class="inputpetit">
                 <br/>
-                <input type="text" name="sujet" id="sujet" placeholder="Sujet">
+                <input type="text" name="sujet" id="sujet" placeholder="Sujet" class="inputgrand">
                 <br/>
-                <textarea name="message" id="message" placeholder="Message"></textarea>
+                <textarea name="message" id="message" placeholder="Message" class="inputgrand"></textarea>
                 <br/>
                 <input type="submit" value="Envoyer" class="Submit">
             </p>
