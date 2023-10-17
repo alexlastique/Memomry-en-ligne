@@ -27,7 +27,6 @@ header a{
     text-decoration: none;
     color: white;
 }
-
 header ul{
     display: flex;
     
@@ -174,4 +173,24 @@ input, textarea{
 }
 ::placeholder{
     color: lightgray;
+}
+
+
+/*Scores*/
+
+.Scores{
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10%;
+}
+.Scores td{
+    display: table-cell;
+    vertical-align: inherit;
+}
+.Scores td,th{
+    border: 1px solid orange;
 }
