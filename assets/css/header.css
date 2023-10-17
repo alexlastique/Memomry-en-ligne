@@ -74,12 +74,12 @@ header h2.connexion{
 .SubmitConnexion{
     background-color: orange;
     color: white;
-    border: transparent;
     margin: 10px auto 10px;
 }
 input{
     background-color: gray;
     margin: 5px auto 5px;
+    border: transparent;
     border-radius: 5px;
 }
 ::placeholder{
