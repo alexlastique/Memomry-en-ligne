@@ -6,6 +6,7 @@ body{
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+    background-color: #100E2E;
     text-align: center;
 }
 header{
@@ -55,4 +56,37 @@ header button{
     margin: 15px auto 30vh;
     font-size: 15px;
 
+}
+
+/*header contact*/
+
+
+/*header login*/
+header.login{
+    display: flex;
+    flex-direction: column;
+    background: url(../images/loginbackground.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header h2.connexion{
+    font-size: 50px;
+    width: 40%;
+    font-weight: bold;
+    margin: 50px auto 50px;
+}
+.SubmitConnexion{
+    background-color: orange;
+    color: white;
+    margin: 10px auto 10px;
+}
+input{
+    background-color: gray;
+    margin: 5px auto 5px;
+    border: transparent;
+    border-radius: 5px;
+}
+::placeholder{
+    color: lightgray;
 }
