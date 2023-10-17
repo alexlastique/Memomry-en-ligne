@@ -8,8 +8,8 @@
         <link rel="stylesheet" href="assets/css/header.css">
         <link rel="stylesheet" href="assets/css/main.css">
     </head>
-    <body>
-        <header class="contact"> 
+    <body class="contact">
+        <header class="login"> 
             <nav>
             <h1>The Power Of Memory</h1>
                 <ul>
@@ -19,33 +19,33 @@
                     <li><a href="" class="header">Nous Contacter</a></li>
                 </ul>
             </nav>
-            <h2 class="login">Nous Contacter</h2>
+            <h2 class="connexion">Nous Contacter</h2>
         </header>
-        <h4>The Power of Memory</h4>
-        <h5>ACCUEIL</h5>
-        <h5>JEU</h5>
-        <h5>SCORES</h5>
-        <h5>NOUS CONTACTER</h5>
-        <h1>NOUS CONTACTER</h1>
-        <section>
-            <a href=""><img src="assets/images/apple-98-964x1024.png"width="48px"height="48px"/></a>
-            <p>06 59 49 68 30</p>
-        </section>
-        <section>
-            <a href=""><img src="assets/images/apple-98-964x1024.png"width="48px"height="48px"/></a>
-            <p>jean.david@gmail.com</p>
-        </section>
-        <section>
-            <a href=""><img src="assets/images/apple-98-964x1024.png"width="48px"height="48px"/></a>
-            <p>Paris</p>
-        </section>
-        <input type="text" name="name" id="name" placeholder="Nom">
-        <input type="email" name="mail" id="mail" placeholder="Email">
-        <br/>
-        <input type="text" name="sujet" id="sujet" placeholder="Sujet">
-        <br/>
-        <textarea name="message" id="message" placeholder="Message"></textarea>
-        <br/>
-        <input type="submit" value="Envoyer">
+        <section class="align">
+            <div>
+                <a href=""><img src="assets/images/apple-98-964x1024.png"width="48px"height="48px"/></a>
+                <p>06 59 49 68 30</p>
+            </div>
+            <div>
+                <a href=""><img src="assets/images/apple-98-964x1024.png"width="48px"height="48px"/></a>
+                <p>jean.david@gmail.com</p>
+            </div>
+            <div>
+                <a href=""><img src="assets/images/apple-98-964x1024.png"width="48px"height="48px"/></a>
+                <p>Paris</p>
+            </div>
+        </section>`
+        <form method="POST" class="left">
+            <p>
+                <input type="text" name="name" id="name" placeholder="Nom">
+                <input type="email" name="mail" id="mail" placeholder="Email">
+                <br/>
+                <input type="text" name="sujet" id="sujet" placeholder="Sujet">
+                <br/>
+                <textarea name="message" id="message" placeholder="Message"></textarea>
+                <br/>
+                <input type="submit" value="Envoyer" class="Submit">
+            </p>
+        </form>
     </body>
 </html>
