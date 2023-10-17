@@ -103,7 +103,7 @@ input, textarea{
     margin: 5px auto 5px;
     border-radius: 5px;
 }
-div{
+.divInput{
     margin: 50px;
     text-align: left;
 
