@@ -59,13 +59,6 @@ header button{
 }
 
 /*header contact*/
-header.contact{
-    display: flex;
-    flex-direction: column;
-    background: url(../images/loginbackground.png) no-repeat;
-    background-size: cover;
-    background-position: center;
-}
 
 
 /*header login*/
