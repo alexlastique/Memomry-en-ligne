@@ -57,7 +57,13 @@ header button{
 
 }
 
-
+header.contact{
+    display: flex;
+    flex-direction: column;
+    background: url(../images/loginbackground.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 header.login{
     display: flex;
     flex-direction: column;
@@ -65,6 +71,7 @@ header.login{
     background-size: cover;
     background-position: center;
 }
+
 header h2.connexion{
     font-size: 50px;
     width: 40%;
