@@ -83,11 +83,11 @@ header h2.connexion{
     width: 15%;
     margin: 10px auto 10px;
 }
-input{
-    background-color: gray;
+input, textarea{
+    background-color: #373367;
     width: 30%;
     border: 0.5rem solid;
-    border-color: gray;
+    border-color: #373367;
     margin: 5px auto 5px;
     border-radius: 5px;
 }
