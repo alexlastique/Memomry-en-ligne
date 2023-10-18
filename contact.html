@@ -23,6 +23,7 @@
             </nav>
             <h2 class="connexion">Nous Contacter</h2>
         </header>
+        <main id="mainContact">
         <section class="align">
             <div>
                 <br/>
@@ -41,17 +42,16 @@
             </div>
         </section>
         <form method="POST" class="form">
-            <p>
-                <input type="text" name="name" id="name" placeholder="Nom" class="inputpetit">
-                <input type="email" name="mail" id="mail" placeholder="Email" class="inputpetit">
-                <br/>
-                <input type="text" name="sujet" id="sujet" placeholder="Sujet" class="inputgrand">
-                <br/>
-                <textarea name="message" id="message" placeholder="Message" class="inputgrand"></textarea>
-                <br/>
+            <div id="inputPetit">
+                <input type="text" name="name" id="name" placeholder="  &nbsp; Nom">
+                <input type="email" name="mail" id="mail" placeholder=" &nbsp; Email">
+            </div>
+                <input type="text" name="sujet" id="sujet" placeholder=" &nbsp; Sujet" class="inputgrand">
+                <textarea name="message" id="message" placeholder=" &nbsp; Message" class="inputgrand"></textarea>
+                <br>
                 <input type="submit" value="Envoyer" class="Submit">
-            </p>
         </form>
+        </main>
         <!--footer-->
         <footer class="footer">
             <article>

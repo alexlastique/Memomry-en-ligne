@@ -163,6 +163,13 @@ h4{
     background-size: cover;
 
 }
+#mainContact{
+    display: flex;
+    width: 75%;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+}
 #leo{
     background: url(../images/gento.jpg) center;
     background-size: cover;

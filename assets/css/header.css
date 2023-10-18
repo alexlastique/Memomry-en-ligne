@@ -9,8 +9,12 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     background-color: #110E2E;
-    text-align: center;
 }
+
+input {
+    padding-left: 10px;
+}
+
 #headerAccueil{
     display: flex;
     flex-direction: column;
@@ -107,33 +111,15 @@ header.login ul{
 }
 .align{
     display: flex;
-    justify-content: center;
-}
-.contact .align{
-    margin-top: 5%;
+    width: 100%;
+    justify-content: space-between;
 }
 .align div{
     text-align: center;
-    width: 20%;
     padding: 40px 0;
-    margin: 1%;
+    margin: 10rem 0 3rem;
+    width: 32%;
     background-color: #0E0B26;
-}
-.form input,.form textarea{
-    margin: 0.7%;
-}
-.inputpetit{
-    width: 21.2%;
-}
-.inputgrand{
-    width: 45.6%;
-}
-textarea{
-    height: 200px;
-}
-.form{
-    margin-left: 4%;
-    text-align:start;
 }
 
 /*header login*/
@@ -144,7 +130,13 @@ header.login{
     background-size: cover;
     background-position: center;
 }
-
+#inputPetit{
+    display: flex;
+    justify-content: space-between;
+}
+#inputPetit input{
+    width: 45%;
+}
 header h1.connexion{
     font-size: 50px;
     width: 40%;
@@ -154,23 +146,33 @@ header h1.connexion{
 .Submit{
     background-color: #EC9123;
     color: white;
-    border-color: #EC9123;
-    width: 15%;
-    margin: 10px auto 10px;
+    width: 20%;
+    border-radius: 2px;
+    border: transparent;
+    padding: 12px 5px;
 }
-input, textarea{
+.inputgrand, #inputPetit input, textarea{
     background-color: #373367;
-    width: 30%;
-    border: 0.5rem solid;
-    border-color: #373367;
-    margin: 5px auto 5px;
     border-radius: 5px;
     color: white;
+    padding: 10px 0;
+    margin: 7px 0;
+    border: none;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    width: 50%;
+    margin: 0 auto 5rem 0;
 }
 .divInput{
     margin: 50px;
     text-align: left;
 
+}
+div, .inputgrand, textarea{
+    width: 100%;
 }
 .pInput{
     margin: 3px;
@@ -194,19 +196,11 @@ input, textarea{
     width: 60%;
     margin: 10px auto 10px;
 }
-.align input, textarea{
-    background-color: #373367;
-    width: 70%;
-    border: 0.5rem solid;
-    border-color: #373367;
-    margin: 5px auto 5px;
-    border-radius: 5px;
-    color: white;
-}
 .align form{
     width: 50%;
     color: white;
 }
+
 .formEspace{
     margin: 50px;
     text-align: center;
