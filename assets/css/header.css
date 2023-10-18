@@ -257,10 +257,20 @@ input, textarea{
     height: 25px;
     width: 225px;
 }
-
 #blockArticle article:hover{
     transition: 0.5s;
     -ms-transform: scale(1.05); /* IE 9 */
     -webkit-transform: scale(1.05); /* Safari 3-8 */
     transform: scale(1.05);
+}
+.PageScores{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10%;
+}
+.PageScores th, .PageScores td, .PageScores td{
+    border: 1px solid orange;
+    height: 25px;
+    width: 225px;
 }
