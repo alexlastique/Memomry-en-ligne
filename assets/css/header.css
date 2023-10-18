@@ -75,6 +75,17 @@ nav{
 
 
 /*header contact*/
+header.login h2{
+    font-size: 80px;
+    width: 60%;
+    font-weight: 900;
+    margin: 20vh auto 5vh;
+}
+header.login nav{
+    background-color: #100E2E;
+    padding-left: 10%;
+    padding-right: 2.5%;
+}
 header.login li{
     list-style: none;
     margin: 10px;
@@ -238,7 +249,12 @@ input, textarea{
     display: table-cell;
     vertical-align: inherit;
     height: 100px;
+    width: 100px;
     border: 1px solid orange;
+}
+.Scores tr,img{
+    height: 100px;
+    width: 100px;
 }
 .Scores th{
     border: 1px solid orange;
