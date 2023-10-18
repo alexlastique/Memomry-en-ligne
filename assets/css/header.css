@@ -79,12 +79,13 @@ header.login h2{
     font-size: 80px;
     width: 60%;
     font-weight: 900;
-    margin: 20vh auto 5vh;
+    margin: 4rem auto;
 }
 header.login nav{
     background-color: #100E2E;
-    padding-left: 10%;
-    padding-right: 2.5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 header.login li{
     list-style: none;
@@ -143,7 +144,7 @@ textarea{
 header.login{
     display: flex;
     flex-direction: column;
-    background: url(../images/loginbackground.png) no-repeat;
+    background: url(../images/headerWalpapper.png) no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -237,24 +238,19 @@ input, textarea{
 /*Scores*/
 
 .Scores{
-    border-collapse: separate;
-    text-indent: initial;
-    border-spacing: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 10%;
 }
-.Scores td{
-    display: table-cell;
-    vertical-align: inherit;
-    height: 100px;
-    width: 100px;
-    border: 1px solid orange;
-}
 .Scores tr,.Scores img{
     height: 100px;
     width: 100px;
+    border: 1px solid #EC9123;
+}
+.Scores tr td{
+    padding: 2px 4px;
+    cursor: pointer;
 }
 .Scores th{
     border: 1px solid orange;
