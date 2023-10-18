@@ -62,12 +62,16 @@ header button{
 .align{
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+}
+.contact .align{
+    margin-top: 5%;
 }
 .align div{
     text-align: center;
     width: 20%;
-    margin: 2%;
+    padding: 40px 0;
+    margin: 1%;
+    background-color: #0a0728;
 }
 .form input,.form textarea{
     margin: 0.7%;
@@ -77,6 +81,9 @@ header button{
 }
 .inputgrand{
     width: 45.6%;
+}
+textarea{
+    height: 200px;
 }
 .form{
     margin-left: 4%;
