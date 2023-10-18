@@ -1,0 +1,30 @@
+footer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    flex-direction: column;
+    background-color: #0D0B26;
+}
+footer a{
+    text-decoration: none;
+    color: white;
+}
+footer .InformationLeft{
+    text-align: left;
+    
+}
+footer .InformationRight{
+    text-align: right;
+    
+}
+footer li{
+    list-style: none;
+    height: 25%;
+    margin: 10px;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+footer span{
+    color: #9F4324;
+}
