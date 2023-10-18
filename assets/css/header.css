@@ -121,7 +121,7 @@ header.login ul{
     width: 20%;
     padding: 40px 0;
     margin: 1%;
-    background-color: #0a0728;
+    background-color: #0E0B26;
 }
 .form input,.form textarea{
     margin: 0.7%;
@@ -256,4 +256,11 @@ input, textarea{
     border: 1px solid orange;
     height: 25px;
     width: 225px;
+}
+
+#blockArticle article:hover{
+    transition: 0.5s;
+    -ms-transform: scale(1.05); /* IE 9 */
+    -webkit-transform: scale(1.05); /* Safari 3-8 */
+    transform: scale(1.05);
 }
