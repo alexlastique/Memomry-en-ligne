@@ -125,21 +125,21 @@ input, textarea{
     color: lightgray;
 }
 /*header login*/
-.Submit{
+.align .Submit{
     background-color: #EC9123;
     color: white;
     border-color: #EC9123;
     width: 15%;
     margin: 10px auto 10px;
 }
-.SubmitEspace{
+.align .SubmitEspace{
     background-color: #EC9123;
     color: white;
     border-color: #EC9123;
     width: 60%;
     margin: 10px auto 10px;
 }
-input, textarea{
+.align input, textarea{
     background-color: #373367;
     width: 70%;
     border: 0.5rem solid;
@@ -190,7 +190,11 @@ input, textarea{
 .Scores td{
     display: table-cell;
     vertical-align: inherit;
-}
-.Scores td,th{
+    height: 100px;
     border: 1px solid orange;
+}
+.Scores th{
+    border: 1px solid orange;
+    height: 25px;
+    width: 225px;
 }
