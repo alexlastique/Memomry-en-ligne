@@ -1,6 +1,6 @@
 #mainAccueil{
     width: 75%;
-    margin: auto;
+    margin: 0 auto 7em;
 }
 #mainAccueil p:not(h5+p), #headerAccueil p, #footerAccueil p{
     color: #C5BFC1;
@@ -10,6 +10,9 @@
     flex-direction: column;
     align-items: center;
     margin: 50px auto;
+}
+h4{
+    font-size: 20px;
 }
 #mainAccueil section:first-of-type #blockImg{
     display: flex;
@@ -146,7 +149,7 @@
 }
 #mainAccueil section:last-of-type article h6{
     font-size: large;
-    margin: 20px 5rem 5px;
+    margin: 20px 7rem 5px;
 }
 #mainAccueil section:last-of-type article h6+p{
     color: #C5BFC1;
