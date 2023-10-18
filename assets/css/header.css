@@ -252,7 +252,7 @@ input, textarea{
     width: 100px;
     border: 1px solid orange;
 }
-.Scores tr,img{
+.Scores tr,.Scores img{
     height: 100px;
     width: 100px;
 }
