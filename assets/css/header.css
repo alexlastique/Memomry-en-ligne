@@ -65,7 +65,34 @@ nav{
 
 }
 
+
+
+
+
+
 /*header contact*/
+header.login li{
+    list-style: none;
+    margin: 10px;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+header.login a{
+    text-decoration: none;
+    color: white;
+    font-weight: 900;
+    font-size: 14px;
+}
+header.login ul li a:hover{
+    color: #EC9123;
+    transition: 1s;
+    border-top: 2px solid #EC9123;
+    padding: 25px 0;
+}
+header.login ul{
+    display: flex;
+    
+}
 .align{
     display: flex;
     justify-content: center;
