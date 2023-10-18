@@ -1,6 +1,8 @@
 #logo{
     text-decoration: none;
     color: white;
+    font-weight: 900;
+    font-size: 18px;
 }
 body{
     box-sizing: border-box;
@@ -9,12 +11,18 @@ body{
     background-color: #100E2E;
     text-align: center;
 }
-header{
+#headerAccueil{
     display: flex;
     flex-direction: column;
-    background: url(../images/headerBackground.jpg) no-repeat;
+    background: url(../images/montagneSpace.jpeg) no-repeat;
     background-size: cover;
     background-position: center;
+}
+#headerAccueil ul li a:hover{
+    color: #EC9123;
+    transition: 1s;
+    border-top: 2px solid #EC9123;
+    padding: 25px 0;
 }
 nav{
     display: flex;
@@ -23,31 +31,30 @@ nav{
     width: 85%;
     margin: auto;
 }
-header a{
+#headerAccueil a{
     text-decoration: none;
     color: white;
+    font-weight: 900;
+    font-size: 14px;
 }
 
-header ul{
+#headerAccueil ul{
     display: flex;
     
 }
-header h1{
-    font-size: 50px;
-    width: 40%;
-    font-weight: bold;
+#headerAccueil h1{
+    font-size: 80px;
+    width: 60%;
+    font-weight: 900;
     margin: 30vh auto 0;
 }
-header h1 + p{
-    color: rgba(255, 255, 255, 0.8);
-}
-header li{
+#headerAccueil li{
     list-style: none;
     margin: 10px;
     text-transform: uppercase;
     font-size: 15px;
 }
-header button{
+#headerAccueil button{
     background-color: orange;
     border: transparent;
     padding: 15px;
