@@ -1,45 +1,166 @@
-main section:first-of-type{
+#mainAccueil{
+    width: 75%;
+    margin: auto;
+}
+#mainAccueil p:not(h5+p), #headerAccueil p, #footerAccueil p{
+    color: #C5BFC1;
+}
+#mainAccueil section:first-of-type{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 50px auto;
 }
-main section:first-of-type #blockImg{
+#mainAccueil section:first-of-type #blockImg{
     display: flex;
     justify-content: space-between;
-    width: 70%;
+    width: 100%;
 }
-main section:first-of-type div img{
+#mainAccueil section:first-of-type div img{
     height: 300px;
-    border: 2px solid white;
 }
-main section:first-of-type div p {
+#mainAccueil section:first-of-type div p {
     text-align: left;
     margin: 0;
-    color: #BAA5B7;
+    width: 20vw;
 }
-main section:first-of-type div p span{
+#mainAccueil section:first-of-type div p span{
     font-size: 20px;
     color: white;
     margin: 15px 0;
 }
-main section:first-of-type div h3{
+#mainAccueil section:first-of-type div h3{
     color: #3724A0;
     margin: 0 30px 0 0;
     text-align: left;
     font-size: 40px;
     font-weight: 900;
 }
-main section:first-of-type #blockText{
-    width: 70%;
-    margin: 25px;
+#mainAccueil section:first-of-type div h4{
     display: flex;
+    margin: 0 0 30px;
 }
-main section:first-of-type #blockText div:first-child{
+#mainAccueil section:first-of-type #blockText{
+    margin: 25px 0;
     display: flex;
+    width: 100%;
 }
-main section:first-of-type #blockText div div{
+#mainAccueil section:first-of-type #blockText div{
+    display: flex;
+}   
+#mainAccueil section:first-of-type #blockText div div{
     display: flex;
     flex-direction: column;
-    width: 50%;
+}
+#mainAccueil section:nth-of-type(2){
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+#mainAccueil section:nth-of-type(2) img{
+    width: 530px;
+    border-radius: 5px;
+}
+#mainAccueil section:nth-of-type(2) div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+}
+#mainAccueil section:nth-of-type(2) div article{
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    border-radius: 5px;
+}
+#mainAccueil section:nth-of-type(2) div article h5{
+    font-size: 38px;
+    margin: 0;
+}
+#mainAccueil section:nth-of-type(2) div article p{
+    font-size: 18px;
+    margin: 10px 0 0;
+    font-weight: bolder;
+}
+#mainAccueil section:nth-of-type(2) div article:first-of-type{
+    background-color: #3724A0;
+}
+#mainAccueil section:nth-of-type(2) div article:nth-of-type(2){
+    background-color: #16A15F;
+        margin-right: 0;
+}
+#mainAccueil section:nth-of-type(2) div article:nth-of-type(3){
+    background-color: #B91CA8;
+
+}
+#mainAccueil section:nth-of-type(2) div article:last-of-type{
+    background-color: #EB9122;
+    margin-right: 0;
+}
+#mainAccueil section:last-of-type{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+#mainAccueil section:last-of-type h2{
+    font-size: xx-large;
+    margin: 8rem 0 0 0;
+}
+#mainAccueil section:last-of-type p{
+    margin: 20px;
+}
+#mainAccueil section:last-of-type p+img{
+    width: 180px;
+    margin: 10px;
+}
+#mainAccueil section:last-of-type #blockArticle{
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 75%;
+}
+#mainAccueil section:last-of-type article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0E0B26;
+    padding: 30px;
+    margin: 10px;
+}
+.imgTeam{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+#mainAccueil section:last-of-type article div:not(.imgTeam){
+    display: flex;
+    justify-content: space-evenly;
+}
+#mainAccueil section:last-of-type article div img{
+    width: 20px;
+    margin: 5px;
+}
+#mainAccueil section:last-of-type article h6{
+    font-size: large;
+    margin: 20px 5rem 5px;
+}
+#mainAccueil section:last-of-type article h6+p{
+    color: #C5BFC1;
+}
+#alexis{
+    background: url(../images/alexis.jpg) center;
+    background-size: cover;
+}
+#mathias{
+    background: url(../images/mathias.JPG) center;
+    background-size: cover;
+
+}
+#leo{
+    background: url(../images/gento.jpg) center;
+    background-size: cover;
 }
