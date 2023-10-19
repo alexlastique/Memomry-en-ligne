@@ -359,6 +359,20 @@ body{
     width: 50%;
     margin: 10px auto 10px;
 }
+.pInput input{
+    background-color: #373367;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 0;
+    margin: 7px 0;
+    border: none;
+}
+.pInput input.Submit{
+    background-color: #EC9123;
+    color: white;
+    border-color: #EC9123;
+    margin: 10px auto 10px;
+}
 
 /*chat*/
 
