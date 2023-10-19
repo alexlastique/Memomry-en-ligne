@@ -10,17 +10,22 @@
 
     </head>
     <body>
-        <header class="login"> 
-            <nav>
-            <h1>Space Memory</h1>
-                <ul>
-                    <li><a href="index.html" >Accueil</a></li>
-                    <li><a href="" >Jeu</a></li>
-                    <li><a href="Scores.html" >Scores</a></li>
-                    <li><a href="contact.html" >Nous Contacter</a></li>
-                    <li><a href="#" id="LienConditionnel">Mon Espace</a></li>
-                </ul>
-            </nav>
+        <header class="header login"> 
+            <div id="backgroundHeader">
+                <nav>
+                    <div id="logo" class="logo">Space Memory</div>
+                    <input class="menu-btn" type="checkbox" id="menu-btn" />
+                    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                    <input type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil">
+                    <ul class="menu">
+                        <li><a href="index.html" >Accueil</a></li>
+                        <li><a href="memory.html" >Jeu</a></li>
+                        <li><a href="Scores.html" >Scores</a></li>
+                        <li><a href="contact.html">Nous Contacter</a></li>
+                        <li><a href="#" id="LienConditionnel">Mon Espace</a></li>
+                    </ul>
+                </nav>
+            </div>
             <h2 class="connexion">Explorez l'univers du Memory Spatial</h2>
         </header>
         <main>

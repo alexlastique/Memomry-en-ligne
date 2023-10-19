@@ -10,21 +10,52 @@
 
     </head>
     <body>
-        <header class="login"> 
-            <nav>
-            <h1>Space Memory</h1>
-                <ul>
-                    <li><a href="index.html" >Accueil</a></li>
-                    <li><a href="" >Jeu</a></li>
-                    <li><a href="Scores.html" >Scores</a></li>
-                    <li><a href="contact.html" >Nous Contacter</a></li>
-                    <li><a href="#" id="LienConditionnel">Mon Espace</a></li>
-                </ul>
-            </nav>
+        <header class="login">
+            <div id="backgroundHeader">
+                <nav>
+                    <div id="logo" class="logo">Space Memory</div>
+                    <input class="menu-btn" type="checkbox" id="menu-btn" />
+                    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                    <input type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil">
+                    <ul class="menu">
+                        <li><a href="index.html" >Accueil</a></li>
+                        <li><a href="memory.html" >Jeu</a></li>
+                        <li><a href="Scores.html" >Scores</a></li>
+                        <li><a href="contact.html">Nous Contacter</a></li>
+                        <li><a href="#" id="LienConditionnel">Mon Espace</a></li>
+                    </ul>
+                </nav>  
+            </div>
             <h2 class="connexion">Mon Espace</h2>
         </header>
-        <div class="align">
-            <form class="formEspace">
+        <div class="alignProfil">
+            <table class="TableauProfil">
+                <tr>
+                    <td class="Profil20">
+                        <img src="assets/images/alexis.jpg" alt="">
+                    </td>
+                    <td class="Profil40">
+                        <form action="POST" class="formEspace">
+                            <input type="email" placeholder="Ancien email">
+                            <input type="pseudo" placeholder="Nouveau email">
+                            <input type="password" placeholder="Mot de passe">
+                            <input type="submit" value="Changer l'adresse mail" class="SubmitEspace">
+                        </form>
+                    </td>
+                    <td class="Profil40">
+                        <form action="POST" class="formEspace">
+                            <input type="password" placeholder="Ancien mot de passe">
+                            <input type="password" placeholder="Nouveau mot de passe">
+                            <input type="password" placeholder="Confirmer le mot de passe">
+                            <input type="submit" value="Changer le mot de passe" class="SubmitEspace">
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="NomProfil">Alexlastique</td>
+                </tr>
+            </table>
+            <!-- <form class="formEspace">
                 <p class="pEspace"><input type="email" placeholder="Ancien email"></p>
                 <p class="pEspace"><input type="pseudo" placeholder="Nouveau email"></p>
                 <p class="pEspace"><input type="password" placeholder="Mot de passe"></p>
@@ -35,7 +66,7 @@
                 <p class="pEspace2"><input type="password" placeholder="Nouveau mot de passe"></p>
                 <p class="pEspace2"><input type="password" placeholder="Confirmer le mot de passe"></p>
                 <p class="pEspace2"><input type="submit" value="Changer le mot de passe" class="SubmitEspace"></p>
-            </form>
+            </form> -->
         </div>
 
         <!--footer-->

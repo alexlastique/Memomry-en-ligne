@@ -163,9 +163,266 @@ h4{
     background-size: cover;
 
 }
+
+#mainContact{
+    display: flex;
+    width: 75%;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+}
 #leo{
     background: url(../images/gento.jpg) center;
     background-size: cover;
+}
+
+
+/*transition du header dan sle bon endroit*/
+
+#logo{
+    text-decoration: none;
+    color: white;
+    font-weight: 900;
+    font-size: 18px;
+    margin: 20px;
+}
+body{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: #110E2E;
+}
+#facebook{
+    padding: 5px 7px 5px 3px;
+}
+#pinterest{
+    height: 25px;
+    width: 25px;
+    padding: 2.5px;
+}
+#playButton{
+    margin: 15px auto 30vh;
+    width: 10%;
+    background-color: orange;
+    border: transparent;
+    padding: 15px;
+}
+.align{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.align div{
+    text-align: center;
+    padding: 40px 0;
+    margin: 10rem 0 3rem;
+    width: 32%;
+    background-color: #0E0B26;
+}
+#inputPetit{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.Submit{
+    background-color: #EC9123;
+    color: white;
+    width: 20%;
+    border-radius: 2px;
+    border: transparent;
+    padding: 12px 5px;
+}
+.inputgrand, #inputPetit input, textarea, .searchProfil{
+    background-color: #373367;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 0;
+    width: 100%;
+    margin: 7px 0;
+    border: none;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    width: 50%;
+    margin: 0 auto 5rem 0;
+}
+#inputPetit input {
+    width: 45%;
+}
+.divInput{
+    margin: 50px;
+    text-align: left;
+
+}
+.pInput{
+    margin: 3px;
+    margin-left: 40%;
+}
+::placeholder{
+    color: lightgray;
+}
+.align .Submit{
+    background-color: #EC9123;
+    color: white;
+    border-color: #EC9123;
+    width: 15%;
+    margin: 10px auto 10px;
+}
+.align .SubmitEspace{
+    background-color: #EC9123;
+    color: white;
+    border-color: #EC9123;
+    width: 60%;
+    margin: 10px auto 10px;
+}
+.align form{
+    width: 50%;
+    color: white;
+}
+
+.formEspace{
+    margin: 50px;
+    text-align: center;
+
+}
+.formEspace2{
+    margin: 50px;
+    text-align: center;
+
+}
+.pEspace{
+    margin: 3px;
+    margin-left: 50%;
+}
+
+.pEspace2{
+    margin: 3px;
+    margin-right: 50%;
+}
+::placeholder{
+    color: lightgray;
+}.Scores{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0%;
+    padding: 10% 0;
+}
+.searchProfil{
+    padding: 10px 4rem 10px 10px;
+    background-color: rgba(17, 14, 46, 0.8);
+    color: rgba(255, 255, 255, 0.5);
+    width: auto;
+    margin: 0 auto 0 0;
+}
+.Scores tr,.Scores img{
+    height: 100px;
+    width: 100px;
+    border: 1px solid #EC9123;
+}
+.Scores tr td{
+    padding: 2px 4px;
+    cursor: pointer;
+}
+.Scores th{
+    border: 1px solid orange;
+    height: 25px;
+    width: 225px;
+}
+#blockArticle article:hover{
+    transition: 0.5s;
+    -ms-transform: scale(1.05); /* IE 9 */
+    -webkit-transform: scale(1.05); /* Safari 3-8 */
+    transform: scale(1.05);
+}
+.PageScores{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10%;
+}
+.PageScores th, .PageScores td{
+    border: 1px solid orange;
+    height: 25px;
+    width: 400px;
+}
+.PageScores .Fait{
+    height: 40px;
+    width: 200px;
+    font-size: 40px;
+}
+.PageScores .FaitBase{
+    height: 40px;
+    width: 200px;
+}
+.jauge {
+    width: 100%;
+    height: 30px;
+    background-color: #ccc;
+    position: relative;
+    border-radius: 10px;
+}
+
+.remplissage {
+    height: 100%;
+    background-color: orange;
+    width: 33%;
+    color: #373367;
+    text-align: right;
+    padding: 1rm;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.progression{
+    width: 400px;
+    margin: 10px;
+}
+.alignProfil{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.alignProfil div{
+    text-align: center;
+    padding: 40px 0;
+    margin: 10rem 0 3rem;
+    width: 32%;
+    background-color: #0E0B26;
+}
+.alignProfil .Submit{
+    background-color: #EC9123;
+    color: white;
+    border-color: #EC9123;
+    width: 15%;
+    margin: 10px auto 10px;
+}
+.alignProfil .SubmitEspace{
+    background-color: #EC9123;
+    color: white;
+    border-color: #EC9123;
+    width: 60%;
+    margin: 10px auto 10px;
+}
+.alignProfil form{
+    width: 50%;
+    color: white;
+}
+.TableauProfil{
+    align-items: center;
+    margin: 10%;;
+}
+.Profil20{
+    width: 20%;
+}
+.Profil20 img{
+    width: 50%;
+    border-radius: 100%;
+    object-fit: fill;
+}
+.Profil40{
+    width: 40%;
 }
 
 /*chat*/

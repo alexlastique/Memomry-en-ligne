@@ -8,20 +8,26 @@
         <link rel="stylesheet" href="assets/css/header.css">
         <link rel="stylesheet" href="assets/css/main.css">
     </head>
-    <body class="contact">
-        <header class="login"> 
-            <nav>
-                <div id="logo">Space Memory</div>
-            <ul>
-                <li><a href="index.html" >Accueil</a></li>
-                <li><a href="" >Jeu</a></li>
-                <li><a href="Scores.html" >Scores</a></li>
-                <li><a>Nous Contacter</a></li>
-                <li><a href="#" id="LienConditionnel">Mon Espace</a></li>
-            </ul>
-            </nav>
+    <body>
+        <header class="login header"> 
+            <div id="backgroundHeader">
+                <nav>
+                    <div id="logo" class="logo">Space Memory</div>
+                    <input class="menu-btn" type="checkbox" id="menu-btn" />
+                    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                    <input type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil">
+                    <ul class="menu">
+                        <li><a href="index.html" >Accueil</a></li>
+                        <li><a href="memory.html" >Jeu</a></li>
+                        <li><a href="Scores.html" >Scores</a></li>
+                        <li><a href="contact.html">Nous Contacter</a></li>
+                        <li><a href="#" id="LienConditionnel">Mon Espace</a></li>
+                    </ul>
+                </nav>
+            </div>
             <h2 class="connexion">Nous Contacter</h2>
         </header>
+        <main id="mainContact">
         <section class="align">
             <div>
                 <br/>
@@ -40,17 +46,16 @@
             </div>
         </section>
         <form method="POST" class="form">
-            <p>
-                <input type="text" name="name" id="name" placeholder="Nom" class="inputpetit">
-                <input type="email" name="mail" id="mail" placeholder="Email" class="inputpetit">
-                <br/>
-                <input type="text" name="sujet" id="sujet" placeholder="Sujet" class="inputgrand">
-                <br/>
-                <textarea name="message" id="message" placeholder="Message" class="inputgrand"></textarea>
-                <br/>
+            <div id="inputPetit">
+                <input type="text" name="name" id="name" placeholder="  &nbsp; Nom">
+                <input type="email" name="mail" id="mail" placeholder=" &nbsp; Email">
+            </div>
+                <input type="text" name="sujet" id="sujet" placeholder=" &nbsp; Sujet" class="inputgrand">
+                <textarea name="message" id="message" placeholder=" &nbsp; Message" class="inputgrand"></textarea>
+                <br>
                 <input type="submit" value="Envoyer" class="Submit">
-            </p>
         </form>
+        </main>
         <!--footer-->
         <footer class="footer">
             <article>
