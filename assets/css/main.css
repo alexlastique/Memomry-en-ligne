@@ -208,11 +208,16 @@ body{
 .divInput{
     margin: 50px;
     text-align: left;
+    margin-left: 40%;
+    margin-right: 40%;
 
 }
 .pInput{
     margin: 3px;
-    margin-left: 40%;
+}
+.pInput2{
+    margin: 10px;
+    text-align: center;
 }
 ::placeholder{
     color: lightgray;
@@ -366,12 +371,14 @@ body{
     padding: 10px 0;
     margin: 7px 0;
     border: none;
+    width: 100%;
 }
 .pInput input.Submit{
     background-color: #EC9123;
     color: white;
     border-color: #EC9123;
     margin: 10px auto 10px;
+    width: 50%;
 }
 
 /*chat*/
