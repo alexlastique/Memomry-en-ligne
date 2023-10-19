@@ -370,43 +370,99 @@ body{
     width: 100%;
     justify-content: center;
 }
-.alignProfil div{
-    text-align: center;
-    padding: 40px 0;
-    margin: 10rem 0 3rem;
-    width: 32%;
-    background-color: #0E0B26;
-}
-.alignProfil .Submit{
-    background-color: #EC9123;
-    color: white;
-    border-color: #EC9123;
-    width: 15%;
-    margin: 10px auto 10px;
-}
-.alignProfil .SubmitEspace{
-    background-color: #EC9123;
-    color: white;
-    border-color: #EC9123;
-    width: 60%;
-    margin: 10px auto 10px;
-}
-.alignProfil form{
-    width: 50%;
-    color: white;
-}
 .TableauProfil{
-    align-items: center;
-    margin: 10%;;
+    text-align: center;
+    width: 100%;
+    margin: 10%;
 }
-.Profil20{
-    width: 20%;
+.colonne1 td{
+    margin: 20%;
 }
-.Profil20 img{
+.formEspace div input{
+    background-color: #373367;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 0;
+    width: 100%;
+    margin: 7px 0;
+    border: none;
+}
+.formEspace div input.SubmitEspace{
+    background-color: #EC9123;
+    color: white;
+    border-color: #EC9123;
     width: 50%;
-    border-radius: 100%;
-    object-fit: fill;
+    margin: 10px auto 10px;
 }
-.Profil40{
-    width: 40%;
+
+/*chat*/
+
+#pos_chat{
+    position: absolute;
+    bottom: 51vh; right: 0;
+}
+#chat{
+    background-color: white;
+    height: 50vh;
+    width: 25%;
+    position: fixed;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+#chat #head{
+    display: flex;
+    background-color:dodgerblue;
+    align-items: center;
+    padding: 0;
+}
+#chat #head img{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#messages{
+    flex: 1;
+    padding: 20px 30px;
+}
+.message {
+    background-color: lightgray;
+    padding: 10px;
+    color: black;
+    width: fit-content;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.users{
+    background-color: dodgerblue;
+    margin-left: auto;
+    color: white;
+}
+#input form{
+    display: flex;
+    margin: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#input form input{
+    flex: 1;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    border-width: 1px;
+    border-color: lightgray;
+    margin: 0;
+    border-radius: 5px;
+}
+#input form button{
+    margin-left: 5px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+#input form button:hover{
+    background-color: dodgerblue;
 }
