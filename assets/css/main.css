@@ -375,3 +375,48 @@ body{
     width: 400px;
     margin: 10px;
 }
+.alignProfil{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.alignProfil div{
+    text-align: center;
+    padding: 40px 0;
+    margin: 10rem 0 3rem;
+    width: 32%;
+    background-color: #0E0B26;
+}
+.alignProfil .Submit{
+    background-color: #EC9123;
+    color: white;
+    border-color: #EC9123;
+    width: 15%;
+    margin: 10px auto 10px;
+}
+.alignProfil .SubmitEspace{
+    background-color: #EC9123;
+    color: white;
+    border-color: #EC9123;
+    width: 60%;
+    margin: 10px auto 10px;
+}
+.alignProfil form{
+    width: 50%;
+    color: white;
+}
+.TableauProfil{
+    align-items: center;
+    margin: 10%;;
+}
+.Profil20{
+    width: 20%;
+}
+.Profil20 img{
+    width: 50%;
+    border-radius: 100%;
+    object-fit: fill;
+}
+.Profil40{
+    width: 40%;
+}
