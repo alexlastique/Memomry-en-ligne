@@ -402,19 +402,37 @@ body{
 }
 #messages{
     flex: 1;
-    padding: 20px 30px;
+    padding: 20px 10px;
+    color: darkgray;
+    font-size: 10px;
 }
-.message {
+.column{
+    flex-direction: column;
+    margin-left: 5px;
+}
+.column p{
+    height: fit-content;
+    margin: 0;
+}
+.flex{
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+}
+.message{
     background-color: lightgray;
     padding: 10px;
     color: black;
+    font-size: 15px;
     width: fit-content;
+    height: fit-content;
     border-radius: 10px;
-    margin-bottom: 15px;
 }
-.users{
-    background-color: dodgerblue;
+.user{
     margin-left: auto;
+}
+.usersmessage{
+    background-color: dodgerblue;
     color: white;
 }
 #input form{
