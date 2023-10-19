@@ -6,12 +6,6 @@
     background-position: center;
     text-align: center;
 }
-#headerAccueil a:hover{
-    color: #EC9123;
-    transition: 1s;
-    border-top: 2px solid #EC9123;
-    padding: 20px 0;
-}
 nav{
     display: flex;
     align-items: center;
@@ -29,6 +23,12 @@ nav{
 #headerAccueil ul, .login ul{
     display: flex;
     margin: 0;
+    flex-direction: column;
+    top: 4rem;
+    position: absolute;
+    right: 1rem;
+    background: rgba(17, 14, 46, 0.5);
+    align-items: center;
 }
 #headerAccueil h1{
     font-size: 80px;
@@ -69,17 +69,12 @@ header.login nav{
     width: 100%;
     background-color: #100E2E;
 }
+
 header.login a{
     text-decoration: none;
     color: white;
     font-weight: 900;
     font-size: 14px;
-}
-header.login ul li a:hover{
-    color: #EC9123;
-    transition: 1s;
-    border-top: 2px solid #EC9123;
-    padding: 20px 0;
 }
 header.login ul{
     display: flex;
@@ -98,109 +93,147 @@ header h1.connexion{
     font-weight: bold;
     margin: 50px auto 50px;
 }
-@media screen and (max-width : 1000px) {
-    #menuToggle{
-        display: block;
-        position: relative;
-        top: 50px;
-        left: 50px;
-        z-index: 1;
-        -webkit-user-select: none;
-        user-select: none;
+
+.header {
+    background-color: #fff;
+    width: 100%;
+    z-index: 3;
+  }
+  
+  .header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+  }
+  
+  .header li a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-top: 2px solid transparent;
+    transition: 1s;
+  }
+  
+  #headerAccueil a:hover, .login li a:hover {
+    color: #EC9123;
+    transition: 0.5s;
+  }
+  
+  .header .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+  
+  /* menu */
+  
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+  }
+  
+  /* menu icon */
+  
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: absolute;
+    right: 5rem;
+    user-select: none;
+  }
+  
+  .header .menu-icon .navicon {
+    background: wheat;
+    display: block;
+    height: 5px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 40px;
+    border-radius: 5px;
+  }
+  
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: wheat;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  
+  .header .menu-icon .navicon:before {
+    top: 13px;
+    border-radius: 5px;
+  }
+  
+  .header .menu-icon .navicon:after {
+    top: -13px;
+    border-radius: 5px;
+  }
+  
+  /* menu btn */
+  
+  .header .menu-btn {
+    display: none;
+  }
+  
+  .header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+
+  @media (min-width: 1000Px) {
+    .header li {
+      float: left;
     }
-
-    #menuToggle a{
-        text-decoration: none;
-        color: #232323;
-        transition: color 0.3s ease;
+    .header li a {
+      padding: 20px 0;
     }
-
-    #menuToggle a:hover{
-        color: tomato;
+    .header .menu {
+      clear: none;
+      float: right;
+      max-height: none;
     }
-
-
-    #menuToggle input{
-        display: block;
-        width: 40px;
-        height: 32px;
-        position: absolute;
-        top: -7px;
-        left: -5px;
-
-        cursor: pointer;
-
-        opacity: 0; /* hide this */
-        z-index: 2; /* and place it over the hamburger */
-
-        -webkit-touch-callout: none;
+    .header .menu-icon {
+      display: none;    
     }
-
-    /*
-    * Just a quick hamburger
-    */
-    #menuToggle span{
-        display: block;
-        width: 33px;
-        height: 4px;
-        margin-bottom: 5px;
-        position: relative;
-
-        background: #cdcdcd;
-        border-radius: 3px;
-
-        z-index: 1;
-
-        transform-origin: 4px 0px;
-
-        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-            background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-            opacity 0.55s ease;
+    #headerAccueil ul li a:hover, header.login ul li a:hover{
+        color: #EC9123;
+        transition: 1s;
+        border-top: 2px solid #EC9123;
+        padding: 32px 0;
     }
-
-    #menuToggle span:first-child
-    {
-        transform-origin: 0% 0%;
+    #headerAccueil ul, .login ul{
+        position: unset;
+        background: none;
+        flex-direction: row;
     }
-
-    #menuToggle span:nth-last-child(2)
-    {
-        transform-origin: 0% 100%;
-    }
-    #menuToggle input:checked ~ span
-    {
-        opacity: 1;
-        transform: rotate(45deg) translate(-2px, -1px);
-        background: #232323;
-    }
-    #menuToggle input:checked ~ span:nth-last-child(3)
-    {
-        opacity: 0;
-        transform: rotate(0deg) scale(0.2, 0.2);
-    }
-    #menuToggle input:checked ~ span:nth-last-child(2)
-    {
-        transform: rotate(-45deg) translate(0, -1px);
-    }
-    #menu {
-        position: absolute;
-        width: 300px;
-        margin: -100px 0 0 -50px;
-        padding: 50px;
-        padding-top: 125px;
-        background: #ededed;
-        list-style-type: none;
-        -webkit-font-smoothing: antialiased;
-        transform-origin: 0% 0%;
-        transform: translate(-100%, 0);
-        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-    }
-
-    #menu li{
-        padding: 10px 0;
-        font-size: 22px;
-    }
-    #menuToggle input:checked ~ ul {
-        transform: none;
+}
+@media (max-width: 1000px) {
+    h1{
+        width: auto;
     }
 }

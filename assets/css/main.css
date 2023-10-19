@@ -163,10 +163,7 @@ h4{
     background-size: cover;
 
 }
-.searchProfil{
-    padding-left: 10px;
-    background-color: midnightblue;
-}
+
 #mainContact{
     display: flex;
     width: 75%;
@@ -311,6 +308,13 @@ body{
     flex-direction: column;
     align-items: center;
     margin: 10%;
+}
+.searchProfil{
+    padding: 10px 4rem 10px 10px;
+    background-color: rgba(17, 14, 46, 0.8);
+    color: rgba(255, 255, 255, 0.5);
+    width: auto;
+    margin: 0 auto 0 0;
 }
 .Scores tr,.Scores img{
     height: 100px;
