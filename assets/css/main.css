@@ -310,7 +310,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10%;
+    margin-bottom: 0%;
+    padding: 10% 0;
 }
 .Scores tr,.Scores img{
     height: 100px;
