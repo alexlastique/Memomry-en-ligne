@@ -3,6 +3,7 @@
     color: white;
     font-weight: 900;
     font-size: 18px;
+    margin: 20px;
 }
 body{
     box-sizing: border-box;
@@ -11,22 +12,19 @@ body{
     background-color: #110E2E;
 }
 
-input {
-    padding-left: 10px;
-}
-
 #headerAccueil{
     display: flex;
     flex-direction: column;
     background: url(../images/montagneSpace.jpeg) no-repeat;
     background-size: cover;
     background-position: center;
+    text-align: center;
 }
-header ul li a:hover{
+#headerAccueil a:hover{
     color: #EC9123;
     transition: 1s;
     border-top: 2px solid #EC9123;
-    padding: 40px 0;
+    padding: 20px 0;
 }
 nav{
     display: flex;
@@ -44,17 +42,19 @@ nav{
 
 #headerAccueil ul, .login ul{
     display: flex;
-    margin: 41px 0 0;
+    margin: 0;
 }
-#headerAccueil h1, .login h1{
+#headerAccueil h1{
     font-size: 80px;
-    width: 60%;
+    width: 50rem;
     font-weight: 900;
     margin: 30vh auto 0;
 }
 #headerAccueil li, .login li{
     list-style: none;
     margin: 0 15px;
+    display: flex;
+    align-items: center;
     text-transform: uppercase;
     font-size: 15px;
 }
@@ -80,9 +80,9 @@ nav{
 
 /*header contact*/
 header.login h2{
-    font-size: 80px;
-    width: 60%;
+    width: 75%;
     font-weight: 900;
+    text-align: center;
     margin: 4rem auto;
     text-transform: uppercase;
 }
@@ -104,7 +104,7 @@ header.login ul li a:hover{
     color: #EC9123;
     transition: 1s;
     border-top: 2px solid #EC9123;
-    padding: 40px 0;
+    padding: 20px 0;
 }
 header.login ul{
     display: flex;
@@ -134,9 +134,7 @@ header.login{
 #inputPetit{
     display: flex;
     justify-content: space-between;
-}
-#inputPetit input{
-    width: 45%;
+    width: 100%;
 }
 header h1.connexion{
     font-size: 50px;
@@ -152,11 +150,12 @@ header h1.connexion{
     border: transparent;
     padding: 12px 5px;
 }
-.inputgrand, #inputPetit input, textarea{
+.inputgrand, #inputPetit input, textarea, .searchProfil{
     background-color: #373367;
     border-radius: 5px;
     color: white;
     padding: 10px 0;
+    width: 100%;
     margin: 7px 0;
     border: none;
 }
@@ -167,13 +166,13 @@ header h1.connexion{
     width: 50%;
     margin: 0 auto 5rem 0;
 }
+#inputPetit input {
+    width: 45%;
+}
 .divInput{
     margin: 50px;
     text-align: left;
 
-}
-div, .inputgrand, textarea{
-    width: 100%;
 }
 .pInput{
     margin: 3px;
@@ -295,4 +294,110 @@ div, .inputgrand, textarea{
 .progression{
     width: 400px;
     margin: 10px;
+}
+@media screen and (max-width : 1000px) {
+    #menuToggle{
+        display: block;
+        position: relative;
+        top: 50px;
+        left: 50px;
+        z-index: 1;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    #menuToggle a{
+        text-decoration: none;
+        color: #232323;
+        transition: color 0.3s ease;
+    }
+
+    #menuToggle a:hover{
+        color: tomato;
+    }
+
+
+    #menuToggle input{
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+
+        cursor: pointer;
+
+        opacity: 0; /* hide this */
+        z-index: 2; /* and place it over the hamburger */
+
+        -webkit-touch-callout: none;
+    }
+
+    /*
+    * Just a quick hamburger
+    */
+    #menuToggle span{
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+
+        background: #cdcdcd;
+        border-radius: 3px;
+
+        z-index: 1;
+
+        transform-origin: 4px 0px;
+
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+            background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+            opacity 0.55s ease;
+    }
+
+    #menuToggle span:first-child
+    {
+        transform-origin: 0% 0%;
+    }
+
+    #menuToggle span:nth-last-child(2)
+    {
+        transform-origin: 0% 100%;
+    }
+    #menuToggle input:checked ~ span
+    {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: #232323;
+    }
+    #menuToggle input:checked ~ span:nth-last-child(3)
+    {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+    #menuToggle input:checked ~ span:nth-last-child(2)
+    {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+    #menu {
+        position: absolute;
+        width: 300px;
+        margin: -100px 0 0 -50px;
+        padding: 50px;
+        padding-top: 125px;
+        background: #ededed;
+        list-style-type: none;
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+
+    #menu li{
+        padding: 10px 0;
+        font-size: 22px;
+    }
+    #menuToggle input:checked ~ ul {
+        transform: none;
+    }
 }
