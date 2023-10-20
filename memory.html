@@ -33,6 +33,15 @@
             <h2 class="connexion">Explorez l'univers du Memory Spatial</h2>
         </header>
         <main>
+            <article class="levelDifficult">
+                <h3>Choisissez votre niveau de difficulté :</h3>
+                <div>
+                    <button id="easy">Facile</button>
+                    <button id="normal">Normal</button>
+                    <button id="difficile">Difficile</button>
+                </div>
+            </article>
+
             <div id="pos_chat">
                 <input type="checkbox" id="toggle" class="toggle-checkbox">
                 <label for="toggle" class="floating-button"></label>
@@ -97,7 +106,7 @@
                     <td><img src="assets/images/galaxy.jpeg" alt="galaxie2"></td>
                 </tr>
             </table>
-            <table class="Scores medium">
+            <table class="Scores"  id="TableMemory2">
                 <tr>
                     <td><img src="assets/images/black-hole.avif" alt="troue noir"></td>
                     <td><img src="assets/images/black-hole.avif" alt="troue noir"></td>
@@ -147,7 +156,7 @@
                     <td><img src="assets/images/planete2.png" alt="planete2"></td>
                 </tr>
             </table>
-            <table class="Scores hard">
+            <table class="Scores"  id="TableMemory3">
                 <tr>
                     <td><img src="assets/images/black-hole.avif" alt="troue noir"></td>
                     <td><img src="assets/images/black-hole.avif" alt="troue noir"></td>
@@ -230,5 +239,34 @@
                 </tr>
             </table>
         </main>
+         <!--footer-->
+         <footer id="footerAccueil">
+            <article>
+                <h4>Information</h4>
+                <p>N'hésiter pas à  nous contacter pour le moindre problème</p>
+                <p><span>Tel : </span> 06 05 04 03 02</p>
+                <p><span>Email : </span> support@powerofmemory.com</p>
+                <p><span>Location : </span> Paris</p>
+                <div>
+                    <img src="assets/images/Facebook.png" alt="Facebook" id="facebook">
+                    <img src="assets/images/twitter-128.png" alt="twitter">
+                    <img src="assets/images/G-logo.png" alt="twitter">
+                    <img src="assets/images/pinterest2.png" alt="pinterest" id="pinterest">
+                    <img src="assets/images/instagram.png" alt="twitter">
+                </div>
+                <p>Copyright © 2022 Tous droits réservés</p>
+            </article>
+            <article>
+                <h4>Space Memory</h4>
+                <ul>
+                    <li><a href="" > Jouer !</a></li>
+                    <li><a href="Scores.html" > Les scores</a></li>
+                    <li><a href="contact.html" > Nous contacter</a></li>
+                </ul>
+                <button class="upButton"><a href="#backgroundHeader">^</a></button>
+            </article>
+        </footer>
+        
+        <script src="assets/js/scripts.js"></script>
     </body>
 </html>

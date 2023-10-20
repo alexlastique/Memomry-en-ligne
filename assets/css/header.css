@@ -13,6 +13,47 @@ nav{
     width: 85%;
     margin: auto;
 }
+.Scores tr,.Scores img{
+    height: 100px;
+    width: 100px;
+    border: 1px solid #EC9123;
+}
+.levelDifficult{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    width: 30%;
+    margin: 2rem auto;
+}
+.levelDifficult div{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+.levelDifficult div button{
+    border-radius: 5px;
+    padding: 15px;
+    border: black 1Px solid;
+    font-weight: bold;
+    margin: 10px;
+    width: 200px;
+    cursor: pointer;
+}
+.levelDifficult div button:first-of-type{
+    background-color: greenyellow;
+}
+.levelDifficult div button:nth-of-type(2){
+    background-color: cornflowerblue;
+}
+.levelDifficult div button:last-of-type{
+    background-color: red;
+}
 #headerAccueil a, .login a{
     text-decoration: none;
     color: white;
@@ -299,6 +340,12 @@ footer article:last-of-type{
 #mainAccueil section:nth-of-type(2) div article:nth-of-type(2){
     background-color: #B91CA8;
 
+}
+.flex{
+    display: flex;
+}
+.none{
+    display: none;
 }
 footer{
     display: flex;
