@@ -270,6 +270,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 0%;
     padding: 10% 0;
 }
@@ -277,6 +278,7 @@ body{
     height: 100px;
     width: 100px;
     border: 1px solid #EC9123;
+    margin: 0;
 }
 .Scores tr td{
     padding: 2px 4px;
@@ -496,4 +498,14 @@ body{
 #input form button:hover{
     background-color: dodgerblue;
     color: white;
+}
+.upButton{
+    -webkit-appearance: none;
+    width: 60px;
+    height: 60px;
+    background-color: orange;
+    background-image: url("../images/up-arrow.png");
+    background-position: center;
+    background-size: 80%;
+    cursor: pointer;
 }
