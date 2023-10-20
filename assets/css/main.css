@@ -208,11 +208,16 @@ body{
 .divInput{
     margin: 50px;
     text-align: left;
+    margin-left: 40%;
+    margin-right: 40%;
 
 }
 .pInput{
     margin: 3px;
-    margin-left: 40%;
+}
+.pInput2{
+    margin: 10px;
+    text-align: center;
 }
 ::placeholder{
     color: lightgray;
@@ -359,6 +364,22 @@ body{
     width: 50%;
     margin: 10px auto 10px;
 }
+.pInput input{
+    background-color: #373367;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 0;
+    margin: 7px 0;
+    border: none;
+    width: 100%;
+}
+.pInput input.Submit{
+    background-color: #EC9123;
+    color: white;
+    border-color: #EC9123;
+    margin: 10px auto 10px;
+    width: 50%;
+}
 
 /*chat*/
 
@@ -388,19 +409,37 @@ body{
 }
 #messages{
     flex: 1;
-    padding: 20px 30px;
+    padding: 20px 10px;
+    color: darkgray;
+    font-size: 10px;
 }
-.message {
+.column{
+    flex-direction: column;
+    margin-left: 5px;
+}
+.column p{
+    height: fit-content;
+    margin: 0;
+}
+.flex{
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+}
+.message{
     background-color: lightgray;
     padding: 10px;
     color: black;
+    font-size: 15px;
     width: fit-content;
+    height: fit-content;
     border-radius: 10px;
-    margin-bottom: 15px;
 }
-.users{
-    background-color: dodgerblue;
+.user{
     margin-left: auto;
+}
+.usersmessage{
+    background-color: dodgerblue;
     color: white;
 }
 #input form{
