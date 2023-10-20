@@ -13,6 +13,11 @@ nav{
     width: 85%;
     margin: auto;
 }
+.Scores tr,.Scores img{
+    height: 100px;
+    width: 100px;
+    border: 1px solid #EC9123;
+}
 #headerAccueil a, .login a{
     text-decoration: none;
     color: white;
