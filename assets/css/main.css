@@ -433,6 +433,10 @@ body{
     padding-right: 15px;
     padding-left: 15px;
 }
+audio{
+    position: fixed;
+    bottom: 0;
+}
 #messages{
     flex: 1;
     padding: 20px 10px;
