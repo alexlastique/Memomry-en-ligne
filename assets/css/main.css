@@ -273,7 +273,11 @@ body{
     margin-bottom: 0%;
     padding: 3% 0;
 }
-
+.Scores tr,.Scores img{
+    height: 100px;
+    width: 100px;
+    border: 1px solid #EC9123;
+}
 .Scores tr td{
     padding: 2px 4px;
     cursor: pointer;
