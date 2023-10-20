@@ -385,17 +385,43 @@ body{
 
 #pos_chat{
     position: absolute;
-    bottom: 51vh; right: 0;
+}.toggle-checkbox {
+    display: none;
+}
+.floating-button {
+    width: 60px;
+    height: 60px;
+    background-color: dodgerblue;
+    position: fixed;
+    bottom: 10px; right: 10px;
+    border-radius: 50%;
+    background-image: url("../images/chaticones.png");
+    background-position: center;
+    background-size: 80%;
+    cursor: pointer;
+}
+.floating-button:hover{
+    width: 70px;
+    height: 70px;
+    bottom: 5px; right: 5px;
+}
+.toggle-checkbox:checked ~ .floating-button{
+    background-color: dodgerblue;
+    background-image: url("../images/checkedchaticone.png");
 }
 #chat{
     background-color: white;
-    height: 50vh;
-    width: 25%;
+    height: 400px;
+    width: 350px;
     position: fixed;
-    right: 0;
+    bottom: 80px; right: 10px;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    display: none;
+}
+.toggle-checkbox:checked ~ #chat{
+    display: flex;
 }
 #chat #head{
     display: flex;
@@ -469,4 +495,5 @@ body{
 }
 #input form button:hover{
     background-color: dodgerblue;
+    color: white;
 }
