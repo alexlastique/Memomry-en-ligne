@@ -519,9 +519,12 @@ audio{
     position: fixed;
     cursor: pointer;
     border: 0;
-    bottom: 10Px;
-    right: 100px;
+    bottom: 15Px;
+    right: 10px;
     border-radius: 5px;
+}
+#memory .upButton{
+    right: 80px;
 }
 .upButton:hover{
     background-color: darkorange;
