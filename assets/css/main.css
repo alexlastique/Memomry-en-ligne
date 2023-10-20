@@ -267,11 +267,11 @@ body{
 ::placeholder{
     color: lightgray;
 }.Scores{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     margin-bottom: 0%;
-    padding: 10% 0;
+    padding: 3% 0;
 }
 
 .Scores tr td{
@@ -496,4 +496,70 @@ audio{
 #input form button:hover{
     background-color: dodgerblue;
     color: white;
+}
+@media screen and (max-width: 900px) {
+    .hard.Scores img{
+        width: 90px;
+        height: 90px;
+    }
+}
+@media screen and (max-width: 810px) {
+    .hard.Scores img{
+        width: 80px;
+        height: 80px;
+    }
+}
+@media screen and (max-width: 730px) {
+    .hard.Scores img{
+        width: 72px;
+        height: 72px;
+    }
+}
+@media screen and (max-width: 670px) {
+    .hard.Scores img{
+        width: 65px;
+        height: 65px;
+    }
+    .medium.Scores img{
+        width: 90px;
+        height: 90px;
+    }
+}
+@media screen and (max-width: 610px) {
+    .hard.Scores img{
+        width: 60px;
+        height: 60px;
+    }
+    .medium.Scores img{
+        width: 81px;
+        height: 81px;
+    }
+}
+@media screen and (max-width: 570px) {
+    .hard.Scores img{
+        width: 57px;
+        height: 57px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .hard.Scores img{
+        width: 55px;
+        height: 55px;
+    }
+    .medium.Scores img{
+        width: 72px;
+        height: 72px;
+    }
+}
+@media screen and (max-width: 530px) {
+    .hard.Scores img{
+        width: 53px;
+        height: 53px;
+    }
+}
+@media screen and (max-width: 510px) {
+    .hard.Scores img{
+        width: 52px;
+        height: 52px;
+    }
 }
