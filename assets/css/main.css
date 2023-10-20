@@ -512,7 +512,7 @@ audio{
     background-repeat: no-repeat;
     width: 50px;
     height: 50px;
-    background-color: orange;
+    background-color: rgba(255, 140, 0, 0.3);
     background-image: url(../images/up-arrow.png);
     background-position: center;
     background-size: 80%;
@@ -522,6 +522,9 @@ audio{
     bottom: 10Px;
     right: 100px;
     border-radius: 5px;
+}
+.upButton:hover{
+    background-color: darkorange;
 }
 @media screen and (max-width: 900px) {
     .hard.Scores img{
