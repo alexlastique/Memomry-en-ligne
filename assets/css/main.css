@@ -347,8 +347,8 @@ body{
     width: 100%;
     margin: 10%;
 }
-.colonne1 td{
-    margin: 20%;
+.levelDifficult h3{
+    text-align: center;
 }
 .formEspace div input{
     background-color: #373367;
@@ -363,7 +363,6 @@ body{
     background-color: #EC9123;
     color: white;
     border-color: #EC9123;
-    width: 50%;
     margin: 10px auto 10px;
 }
 .pInput input{
