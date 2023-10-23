@@ -189,10 +189,9 @@ body{
 .Submit{
     background-color: #EC9123;
     color: white;
-    width: 20%;
     border-radius: 2px;
     border: transparent;
-    padding: 12px 5px;
+    padding: 12px 30px;
 }
 
 .form{
@@ -538,6 +537,16 @@ audio{
     .hard.Scores img{
         width: 80px;
         height: 80px;
+    }
+}
+@media screen and (max-width: 760px) {
+    .align{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .align div{
+        width: 100%;
+        margin: 3rem 0;
     }
 }
 @media screen and (max-width: 730px) {
