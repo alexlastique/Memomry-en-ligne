@@ -11,9 +11,9 @@ CREATE TABLE IF NOT EXISTS Utilisateur (
   PasswordUser varchar(200) NOT NULL,
   Pseudo varchar(100) NOT NULL,
   InscriptionDate datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  LastConnexionDate datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-  ADD PRIMARY KEY (Id);
-)
+  LastConnexionDate datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (Id)
+);
 
 CREATE TABLE IF NOT EXISTS Score (
   Id int UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -21,36 +21,36 @@ CREATE TABLE IF NOT EXISTS Score (
   IdGame int UNSIGNED,
   GameDifficult enum('1','2','3'),
   GameScore int,
-  DateGame datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-  ADD PRIMARY KEY (Id);
-)
+  DateGame datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (Id)
+);
 
 CREATE TABLE IF NOT EXISTS `Message` (
   Id int UNSIGNED NOT NULL AUTO_INCREMENT,
   IdGame int UNSIGNED DEFAULT NULL,
   IdUser int UNSIGNED DEFAULT NULL,
   Chat TEXT,
-  MessageDate datetime DEFAULT CURRENT_TIMESTAMP
-  ADD PRIMARY KEY (Id);
-)
+  MessageDate datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (Id)
+);
 
 CREATE TABLE IF NOT EXISTS Game (
   Id int UNSIGNED NOT NULL AUTO_INCREMENT,
-  GameName varchar(100) NOT NULL
-  ADD PRIMARY KEY (Id);
-)
+  GameName varchar(100) NOT NULL,
+  PRIMARY KEY (Id)
+);
 
 ALTER TABLE `Message`
   ADD CONSTRAINT FkMessageGame FOREIGN KEY (IdGame) REFERENCES Game(Id) ON UPDATE CASCADE ON DELETE SET NULL,
-  ADD CONSTRAINT FkMessageUtilisateur FOREIGN KEY (IdUser) REFERENCES Utilisateur(Id) ON UPDATE CASCADE ON DELETE SET NULL,
+  ADD CONSTRAINT FkMessageUtilisateur FOREIGN KEY (IdUser) REFERENCES Utilisateur(Id) ON UPDATE CASCADE ON DELETE SET NULL;
 
 ALTER TABLE Score
   ADD CONSTRAINT FkScoreGame FOREIGN KEY (IdGame) REFERENCES Game(Id) ON UPDATE CASCADE ON DELETE SET NULL,
-  ADD CONSTRAINT FkScoreUtilisateur FOREIGN KEY (IdUser) REFERENCES Utilisateur(Id) ON UPDATE CASCADE ON DELETE SET NULL,
+  ADD CONSTRAINT FkScoreUtilisateur FOREIGN KEY (IdUser) REFERENCES Utilisateur(Id) ON UPDATE CASCADE ON DELETE SET NULL;
 
 ALTER TABLE Utilisateur
   ADD CONSTRAINT FkMessageGame FOREIGN KEY (IdGame) REFERENCES Game(Id) ON UPDATE CASCADE ON DELETE SET NULL,
-  ADD CONSTRAINT FkMessageUtilisateur FOREIGN KEY (IdUser) REFERENCES Utilisateur(Id) ON UPDATE CASCADE ON DELETE SET NULL,
+  ADD CONSTRAINT FkMessageUtilisateur FOREIGN KEY (IdUser) REFERENCES Utilisateur(Id) ON UPDATE CASCADE ON DELETE SET NULL;
 
 --
 -- STORY 2
@@ -137,11 +137,11 @@ ALTER TABLE Utilisateur
 
 UPDATE Utilisateur
 SET PasswordUser='modifier'
-WHERE Id=1
+WHERE Id=1;
 
 UPDATE Utilisateur
 SET Email='modifier@gmail.com'
-WHERE Id=1
+WHERE Id=1;
 
 --
 --STORY 5
@@ -149,7 +149,7 @@ WHERE Id=1
 
 SELECT * FROM Utilisateur
 WHERE Email=papatate2@gmail.com
-AND PasswordUser=4567
+AND PasswordUser=4567;
 
 --
 --STORY 6
@@ -185,14 +185,14 @@ SET GameScore = 9000
 WHERE IdUser = 1
 AND IdGame = 1
 AND GameDifficult = 1
-AND GameScore < 9000
+AND GameScore < 9000;
 
 --
 --STORY 10
 --
 
 INSERT INTO 'Message' (IdGame, IdUser, Chat)
-VALUES (1,4,'STORY 8')
+VALUES (1,4,'STORY 8');
 
 --
 --STORY 11
@@ -211,7 +211,7 @@ WHERE MessageDate + INTERVAL 24 HOUR >= CURRENT_TIMESTAMP;
 
 SELECT Score.* FROM Score
 LEFT JOIN Utilisateur ON Score.IdUser = Utilisateur.Id
-WHERE Utilisateur.Pseudo LIKE '% %'
+WHERE Utilisateur.Pseudo LIKE '% %';
 
 
 --
@@ -230,5 +230,11 @@ CREATE TABLE IF NOT EXISTS PrivedMessage (
   WathRead BOOLEAN DEFAULT FALSE,
   PublichDate datetime DEFAULT CURRENT_TIMESTAMP,
   ReadDate datetime DEFAULT CURRENT_TIMESTAMP,
-  ADD PRIMARY KEY (Id);
-)
+  PRIMARY KEY (Id)
+);
+
+--
+--STORY 14
+--
+
+INSERT INTO
