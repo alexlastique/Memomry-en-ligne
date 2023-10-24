@@ -59,7 +59,7 @@ ALTER TABLE Utilisateur
 INSERT INTO Game (GameName)
 VALUES ('Memory');
 
-INSERT INTO `Message` (IdGame, ExpeditorId, CHAT)
+INSERT INTO `Message` (IdGame, ExpeditorId, Chat)
 VALUES
     (1, 1, 'Pour Demacia'),
     (1, 1, 'Pour Noxus'),
@@ -144,7 +144,7 @@ SET Email='modifier@gmail.com'
 WHERE Id=1
 
 --
---STORT 5
+--STORY 5
 --
 
 SELECT * FROM Utilisateur
@@ -156,7 +156,7 @@ AND PasswordUser=4567
 --
 
 --
---STORT 7
+--STORY 7
 --
 
 SELECT Game.GameName, Utilisateur.Pseudo, GameDifficult, GameScore FROM Score
@@ -165,7 +165,7 @@ LEFT JOIN Utilisateur On Score.IdPlayer = Utilisateur.Id
 ORDER BY IdGame, GameDifficult, GameScore ASC;
 
 --
---STORT 7
+--STORY 8
 --
 
 SELECT Game.GameName, Utilisateur.Pseudo, GameDifficult, GameScore FROM Score
@@ -177,7 +177,7 @@ OR GameDifficult = 2
 ORDER BY IdGame, GameDifficult, GameScore ASC;
 
 --
---STORT 7
+--STORT 9
 --
 
 UPDATE Score
@@ -186,3 +186,17 @@ WHERE IdPlayer = 1
 AND IdGame = 1
 AND GameDifficult = 1
 AND GameScore < 9000
+
+--
+--STORT 10
+--
+
+INSERT INTO 'Message' (IdGame, ExpeditorId, Chat)
+VALUES (1,4,'STORY 8')
+
+--
+--STORT 11
+--
+
+SELECT Chat FROM 'Message'
+WHERE MessageDate + INTERVAL 24 HOUR >=CURRENT_TIMESTAMP;
