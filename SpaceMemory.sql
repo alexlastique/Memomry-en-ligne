@@ -159,9 +159,26 @@ AND PasswordUser=4567
 --STORT 7
 --
 
-SELECT IdGame, IdPlayer, GameDifficult, GameScore FROM Score
+SELECT Game.GameName, Utilisateur.Pseudo, GameDifficult, GameScore FROM Score
+LEFT JOIN Game ON Score.IdGame = Game.Id
+LEFT JOIN Utilisateur On Score.IdPlayer = Utilisateur.Id
 ORDER BY IdGame, GameDifficult, GameScore ASC;
 
-SELECT U.*, S.nom as nom_sport
-FROM Utilisateur as u
-left join sport_utilisateur
+--
+--STORT 7
+--
+
+SELECT Game.GameName, Utilisateur.Pseudo, GameDifficult, GameScore FROM Score
+LEFT JOIN Game ON Score.IdGame = Game.Id
+LEFT JOIN Utilisateur On Score.IdPlayer = Utilisateur.Id
+WHERE Game.GameName = 'Memory'
+OR Utilisateur.Pseudo = 'Alexlastique'
+OR GameDifficult = 2
+ORDER BY IdGame, GameDifficult, GameScore ASC;
+
+--
+--STORT 7
+--
+
+UPDATE Score
+SET GameScore
