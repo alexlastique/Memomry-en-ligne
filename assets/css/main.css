@@ -489,8 +489,7 @@ audio{
 }
 #mainAccount section{
     text-align: center;
-    margin: auto;
-    width: 50%;
+    margin: 0 0 0 auto;
 }
 #mainAccount section img{
     width: 200px;
