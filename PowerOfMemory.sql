@@ -268,3 +268,12 @@ INSERT INTO PrivedMessage(IdUser1, IdUser2, MessageContente, PublichDate, ReadDa
 (1,4,'Ca va et toi?','2023-10-24 10:22:00.000','2023-10-24 10:27:00.000'),
 (4,1,'Ca va!','2023-10-24 10:32:00.000','2023-10-24 10:37:00.000'),
 (1,4,'Bon bah tant mieux.','2023-10-24 10:42:00.000','2023-10-24 10:47:00.000')
+
+DELETE FROM PrivedMessage
+WHERE Id = 2
+
+UPDATE PrivedMessage
+SET MessageContente = 'J ai modifier ce message'
+WHERE Id = 1
+
+
