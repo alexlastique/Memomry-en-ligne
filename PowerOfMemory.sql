@@ -212,3 +212,23 @@ WHERE MessageDate + INTERVAL 24 HOUR >= CURRENT_TIMESTAMP;
 SELECT Score.* FROM Score
 LEFT JOIN Utilisateur ON Score.IdUser = Utilisateur.Id
 WHERE Utilisateur.Pseudo LIKE '% %'
+
+
+--
+--BACKLOG 2
+--
+
+--
+--STORY 13
+--
+
+CREATE TABLE IF NOT EXISTS PrivedMessage (
+  Id int UNSIGNED NOT NULL AUTO_INCREMENT,
+  IdUser1 INT UNSIGNED,
+  IdUser2 INT UNSIGNED,
+  MessageContente TEXT,
+  WathRead BOOLEAN DEFAULT FALSE,
+  PublichDate datetime DEFAULT CURRENT_TIMESTAMP,
+  ReadDate datetime DEFAULT CURRENT_TIMESTAMP,
+  ADD PRIMARY KEY (Id);
+)
