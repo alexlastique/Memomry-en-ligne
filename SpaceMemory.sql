@@ -181,4 +181,8 @@ ORDER BY IdGame, GameDifficult, GameScore ASC;
 --
 
 UPDATE Score
-SET GameScore
+SET GameScore = 9000
+WHERE IdPlayer = 1
+AND IdGame = 1
+AND GameDifficult = 1
+AND GameScore < 9000
