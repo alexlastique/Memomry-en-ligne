@@ -32,35 +32,29 @@
             </audio>
             <h2 class="connexion">Mon Espace</h2>
         </header>
-        <div class="alignProfil">
-            <table class="TableauProfil">
-                <tr class="colonne1">
-                    <td>
-                        <img class="rounded-circle mt-5" width="150px" src="assets/images/alexis.jpg">
-                    </td>
-                    <td>
-                        <form action="POST" class="formEspace">
-                            <div><input type="email" placeholder=" &nbsp; Ancien email"></div>
-                            <div><input type="pseudo" placeholder=" &nbsp; Nouveau email"></div>
-                            <div><input type="password" placeholder=" &nbsp; Mot de passe"></div>
-                            <div><input type="submit" value="Changer l'adresse mail" class="SubmitEspace"></div>
-                        </form>
-                    </td>
-                    <td>
-                        <form action="POST" class="formEspace">
-                            <div><input type="password" placeholder=" &nbsp; Ancien mot de passe"></div>
-                            <div><input type="password" placeholder=" &nbsp; Nouveau mot de passe"></div>
-                            <div><input type="password" placeholder=" &nbsp; Confirmer le mot de passe"></div>
-                            <div><input type="submit" value=" &nbsp; Changer le mot de passe" class="SubmitEspace"></div>
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Alexlastique</td>
-                </tr>
-            </table>
-        </div>
-        <!-- <div class="alignProfil">
+        <main id="mainAccount">
+            <section>
+                <h2>Alexis</h2>
+                <img class="rounded-circle mt-5" width="150px" src="assets/images/alexis.jpg">
+            </section>
+            <form action="">
+                <fieldset>
+                    <h3>Changer l'adresse email</h3>
+                    <input type="email" placeholder=" &nbsp; Ancien email">
+                    <input type="pseudo" placeholder=" &nbsp; Nouveau email">
+                    <input type="password" placeholder=" &nbsp; Mot de passe">
+                    <input type="submit" value=" &nbsp; Changer l'adresse mail" class="SubmitEspace">
+                </fieldset>
+                <fieldset>
+                    <h3>Changer le mot de passe</h3>
+                    <input type="password" placeholder=" &nbsp; Ancien mot de passe">
+                    <input type="password" placeholder=" &nbsp; Nouveau mot de passe">
+                    <input type="password" placeholder=" &nbsp; Confirmer le mot de passe">
+                    <input type="submit" value=" &nbsp; Changer le mot de passe" class="SubmitEspace">
+                </fieldset>
+            </form>
+        </main>
+            <!-- <div class="alignProfil">
             <table class="TableauProfil">
                 <tr>
                     <td class="Profil20">
@@ -94,7 +88,6 @@
                 <p class="pEspace2"><input type="password" placeholder="Confirmer le mot de passe"></p>
                 <p class="pEspace2"><input type="submit" value="Changer le mot de passe" class="SubmitEspace"></p>
             </form> -->
-        </div>
 
         <!--footer-->
         <footer id="footerAccueil">

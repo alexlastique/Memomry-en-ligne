@@ -300,10 +300,14 @@ body{
     align-items: center;
     margin: 10%;
 }
+.PageScores tr{
+    outline: 2px solid #EC9123;
+}
+
 .PageScores th, .PageScores td{
-    border: 1px solid orange;
-    height: 25px;
-    width: 400px;
+    outline: 1px solid #EC9123;
+    padding: 10px;
+    text-align: center;
 }
 .PageScores .Fait{
     height: 40px;
@@ -324,7 +328,7 @@ body{
 
 .remplissage {
     height: 100%;
-    background-color: orange;
+    background-color: #EC9123;
     width: 33%;
     color: #373367;
     text-align: right;
@@ -472,6 +476,43 @@ audio{
     background-color: dodgerblue;
     color: white;
 }
+#mainAccount {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    align-items: center;
+}
+#mainAccount form{
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+#mainAccount section{
+    text-align: center;
+    margin: auto;
+    width: 50%;
+}
+#mainAccount section img{
+    width: 200px;
+}
+#mainAccount form fieldset{
+    display: flex;
+    flex-direction: column;
+    border: 0;
+    padding: 0;
+    margin: 10Px;
+    text-align: center;
+}
+#mainAccount form fieldset input{
+    margin: 5px;
+    border: transparent;
+    padding: 10px 0;
+    background-color: #373367;
+}
+#mainAccount form fieldset input[type=submit]{
+    background-color: #EC9123;
+    color: white;
+}
 #input form{
     display: flex;
     margin: 10px;
@@ -531,6 +572,9 @@ audio{
     .hard.Scores img{
         width: 90px;
         height: 90px;
+    }
+    #mainAccount {
+        flex-direction: column;
     }
 }
 @media screen and (max-width: 810px) {
