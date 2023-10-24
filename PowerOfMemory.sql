@@ -213,11 +213,6 @@ SELECT Score.* FROM Score
 LEFT JOIN Utilisateur ON Score.IdUser = Utilisateur.Id
 WHERE Utilisateur.Pseudo LIKE '% %'
 
-
---
---BACKLOG 2
---
-
 --
 --STORY 13
 --
@@ -232,3 +227,39 @@ CREATE TABLE IF NOT EXISTS PrivedMessage (
   ReadDate datetime DEFAULT CURRENT_TIMESTAMP,
   ADD PRIMARY KEY (Id);
 )
+
+--
+--STORY 14
+--
+
+CREATE TABLE IF NOT EXISTS PrivedMessage (
+  Id int UNSIGNED NOT NULL AUTO_INCREMENT,
+  IdUser1 INT UNSIGNED,
+  IdUser2 INT UNSIGNED,
+  MessageContente TEXT,
+  WathRead BOOLEAN DEFAULT FALSE,
+  PublichDate datetime DEFAULT CURRENT_TIMESTAMP,
+  ReadDate datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (Id)
+)
+INSERT INTO PrivedMessage(IdUser1, IdUser2, MessageContente, PublichDate, ReadDate)VALUES
+(1,2,'Salut!','2023-10-24 10:00:00.000','2023-10-24 10:05:00.000'),
+(2,1,'Salut, ça va?','2023-10-24 10:10:00.000','2023-10-24 10:15:00.000'),
+(1,2,'Ca va et toi?','2023-10-24 10:20:00.000','2023-10-24 10:25:00.000'),
+(2,1,'Ca va!','2023-10-24 10:30:00.000','2023-10-24 10:35:00.000'),
+(1,2,'Bon bah tant mieux.','2023-10-24 10:40:00.000','2023-10-24 10:45:00.000'),
+(3,1,'Salut!','2023-10-24 10:11:00.000','2023-10-24 10:16:00.000'),
+(1,3,'Salut, ça va?','2023-10-24 10:01:00.000','2023-10-24 10:06:00.000'),
+(3,1,'Ca va et toi?','2023-10-24 10:21:00.000','2023-10-24 10:26:00.000'),
+(1,3,'Ca va!','2023-10-24 10:31:00.000','2023-10-24 10:36:00.000'),
+(3,1,'Bon bah tant mieux.','2023-10-24 10:41:00.000','2023-10-24 10:46:00.000'),
+(2,4,'Salut!','2023-10-24 10:01:00.000','2023-10-24 10:06:00.000'),
+(4,2,'Salut, ça va?','2023-10-24 10:11:00.000','2023-10-24 10:16:00.000'),
+(2,4,'Ca va et toi?','2023-10-24 10:21:00.000','2023-10-24 10:26:00.000'),
+(4,2,'Ca va!','2023-10-24 10:31:00.000','2023-10-24 10:36:00.000'),
+(2,4,'Bon bah tant mieux.','2023-10-24 10:41:00.000','2023-10-24 10:46:00.000'),
+(1,4,'Salut!','2023-10-24 10:02:00.000','2023-10-24 10:07:00.000'),
+(4,1,'Salut, ça va?','2023-10-24 10:12:00.000','2023-10-24 10:17:00.000'),
+(1,4,'Ca va et toi?','2023-10-24 10:22:00.000','2023-10-24 10:27:00.000'),
+(4,1,'Ca va!','2023-10-24 10:32:00.000','2023-10-24 10:37:00.000'),
+(1,4,'Bon bah tant mieux.','2023-10-24 10:42:00.000','2023-10-24 10:47:00.000')
