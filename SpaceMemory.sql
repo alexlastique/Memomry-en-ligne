@@ -198,5 +198,17 @@ VALUES (1,4,'STORY 8')
 --STORY 11
 --
 
-SELECT Chat FROM 'Message'
-WHERE MessageDate + INTERVAL 24 HOUR >=CURRENT_TIMESTAMP;
+SELECT Chat, Utilisateur.Pseudo, MessageDate,
+  CASE WHEN ExpeditorId = 1 THEN TRUE ELSE FALSE END AS IsSender
+FROM Message
+LEFT JOIN Utilisateur ON Message.ExpeditorId = Utilisateur.Id
+WHERE MessageDate + INTERVAL 24 HOUR >= CURRENT_TIMESTAMP;
+
+
+--
+--STORY 12
+--
+
+SELECT Score.* FROM Score
+LEFT JOIN Utilisateur ON Score.IdPlayer = Utilisateur.Id
+WHERE Utilisateur.Pseudo LIKE '% %'
