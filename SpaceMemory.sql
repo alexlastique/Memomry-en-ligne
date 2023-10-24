@@ -177,7 +177,7 @@ OR GameDifficult = 2
 ORDER BY IdGame, GameDifficult, GameScore ASC;
 
 --
---STORT 9
+--STORY 9
 --
 
 UPDATE Score
@@ -188,14 +188,14 @@ AND GameDifficult = 1
 AND GameScore < 9000
 
 --
---STORT 10
+--STORY 10
 --
 
 INSERT INTO 'Message' (IdGame, ExpeditorId, Chat)
 VALUES (1,4,'STORY 8')
 
 --
---STORT 11
+--STORY 11
 --
 
 SELECT Chat FROM 'Message'
