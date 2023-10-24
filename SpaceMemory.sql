@@ -209,4 +209,6 @@ WHERE MessageDate + INTERVAL 24 HOUR >= CURRENT_TIMESTAMP;
 --STORY 12
 --
 
-
+SELECT Score.* FROM Score
+LEFT JOIN Utilisateur ON Score.IdPlayer = Utilisateur.Id
+WHERE Utilisateur.Pseudo LIKE '% %'
