@@ -575,6 +575,10 @@ audio{
     #mainAccount {
         flex-direction: column;
     }
+    #mainAccount section{
+        text-align: center;
+        margin: auto;
+    }
 }
 @media screen and (max-width: 810px) {
     .hard.Scores img{
