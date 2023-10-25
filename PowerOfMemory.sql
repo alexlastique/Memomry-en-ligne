@@ -294,15 +294,16 @@ SELECT
   U2.Pseudo AS "Pseudo du receveur",
   PM.PublichDate,
   PM.ReadDate,
-  PM.WathRead
+  PM.WathRead,
+  (PM.IdUser1 + PM.IdUser2) AS "Somme des ID Utilisateur"
 
 FROM PrivedMessage AS PM
 LEFT JOIN Utilisateur AS U1 ON PM.IdUser1=U1.Id
 LEFT JOIN Utilisateur AS U2 ON PM.IdUser2=U2.Id
-RIGHT JOIN (SELECT SUM(Utilisateur.Id+Utilisateur.Id) FROM Utilisateur)Total
 WHERE U1.Id = 1
 OR U2.Id = 1
-ORDER BY Total, PublichDate;
+ORDER BY PublichDate
+GROUP BY "Somme des ID Utilisateur";
 
 
 --
