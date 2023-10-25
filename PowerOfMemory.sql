@@ -281,6 +281,23 @@ SET MessageContente = 'J ai modifier ce message'
 WHERE Id = 1
 
 
+--
+--STORY 15
+--
+
+SELECT 
+  PM.MessageContente,
+  U1.Pseudo AS Moi,
+  U2.Pseudo AS "L'autre",
+  PM.PublichDate,
+  PM.ReadDate,
+  PM.WathRead
+
+FROM PrivedMessage AS PM
+LEFT JOIN Utilisateur AS U1 ON PM.IdUser1=U1.Id
+LEFT JOIN Utilisateur AS U2 ON PM.IdUser2=U2.Id
+WHERE U1.Id = 1
+ORDER BY PublichDate;
 
 
 --
