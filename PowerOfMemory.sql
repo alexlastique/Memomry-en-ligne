@@ -337,12 +337,15 @@ AS 'Top 1',
 (SELECT U.Pseudo FROM Score AS S
 LEFT JOIN Utilisateur AS U ON S.IdPlayer = U.Id
 WHERE MONTH(S.DateGame)=mois
+ AND U.Pseudo != `TOP 1`
 ORDER BY S.GameScore DESC
 LIMIT 1 OFFSET 1)
 AS 'Top 2',
 (SELECT U.Pseudo FROM Score AS S
 LEFT JOIN Utilisateur AS U ON S.IdPlayer = U.Id
 WHERE MONTH(S.DateGame)=mois
+ AND U.Pseudo != `TOP 1`
+ AND U.Pseudo != `TOP 2`
 ORDER BY S.GameScore DESC
 LIMIT 1 OFFSET 2)
 AS 'Top 3',
