@@ -280,6 +280,9 @@ UPDATE PrivedMessage
 SET MessageContente = 'J ai modifier ce message'
 WHERE Id = 1
 
+--
+--STORY 15
+--
 
 --
 --STORY 15
@@ -354,12 +357,15 @@ AS 'Top 1',
 (SELECT U.Pseudo FROM Score AS S
 LEFT JOIN Utilisateur AS U ON S.IdPlayer = U.Id
 WHERE MONTH(S.DateGame)=mois
+ AND U.Pseudo != `TOP 1`
 ORDER BY S.GameScore DESC
 LIMIT 1 OFFSET 1)
 AS 'Top 2',
 (SELECT U.Pseudo FROM Score AS S
 LEFT JOIN Utilisateur AS U ON S.IdPlayer = U.Id
 WHERE MONTH(S.DateGame)=mois
+ AND U.Pseudo != `TOP 1`
+ AND U.Pseudo != `TOP 2`
 ORDER BY S.GameScore DESC
 LIMIT 1 OFFSET 2)
 AS 'Top 3',
@@ -371,6 +377,38 @@ WHERE MONTH(S.DateGame)=mois
 ORDER BY 
  (SELECT COUNT(DISTINCT S.DateGame) AS NbParties FROM Score AS S) DESC
 LIMIT 1) AS 'Jeu le plus joué'
+FROM (
+   SELECT '01' AS mois
+   UNION SELECT '02'
+   UNION SELECT '03'
+   UNION SELECT '04'
+   UNION SELECT '05'
+   UNION SELECT '06'
+   UNION SELECT '07'
+   UNION SELECT '08'
+   UNION SELECT '09'
+   UNION SELECT '10'
+   UNION SELECT '11'
+   UNION SELECT '12'
+) AS m
+LEFT JOIN Score AS S ON MONTH(S.DateGame) = m.mois
+GROUP BY mois
+ORDER BY mois;
+
+--
+--STORY 18
+--
+
+SELECT '2023' AS Année, m.mois AS Mois,
+(SELECT COUNT(DISTINCT S.DateGame) AS Total_parties FROM Score AS S
+WHERE MONTH(S.DateGame)=mois) AS 'Total parties',
+(SELECT G.Game FROM Score AS S
+LEFT JOIN Game AS G ON S.IdGame = G.Id
+WHERE MONTH(S.DateGame)=mois
+ORDER BY 
+ (SELECT COUNT(DISTINCT S.DateGame) AS NbParties FROM Score AS S) DESC
+LIMIT 1) AS 'Jeu le plus joué',
+AVG(S.GameScore) AS 'Score moyen'
 FROM (
    SELECT '01' AS mois
    UNION SELECT '02'
