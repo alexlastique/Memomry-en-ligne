@@ -247,6 +247,10 @@ CREATE TABLE IF NOT EXISTS PrivedMessage (
   ReadDate datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (Id)
 )
+ALTER TABLE PrivedMessage
+  ADD CONSTRAINT FkPrivedMessageUtilisateur1 FOREIGN KEY (IdUser1) REFERENCES Utilisateur(Id) ON UPDATE CASCADE ON DELETE SET NULL,
+  ADD CONSTRAINT FkPrivedMessageUtilisateur2 FOREIGN KEY (IdUser2) REFERENCES Utilisateur(Id) ON UPDATE CASCADE ON DELETE SET NULL;
+
 INSERT INTO PrivedMessage(IdUser1, IdUser2, MessageContente, PublichDate, ReadDate)VALUES
 (1,2,'Salut!','2023-10-24 10:00:00.000','2023-10-24 10:05:00.000'),
 (2,1,'Salut, ça va?','2023-10-24 10:10:00.000','2023-10-24 10:15:00.000'),
@@ -277,3 +281,48 @@ SET MessageContente = 'J ai modifier ce message'
 WHERE Id = 1
 
 
+
+
+--
+--STORY 16
+--
+
+SELECT 
+  PM.MessageContente,
+  U1.Pseudo,
+  U2.Pseudo,
+  PM.PublichDate,
+  PM.ReadDate,
+  PM.WathRead,
+  (SELECT COUNT(DISTINCT S1.GameDifficult)
+    FROM PrivedMessage AS PM
+	  LEFT JOIN Score AS S1 ON PM.IdUser1=S1.IdUser
+    WHERE S1.IdUser = PM.IdUser1
+  ) AS NbPartieJouer1,
+  (SELECT COUNT(DISTINCT S2.GameDifficult)
+    FROM PrivedMessage AS PM
+	  LEFT JOIN Score AS S2 ON PM.IdUser2=S2.IdUser
+    WHERE S2.IdUser = PM.IdUser2
+  ) AS NbPartieJouer2,
+  (SELECT COUNT(DISTINCT Score.IdGame) AS NombreDOccurrences1
+    FROM Score
+    ORDER BY NombreDOccurrences1 DESC
+    LIMIT 1
+  ) AS JeuxLePlusJoué1,
+  (SELECT COUNT(DISTINCT Score.IdGame) AS NombreDOccurrences2
+    FROM Score
+    ORDER BY NombreDOccurrences2 DESC
+    LIMIT 1
+  ) AS JeuxLePlusJoué2
+FROM PrivedMessage AS PM
+LEFT JOIN Utilisateur AS U1 ON PM.IdUser1=U1.Id
+LEFT JOIN Utilisateur AS U2 ON PM.IdUser2=U2.Id
+WHERE (PM.IdUser1 = 1
+       AND PM.IdUser2 = 2)
+       OR(PM.IdUser1 = 2
+       AND PM.IdUser2 = 1)
+ORDER BY -PublichDate
+
+--
+--STORY 17
+--
