@@ -290,8 +290,8 @@ WHERE Id = 1
 
 SELECT 
   PM.MessageContente,
-  U1.Pseudo AS Moi,
-  U2.Pseudo AS "L'autre",
+  U1.Pseudo AS "Pseudo de l'expéditeur",
+  U2.Pseudo AS "Pseudo du receveur",
   PM.PublichDate,
   PM.ReadDate,
   PM.WathRead
@@ -299,8 +299,10 @@ SELECT
 FROM PrivedMessage AS PM
 LEFT JOIN Utilisateur AS U1 ON PM.IdUser1=U1.Id
 LEFT JOIN Utilisateur AS U2 ON PM.IdUser2=U2.Id
+RIGHT JOIN (SELECT SUM(Utilisateur.Id+Utilisateur.Id) FROM Utilisateur)Total
 WHERE U1.Id = 1
-ORDER BY PublichDate;
+OR U2.Id = 1
+ORDER BY Total, PublichDate;
 
 
 --
