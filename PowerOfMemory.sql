@@ -324,16 +324,16 @@ SELECT
 	  LEFT JOIN Score AS S2 ON PM.IdUser2=S2.IdUser
     WHERE S2.IdUser = PM.IdUser2
   ) AS NbPartieJouer2,
-  (SELECT COUNT(DISTINCT Score.IdGame) AS NombreDOccurrences1
-    FROM Score
-    ORDER BY NombreDOccurrences1 DESC
-    LIMIT 1
-  ) AS JeuxLePlusJoué1,
-  (SELECT COUNT(DISTINCT Score.IdGame) AS NombreDOccurrences2
-    FROM Score
-    ORDER BY NombreDOccurrences2 DESC
-    LIMIT 1
-  ) AS JeuxLePlusJoué2
+  (SELECT G.GameName FROM Score AS S
+LEFT JOIN Game AS G ON S.IdGame = G.Id
+ORDER BY 
+ (SELECT COUNT(DISTINCT S.DateGame) AS NbParties FROM Score AS S) DESC
+LIMIT 1) AS JeuLePlusJoué1,
+  (SELECT G.GameName FROM Score AS S
+LEFT JOIN Game AS G ON S.IdGame = G.Id
+ORDER BY 
+ (SELECT COUNT(DISTINCT S.DateGame) AS NbParties FROM Score AS S) DESC
+LIMIT 1) AS JeuLePlusJoué2
 FROM PrivedMessage AS PM
 LEFT JOIN Utilisateur AS U1 ON PM.IdUser1=U1.Id
 LEFT JOIN Utilisateur AS U2 ON PM.IdUser2=U2.Id
