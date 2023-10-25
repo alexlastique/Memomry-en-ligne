@@ -284,20 +284,21 @@ WHERE Id = 1
 --STORY 15
 --
 
-SELECT 
+SET @@sql_mode=REPLACE(@@sql_mode, 'ONLY_FULL_GROUP_BY', '');
+
+SELECT
   PM.MessageContente,
   U1.Pseudo AS "Pseudo de l'expéditeur",
   U2.Pseudo AS "Pseudo du receveur",
   PM.PublichDate,
   PM.ReadDate,
   PM.WathRead
-
 FROM PrivedMessage AS PM
 LEFT JOIN Utilisateur AS U1 ON PM.IdUser1=U1.Id
 LEFT JOIN Utilisateur AS U2 ON PM.IdUser2=U2.Id
-WHERE U1.Id = 1
-OR U2.Id = 1
-ORDER BY (PM.IdUser1 + PM.IdUser2), PublichDate DESC;
+WHERE (U1.Id = 1 OR U2.Id = 1)
+GROUP BY (PM.IdUser1 + PM.IdUser2)
+ORDER BY (PM.IdUser1 + PM.IdUser2), PublichDate DESC
 
 
 --
