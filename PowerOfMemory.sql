@@ -2,7 +2,7 @@
 -- STORY 1
 -- 
 
-CREATE DATABASE IF NOT EXISTS SpaceMemory CHARACTER SET 'utf8'
+CREATE DATABASE IF NOT EXISTS PowerOfMemory CHARACTER SET 'utf8'
 
 
 CREATE TABLE IF NOT EXISTS Utilisateur (
@@ -48,10 +48,6 @@ ALTER TABLE Score
   ADD CONSTRAINT FkScoreGame FOREIGN KEY (IdGame) REFERENCES Game(Id) ON UPDATE CASCADE ON DELETE SET NULL,
   ADD CONSTRAINT FkScoreUtilisateur FOREIGN KEY (IdUser) REFERENCES Utilisateur(Id) ON UPDATE CASCADE ON DELETE SET NULL;
 
-ALTER TABLE Utilisateur
-  ADD CONSTRAINT FkMessageGame FOREIGN KEY (IdGame) REFERENCES Game(Id) ON UPDATE CASCADE ON DELETE SET NULL,
-  ADD CONSTRAINT FkMessageUtilisateur FOREIGN KEY (IdUser) REFERENCES Utilisateur(Id) ON UPDATE CASCADE ON DELETE SET NULL;
-
 --
 -- STORY 2
 --
@@ -59,33 +55,41 @@ ALTER TABLE Utilisateur
 INSERT INTO Game (GameName)
 VALUES ('Memory');
 
-INSERT INTO `Message` (IdGame, IdUser, Chat)
+INSERT INTO Utilisateur (Email, PasswordUser, Pseudo)
 VALUES
-    (1, 1, 'Pour Demacia'),
-    (1, 1, 'Pour Noxus'),
-    (1, 1, 'Pour Shurima'),
-    (1, 1, 'Pour Freljord'),
-    (1, 1, 'Pour Le néant'),
-    (1, 2, 'Pour les iles obscurs'),
-    (1, 2, 'Pour Ionia'),
-    (1, 2, 'Pour Bundle'),
-    (1, 2, 'Pour le mont targon'),
-    (1, 2, 'Pour xtal'),
-    (1, 3, 'Pour bilgewater'),
-    (1, 3, 'Pour les darkins'),
-    (1, 3, 'Pour Piltover'),
-    (1, 3, 'Pour Zaun'),
-    (1, 3, 'Pour Demacia'),
-    (1, 4, 'Pour Noxus'),
-    (1, 4, 'Pour Shurima'),
-    (1, 4, 'Pour Freljord'),
-    (1, 4, 'Pour Le néant'),
-    (1, 4, 'Pour les iles obscurs'),
-    (1, 5, 'Pour Ionia'),
-    (1, 5, 'Pour Bundle'),
-    (1, 5, 'Pour le mont targon'),
-    (1, 5, 'Pour xtal'),
-    (1, 5, 'Pour bilgewater');
+    ('alexis.godet@esiee-it.fr', '1234', 'Alexlastique'),
+    ('alexis.godet05@gmail.com', '2345', 'Alexlastique 2'),
+    ('alexis.godet050@gmail.com', '3456', 'Alexlastique 3'),
+    ('papatate2@gmail.com', '4567', 'Alexlastique 4'),
+    ('alexlastique@gmail.com', '5678', 'Alexlastique 5');
+
+INSERT INTO `Message` (IdGame, IdUser, Chat, MessageDate)
+VALUES
+    (1, 1, 'Pour Demacia','2023-10-26 10:01:00'),
+    (1, 1, 'Pour Noxus','2023-10-26 10:02:00'),
+    (1, 1, 'Pour Shurima','2023-10-26 10:03:00'),
+    (1, 1, 'Pour Freljord','2023-10-26 10:04:00'),
+    (1, 1, 'Pour Le néant','2023-10-26 10:05:00'),
+    (1, 2, 'Pour les iles obscurs','2023-10-26 10:06:00'),
+    (1, 2, 'Pour Ionia','2023-10-26 10:07:00'),
+    (1, 2, 'Pour Bundle','2023-10-26 10:08:00'),
+    (1, 2, 'Pour le mont targon','2023-10-26 10:09:00'),
+    (1, 2, 'Pour xtal','2023-10-26 10:10:00'),
+    (1, 3, 'Pour bilgewater','2023-10-26 10:11:00'),
+    (1, 3, 'Pour les darkins','2023-10-26 10:12:00'),
+    (1, 3, 'Pour Piltover','2023-10-26 10:13:00'),
+    (1, 3, 'Pour Zaun','2023-10-26 10:14:00'),
+    (1, 3, 'Pour Demacia','2023-10-26 10:15:00'),
+    (1, 4, 'Pour Noxus','2023-10-26 10:16:00'),
+    (1, 4, 'Pour Shurima','2023-10-26 10:17:00'),
+    (1, 4, 'Pour Freljord','2023-10-26 10:18:00'),
+    (1, 4, 'Pour Le néant','2023-10-26 10:19:00'),
+    (1, 4, 'Pour les iles obscurs','2023-10-26 10:20:00'),
+    (1, 5, 'Pour Ionia','2023-10-26 10:21:00'),
+    (1, 5, 'Pour Bundle','2023-10-26 10:22:00'),
+    (1, 5, 'Pour le mont targon','2023-10-26 10:23:00'),
+    (1, 5, 'Pour xtal','2023-10-26 10:24:00'),
+    (1, 5, 'Pour bilgewater','2023-10-26 10:25:00');
 
 INSERT INTO Score (IdUser, IdGame, GameDifficult, GameScore, DateGame)
 VALUES
@@ -115,14 +119,6 @@ VALUES
     (4, 1, '2', 600, '2023-10-05 14:00:00'),
     (5, 1, '2', 450, '2023-10-05 14:00:00');
 
-INSERT INTO Utilisateur (Email, PasswordUser, Pseudo)
-VALUES
-    ('alexis.godet@esiee-it.fr', '1234', 'Alexlastique'),
-    ('alexis.godet05@gmail.com', '2345', 'Alexlastique 2'),
-    ('alexis.godet050@gmail.com', '3456', 'Alexlastique 3'),
-    ('papatate2@gmail.com', '4567', 'Alexlastique 4'),
-    ('alexlastique@gmail.com', '5678', 'Alexlastique 5');
-
 --
 -- Story 3
 --
@@ -148,7 +144,7 @@ WHERE Id=1;
 --
 
 SELECT * FROM Utilisateur
-WHERE Email=papatate2@gmail.com
+WHERE Email LIKE '%papatate2%'
 AND PasswordUser=4567;
 
 --
@@ -191,7 +187,7 @@ AND GameScore < 9000;
 --STORY 10
 --
 
-INSERT INTO 'Message' (IdGame, IdUser, Chat)
+INSERT INTO `Message` (IdGame, IdUser, Chat)
 VALUES (1,4,'STORY 8');
 
 --
@@ -227,7 +223,7 @@ CREATE TABLE IF NOT EXISTS PrivedMessage (
   IdUser1 INT UNSIGNED,
   IdUser2 INT UNSIGNED,
   MessageContente TEXT,
-  WathRead BOOLEAN DEFAULT FALSE,
+  Readed BOOLEAN DEFAULT FALSE,
   PublichDate datetime DEFAULT CURRENT_TIMESTAMP,
   ReadDate datetime DEFAULT CURRENT_TIMESTAMP,
   ADD PRIMARY KEY (Id)
@@ -237,47 +233,37 @@ CREATE TABLE IF NOT EXISTS PrivedMessage (
 --STORY 14
 --
 
-CREATE TABLE IF NOT EXISTS PrivedMessage (
-  Id int UNSIGNED NOT NULL AUTO_INCREMENT,
-  IdUser1 INT UNSIGNED,
-  IdUser2 INT UNSIGNED,
-  MessageContente TEXT,
-  WathRead BOOLEAN DEFAULT FALSE,
-  PublichDate datetime DEFAULT CURRENT_TIMESTAMP,
-  ReadDate datetime DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (Id)
-)
 ALTER TABLE PrivedMessage
   ADD CONSTRAINT FkPrivedMessageUtilisateur1 FOREIGN KEY (IdUser1) REFERENCES Utilisateur(Id) ON UPDATE CASCADE ON DELETE SET NULL,
   ADD CONSTRAINT FkPrivedMessageUtilisateur2 FOREIGN KEY (IdUser2) REFERENCES Utilisateur(Id) ON UPDATE CASCADE ON DELETE SET NULL;
 
-INSERT INTO PrivedMessage(IdUser1, IdUser2, MessageContente, PublichDate, ReadDate)VALUES
-(1,2,'Salut!','2023-10-24 10:00:00.000','2023-10-24 10:05:00.000'),
-(2,1,'Salut, ça va?','2023-10-24 10:10:00.000','2023-10-24 10:15:00.000'),
-(1,2,'Ca va et toi?','2023-10-24 10:20:00.000','2023-10-24 10:25:00.000'),
-(2,1,'Ca va!','2023-10-24 10:30:00.000','2023-10-24 10:35:00.000'),
-(1,2,'Bon bah tant mieux.','2023-10-24 10:40:00.000','2023-10-24 10:45:00.000'),
-(3,1,'Salut!','2023-10-24 10:11:00.000','2023-10-24 10:16:00.000'),
-(1,3,'Salut, ça va?','2023-10-24 10:01:00.000','2023-10-24 10:06:00.000'),
-(3,1,'Ca va et toi?','2023-10-24 10:21:00.000','2023-10-24 10:26:00.000'),
-(1,3,'Ca va!','2023-10-24 10:31:00.000','2023-10-24 10:36:00.000'),
-(3,1,'Bon bah tant mieux.','2023-10-24 10:41:00.000','2023-10-24 10:46:00.000'),
-(2,4,'Salut!','2023-10-24 10:01:00.000','2023-10-24 10:06:00.000'),
-(4,2,'Salut, ça va?','2023-10-24 10:11:00.000','2023-10-24 10:16:00.000'),
-(2,4,'Ca va et toi?','2023-10-24 10:21:00.000','2023-10-24 10:26:00.000'),
-(4,2,'Ca va!','2023-10-24 10:31:00.000','2023-10-24 10:36:00.000'),
-(2,4,'Bon bah tant mieux.','2023-10-24 10:41:00.000','2023-10-24 10:46:00.000'),
-(1,4,'Salut!','2023-10-24 10:02:00.000','2023-10-24 10:07:00.000'),
-(4,1,'Salut, ça va?','2023-10-24 10:12:00.000','2023-10-24 10:17:00.000'),
-(1,4,'Ca va et toi?','2023-10-24 10:22:00.000','2023-10-24 10:27:00.000'),
-(4,1,'Ca va!','2023-10-24 10:32:00.000','2023-10-24 10:37:00.000'),
-(1,4,'Bon bah tant mieux.','2023-10-24 10:42:00.000','2023-10-24 10:47:00.000')
+INSERT INTO PrivedMessage(IdUser1, IdUser2, MessageContente, PublichDate, ReadDate, Readed)VALUES
+(1,2,'Salut!','2023-10-24 10:00:00.000','2023-10-24 10:05:00.000',TRUE),
+(2,1,'Salut, ça va?','2023-10-24 10:10:00.000','2023-10-24 10:15:00.000',TRUE),
+(1,2,'Ca va et toi?','2023-10-24 10:20:00.000','2023-10-24 10:25:00.000',TRUE),
+(2,1,'Ca va!','2023-10-24 10:30:00.000','2023-10-24 10:35:00.000',TRUE),
+(1,2,'Bon bah tant mieux.','2023-10-24 10:40:00.000','2023-10-24 10:45:00.000',TRUE),
+(3,1,'Salut!','2023-10-24 10:11:00.000','2023-10-24 10:16:00.000',TRUE),
+(1,3,'Salut, ça va?','2023-10-24 10:01:00.000','2023-10-24 10:06:00.000',TRUE),
+(3,1,'Ca va et toi?','2023-10-24 10:21:00.000','2023-10-24 10:26:00.000',TRUE),
+(1,3,'Ca va!','2023-10-24 10:31:00.000','2023-10-24 10:36:00.000',TRUE),
+(3,1,'Bon bah tant mieux.','2023-10-24 10:41:00.000','2023-10-24 10:46:00.000',TRUE),
+(2,4,'Salut!','2023-10-24 10:01:00.000','2023-10-24 10:06:00.000',FALSE),
+(4,2,'Salut, ça va?','2023-10-24 10:11:00.000','2023-10-24 10:16:00.000',FALSE),
+(2,4,'Ca va et toi?','2023-10-24 10:21:00.000','2023-10-24 10:26:00.000',FALSE),
+(4,2,'Ca va!','2023-10-24 10:31:00.000','2023-10-24 10:36:00.000',FALSE),
+(2,4,'Bon bah tant mieux.','2023-10-24 10:41:00.000','2023-10-24 10:46:00.000',FALSE),
+(1,4,'Salut!','2023-10-24 10:02:00.000','2023-10-24 10:07:00.000',FALSE),
+(4,1,'Salut, ça va?','2023-10-24 10:12:00.000','2023-10-24 10:17:00.000',FALSE),
+(1,4,'Ca va et toi?','2023-10-24 10:22:00.000','2023-10-24 10:27:00.000',FALSE),
+(4,1,'Ca va!','2023-10-24 10:32:00.000','2023-10-24 10:37:00.000',FALSE),
+(1,4,'Bon bah tant mieux.','2023-10-24 10:42:00.000','2023-10-24 10:47:00.000',FALSE);
 
 DELETE FROM PrivedMessage
 WHERE Id = 2
 
 UPDATE PrivedMessage
-SET MessageContente = 'J ai modifier ce message'
+SET MessageContente = "J'ai modifier ce message"
 WHERE Id = 1
 
 --
@@ -291,13 +277,12 @@ SELECT
   PM.PublichDate,
   PM.ReadDate,
   PM.WathRead
-
 FROM PrivedMessage AS PM
 LEFT JOIN Utilisateur AS U1 ON PM.IdUser1=U1.Id
 LEFT JOIN Utilisateur AS U2 ON PM.IdUser2=U2.Id
-WHERE U1.Id = 1
-OR U2.Id = 1
-ORDER BY (PM.IdUser1 + PM.IdUser2), PublichDate DESC;
+WHERE (U1.Id = 1 OR U2.Id = 1)
+GROUP BY (PM.IdUser1 + PM.IdUser2)
+ORDER BY (PM.IdUser1 + PM.IdUser2), PublichDate DESC
 
 
 --
@@ -310,7 +295,7 @@ SELECT
   U2.Pseudo,
   PM.PublichDate,
   PM.ReadDate,
-  PM.WathRead,
+  PM.Readed,
   (SELECT COUNT(DISTINCT S1.GameDifficult)
     FROM PrivedMessage AS PM
 	  LEFT JOIN Score AS S1 ON PM.IdUser1=S1.IdUser
@@ -338,13 +323,16 @@ WHERE (PM.IdUser1 = 1
        AND PM.IdUser2 = 2)
        OR(PM.IdUser1 = 2
        AND PM.IdUser2 = 1)
-ORDER BY -PublichDate
+ORDER BY -PublichDate;
 
 --
 --STORY 17
 --
 
-SELECT '2023' AS Année, m.mois AS Mois,
+SELECT
+(SELECT YEAR(S.DateGame) FROM Score AS S
+WHERE S.DateGame IS NOT NULL
+LIMIT 1) AS Année, m.mois AS Mois,
 (SELECT U.Pseudo FROM Score AS S
 LEFT JOIN Utilisateur AS U ON S.IdPlayer = U.Id
 WHERE MONTH(S.DateGame)=mois
@@ -389,6 +377,8 @@ FROM (
    UNION SELECT '12'
 ) AS m
 LEFT JOIN Score AS S ON MONTH(S.DateGame) = m.mois
+WHERE YEAR(S.DateGame) = 2023
+OR YEAR(S.DateGame) IS NULL
 GROUP BY mois
 ORDER BY mois;
 
@@ -396,7 +386,11 @@ ORDER BY mois;
 --STORY 18
 --
 
-SELECT '2023' AS Année, m.mois AS Mois,
+SELECT
+(SELECT YEAR(S.DateGame) FROM Score AS S
+WHERE S.DateGame IS NOT NULL
+LIMIT 1) AS Année,
+m.mois AS Mois,
 (SELECT COUNT(DISTINCT S.DateGame) AS Total_parties FROM Score AS S
 WHERE MONTH(S.DateGame)=mois) AS 'Total parties',
 (SELECT G.Game FROM Score AS S
@@ -421,5 +415,7 @@ FROM (
    UNION SELECT '12'
 ) AS m
 LEFT JOIN Score AS S ON MONTH(S.DateGame) = m.mois
-GROUP BY mois
-ORDER BY mois;
+WHERE YEAR(S.DateGame) = 2023
+OR YEAR(S.DateGame) IS NULL
+GROUP BY Mois, Année
+ORDER BY Mois;
