@@ -345,7 +345,10 @@ ORDER BY -PublichDate
 --STORY 17
 --
 
-SELECT '2023' AS Année, m.mois AS Mois,
+SELECT
+(SELECT YEAR(S.DateGame) FROM Score AS S
+WHERE S.DateGame IS NOT NULL
+LIMIT 1) AS Année, m.mois AS Mois,
 (SELECT U.Pseudo FROM Score AS S
 LEFT JOIN Utilisateur AS U ON S.IdPlayer = U.Id
 WHERE MONTH(S.DateGame)=mois
@@ -390,6 +393,8 @@ FROM (
    UNION SELECT '12'
 ) AS m
 LEFT JOIN Score AS S ON MONTH(S.DateGame) = m.mois
+WHERE YEAR(S.DateGame) = 2023
+OR YEAR(S.DateGame) IS NULL
 GROUP BY mois
 ORDER BY mois;
 
@@ -397,7 +402,11 @@ ORDER BY mois;
 --STORY 18
 --
 
-SELECT '2023' AS Année, m.mois AS Mois,
+SELECT
+(SELECT YEAR(S.DateGame) FROM Score AS S
+WHERE S.DateGame IS NOT NULL
+LIMIT 1) AS Année,
+m.mois AS Mois,
 (SELECT COUNT(DISTINCT S.DateGame) AS Total_parties FROM Score AS S
 WHERE MONTH(S.DateGame)=mois) AS 'Total parties',
 (SELECT G.Game FROM Score AS S
@@ -422,5 +431,7 @@ FROM (
    UNION SELECT '12'
 ) AS m
 LEFT JOIN Score AS S ON MONTH(S.DateGame) = m.mois
-GROUP BY mois
-ORDER BY mois;
+WHERE YEAR(S.DateGame) = 2023
+OR YEAR(S.DateGame) IS NULL
+GROUP BY Mois, Année
+ORDER BY Mois;
