@@ -237,40 +237,38 @@ ALTER TABLE PrivedMessage
   ADD CONSTRAINT FkPrivedMessageUtilisateur1 FOREIGN KEY (IdUser1) REFERENCES Utilisateur(Id) ON UPDATE CASCADE ON DELETE SET NULL,
   ADD CONSTRAINT FkPrivedMessageUtilisateur2 FOREIGN KEY (IdUser2) REFERENCES Utilisateur(Id) ON UPDATE CASCADE ON DELETE SET NULL;
 
-INSERT INTO PrivedMessage(IdUser1, IdUser2, MessageContente, PublichDate, ReadDate)VALUES
-(1,2,'Salut!','2023-10-24 10:00:00.000','2023-10-24 10:05:00.000'),
-(2,1,'Salut, ça va?','2023-10-24 10:10:00.000','2023-10-24 10:15:00.000'),
-(1,2,'Ca va et toi?','2023-10-24 10:20:00.000','2023-10-24 10:25:00.000'),
-(2,1,'Ca va!','2023-10-24 10:30:00.000','2023-10-24 10:35:00.000'),
-(1,2,'Bon bah tant mieux.','2023-10-24 10:40:00.000','2023-10-24 10:45:00.000'),
-(3,1,'Salut!','2023-10-24 10:11:00.000','2023-10-24 10:16:00.000'),
-(1,3,'Salut, ça va?','2023-10-24 10:01:00.000','2023-10-24 10:06:00.000'),
-(3,1,'Ca va et toi?','2023-10-24 10:21:00.000','2023-10-24 10:26:00.000'),
-(1,3,'Ca va!','2023-10-24 10:31:00.000','2023-10-24 10:36:00.000'),
-(3,1,'Bon bah tant mieux.','2023-10-24 10:41:00.000','2023-10-24 10:46:00.000'),
-(2,4,'Salut!','2023-10-24 10:01:00.000','2023-10-24 10:06:00.000'),
-(4,2,'Salut, ça va?','2023-10-24 10:11:00.000','2023-10-24 10:16:00.000'),
-(2,4,'Ca va et toi?','2023-10-24 10:21:00.000','2023-10-24 10:26:00.000'),
-(4,2,'Ca va!','2023-10-24 10:31:00.000','2023-10-24 10:36:00.000'),
-(2,4,'Bon bah tant mieux.','2023-10-24 10:41:00.000','2023-10-24 10:46:00.000'),
-(1,4,'Salut!','2023-10-24 10:02:00.000','2023-10-24 10:07:00.000'),
-(4,1,'Salut, ça va?','2023-10-24 10:12:00.000','2023-10-24 10:17:00.000'),
-(1,4,'Ca va et toi?','2023-10-24 10:22:00.000','2023-10-24 10:27:00.000'),
-(4,1,'Ca va!','2023-10-24 10:32:00.000','2023-10-24 10:37:00.000'),
-(1,4,'Bon bah tant mieux.','2023-10-24 10:42:00.000','2023-10-24 10:47:00.000')
+INSERT INTO PrivedMessage(IdUser1, IdUser2, MessageContente, PublichDate, ReadDate, Readed)VALUES
+(1,2,'Salut!','2023-10-24 10:00:00.000','2023-10-24 10:05:00.000',TRUE),
+(2,1,'Salut, ça va?','2023-10-24 10:10:00.000','2023-10-24 10:15:00.000',TRUE),
+(1,2,'Ca va et toi?','2023-10-24 10:20:00.000','2023-10-24 10:25:00.000',TRUE),
+(2,1,'Ca va!','2023-10-24 10:30:00.000','2023-10-24 10:35:00.000',TRUE),
+(1,2,'Bon bah tant mieux.','2023-10-24 10:40:00.000','2023-10-24 10:45:00.000',TRUE),
+(3,1,'Salut!','2023-10-24 10:11:00.000','2023-10-24 10:16:00.000',TRUE),
+(1,3,'Salut, ça va?','2023-10-24 10:01:00.000','2023-10-24 10:06:00.000',TRUE),
+(3,1,'Ca va et toi?','2023-10-24 10:21:00.000','2023-10-24 10:26:00.000',TRUE),
+(1,3,'Ca va!','2023-10-24 10:31:00.000','2023-10-24 10:36:00.000',TRUE),
+(3,1,'Bon bah tant mieux.','2023-10-24 10:41:00.000','2023-10-24 10:46:00.000',TRUE),
+(2,4,'Salut!','2023-10-24 10:01:00.000','2023-10-24 10:06:00.000',FALSE),
+(4,2,'Salut, ça va?','2023-10-24 10:11:00.000','2023-10-24 10:16:00.000',FALSE),
+(2,4,'Ca va et toi?','2023-10-24 10:21:00.000','2023-10-24 10:26:00.000',FALSE),
+(4,2,'Ca va!','2023-10-24 10:31:00.000','2023-10-24 10:36:00.000',FALSE),
+(2,4,'Bon bah tant mieux.','2023-10-24 10:41:00.000','2023-10-24 10:46:00.000',FALSE),
+(1,4,'Salut!','2023-10-24 10:02:00.000','2023-10-24 10:07:00.000',FALSE),
+(4,1,'Salut, ça va?','2023-10-24 10:12:00.000','2023-10-24 10:17:00.000',FALSE),
+(1,4,'Ca va et toi?','2023-10-24 10:22:00.000','2023-10-24 10:27:00.000',FALSE),
+(4,1,'Ca va!','2023-10-24 10:32:00.000','2023-10-24 10:37:00.000',FALSE),
+(1,4,'Bon bah tant mieux.','2023-10-24 10:42:00.000','2023-10-24 10:47:00.000',FALSE);
 
 DELETE FROM PrivedMessage
 WHERE Id = 2
 
 UPDATE PrivedMessage
-SET MessageContente = 'J ai modifier ce message'
+SET MessageContente = "J'ai modifier ce message"
 WHERE Id = 1
 
 --
 --STORY 15
 --
-
-SET @@sql_mode=REPLACE(@@sql_mode, 'ONLY_FULL_GROUP_BY', '');
 
 SELECT
   PM.MessageContente,
@@ -278,13 +276,13 @@ SELECT
   U2.Pseudo AS "Pseudo du receveur",
   PM.PublichDate,
   PM.ReadDate,
-  PM.WathRead
+  PM.Readed
 FROM PrivedMessage AS PM
 LEFT JOIN Utilisateur AS U1 ON PM.IdUser1=U1.Id
 LEFT JOIN Utilisateur AS U2 ON PM.IdUser2=U2.Id
 WHERE (U1.Id = 1 OR U2.Id = 1)
 GROUP BY (PM.IdUser1 + PM.IdUser2)
-ORDER BY (PM.IdUser1 + PM.IdUser2), PublichDate DESC
+ORDER BY (PM.IdUser1 + PM.IdUser2), PublichDate DESC;
 
 
 --
@@ -297,7 +295,7 @@ SELECT
   U2.Pseudo,
   PM.PublichDate,
   PM.ReadDate,
-  PM.WathRead,
+  PM.Readed,
   (SELECT COUNT(DISTINCT S1.GameDifficult)
     FROM PrivedMessage AS PM
 	  LEFT JOIN Score AS S1 ON PM.IdUser1=S1.IdUser
@@ -325,7 +323,7 @@ WHERE (PM.IdUser1 = 1
        AND PM.IdUser2 = 2)
        OR(PM.IdUser1 = 2
        AND PM.IdUser2 = 1)
-ORDER BY -PublichDate
+ORDER BY -PublichDate;
 
 --
 --STORY 17
