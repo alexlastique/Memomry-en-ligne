@@ -284,21 +284,20 @@ WHERE Id = 1
 --STORY 15
 --
 
-SET @@sql_mode=REPLACE(@@sql_mode, 'ONLY_FULL_GROUP_BY', '');
-
-SELECT
+SELECT 
   PM.MessageContente,
   U1.Pseudo AS "Pseudo de l'expéditeur",
   U2.Pseudo AS "Pseudo du receveur",
   PM.PublichDate,
   PM.ReadDate,
   PM.WathRead
+
 FROM PrivedMessage AS PM
 LEFT JOIN Utilisateur AS U1 ON PM.IdUser1=U1.Id
 LEFT JOIN Utilisateur AS U2 ON PM.IdUser2=U2.Id
-WHERE (U1.Id = 1 OR U2.Id = 1)
-GROUP BY (PM.IdUser1 + PM.IdUser2)
-ORDER BY (PM.IdUser1 + PM.IdUser2), PublichDate DESC
+WHERE U1.Id = 1
+OR U2.Id = 1
+ORDER BY (PM.IdUser1 + PM.IdUser2), PublichDate DESC;
 
 
 --
@@ -323,15 +322,15 @@ SELECT
     WHERE S2.IdUser = PM.IdUser2
   ) AS NbPartieJouer2,
   (SELECT G.GameName FROM Score AS S
-    LEFT JOIN Game AS G ON S.IdGame = G.Id
-    ORDER BY 
-      (SELECT COUNT(DISTINCT S.DateGame) AS NbParties FROM Score AS S) DESC
-      LIMIT 1) AS JeuLePlusJoué1,
+LEFT JOIN Game AS G ON S.IdGame = G.Id
+ORDER BY 
+ (SELECT COUNT(DISTINCT S.DateGame) AS NbParties FROM Score AS S) DESC
+LIMIT 1) AS JeuLePlusJoué1,
   (SELECT G.GameName FROM Score AS S
-    LEFT JOIN Game AS G ON S.IdGame = G.Id
-    ORDER BY 
-      (SELECT COUNT(DISTINCT S.DateGame) AS NbParties FROM Score AS S) DESC
-      LIMIT 1) AS JeuLePlusJoué2
+LEFT JOIN Game AS G ON S.IdGame = G.Id
+ORDER BY 
+ (SELECT COUNT(DISTINCT S.DateGame) AS NbParties FROM Score AS S) DESC
+LIMIT 1) AS JeuLePlusJoué2
 FROM PrivedMessage AS PM
 LEFT JOIN Utilisateur AS U1 ON PM.IdUser1=U1.Id
 LEFT JOIN Utilisateur AS U2 ON PM.IdUser2=U2.Id
@@ -347,20 +346,20 @@ ORDER BY -PublichDate
 
 SELECT '2023' AS Année, m.mois AS Mois,
 (SELECT U.Pseudo FROM Score AS S
-LEFT JOIN Utilisateur AS U ON S.IdUser = U.Id
+LEFT JOIN Utilisateur AS U ON S.IdPlayer = U.Id
 WHERE MONTH(S.DateGame)=mois
 ORDER BY S.GameScore DESC
 LIMIT 1)
 AS 'Top 1',
 (SELECT U.Pseudo FROM Score AS S
-LEFT JOIN Utilisateur AS U ON S.IdUser = U.Id
+LEFT JOIN Utilisateur AS U ON S.IdPlayer = U.Id
 WHERE MONTH(S.DateGame)=mois
  AND U.Pseudo != `TOP 1`
 ORDER BY S.GameScore DESC
 LIMIT 1 OFFSET 1)
 AS 'Top 2',
 (SELECT U.Pseudo FROM Score AS S
-LEFT JOIN Utilisateur AS U ON S.IdUser = U.Id
+LEFT JOIN Utilisateur AS U ON S.IdPlayer = U.Id
 WHERE MONTH(S.DateGame)=mois
  AND U.Pseudo != `TOP 1`
  AND U.Pseudo != `TOP 2`
@@ -369,7 +368,7 @@ LIMIT 1 OFFSET 2)
 AS 'Top 3',
 (SELECT COUNT(DISTINCT S.DateGame) AS Total_parties FROM Score AS S
 WHERE MONTH(S.DateGame)=mois) AS 'Total parties',
-(SELECT G.GameName FROM Score AS S
+(SELECT G.Game FROM Score AS S
 LEFT JOIN Game AS G ON S.IdGame = G.Id
 WHERE MONTH(S.DateGame)=mois
 ORDER BY 
@@ -400,7 +399,7 @@ ORDER BY mois;
 SELECT '2023' AS Année, m.mois AS Mois,
 (SELECT COUNT(DISTINCT S.DateGame) AS Total_parties FROM Score AS S
 WHERE MONTH(S.DateGame)=mois) AS 'Total parties',
-(SELECT G.GameName FROM Score AS S
+(SELECT G.Game FROM Score AS S
 LEFT JOIN Game AS G ON S.IdGame = G.Id
 WHERE MONTH(S.DateGame)=mois
 ORDER BY 
