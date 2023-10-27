@@ -328,16 +328,17 @@ ORDER BY -PublichDate;
 --STORY 17
 --
 
-SELECT '2023'
+SELECT '2021'
 
 -- (SELECT YEAR(S.DateGame) FROM Score AS S
 -- WHERE S.DateGame IS NOT NULL
 -- LIMIT 1)
 
-AS Année, m.mois AS Mois,
+AS Année,
+m.mois AS Mois,
 (SELECT U.Pseudo FROM Score AS S
 LEFT JOIN Utilisateur AS U ON S.IdUser = U.Id
-WHERE (YEAR(S.DateGame) = 2023
+WHERE (YEAR(S.DateGame) = Année
  AND MONTH(S.DateGame) = mois)
 OR YEAR(S.DateGame) IS NULL
 ORDER BY S.GameScore DESC
@@ -345,7 +346,7 @@ LIMIT 1)
 AS 'Top 1',
 (SELECT U.Pseudo FROM Score AS S
 LEFT JOIN Utilisateur AS U ON S.IdUser = U.Id
-WHERE ((YEAR(S.DateGame) = 2023
+WHERE ((YEAR(S.DateGame) = Année
  AND MONTH(S.DateGame) = mois)
 OR YEAR(S.DateGame) IS NULL)
  AND U.Pseudo != `TOP 1`
@@ -354,7 +355,7 @@ LIMIT 1 OFFSET 1)
 AS 'Top 2',
 (SELECT U.Pseudo FROM Score AS S
 LEFT JOIN Utilisateur AS U ON S.IdUser = U.Id
-WHERE ((YEAR(S.DateGame) = 2023
+WHERE ((YEAR(S.DateGame) = Année
  AND MONTH(S.DateGame) = mois)
 OR YEAR(S.DateGame) IS NULL)
  AND U.Pseudo != `TOP 1`
@@ -363,12 +364,12 @@ ORDER BY S.GameScore DESC
 LIMIT 1 OFFSET 2)
 AS 'Top 3',
 (SELECT COUNT(DISTINCT S.DateGame) AS Total_parties FROM Score AS S
-WHERE (YEAR(S.DateGame) = 2023
+WHERE (YEAR(S.DateGame) = Année
  AND MONTH(S.DateGame) = mois)
 OR YEAR(S.DateGame) IS NULL) AS 'Total parties',
 (SELECT G.GameName FROM Score AS S
 LEFT JOIN Game AS G ON S.IdGame = G.Id
-WHERE (YEAR(S.DateGame) = 2023
+WHERE (YEAR(S.DateGame) = Année
  AND MONTH(S.DateGame) = mois)
 OR YEAR(S.DateGame) IS NULL
 ORDER BY 
@@ -399,19 +400,19 @@ ORDER BY Mois;
 SELECT '2021' AS Année,
 m.mois AS Mois,
 (SELECT COUNT(DISTINCT S.DateGame) AS Total_parties FROM Score AS S
-WHERE (YEAR(S.DateGame) = 2021
+WHERE (YEAR(S.DateGame) = Année
  AND MONTH(S.DateGame) = mois)
 OR YEAR(S.DateGame) IS NULL) AS 'Total parties',
 (SELECT G.GameName FROM Score AS S
 LEFT JOIN Game AS G ON S.IdGame = G.Id
-WHERE (YEAR(S.DateGame) = 2021
+WHERE (YEAR(S.DateGame) = Année
  AND MONTH(S.DateGame) = mois)
 OR YEAR(S.DateGame) IS NULL
 ORDER BY 
  (SELECT COUNT(DISTINCT S.DateGame) AS NbParties FROM Score AS S) DESC
 LIMIT 1) AS 'Jeu le plus joué',
 (SELECT AVG(S.GameScore) FROM Score AS S
-WHERE (YEAR(S.DateGame) = 2021
+WHERE (YEAR(S.DateGame) = Année
  AND MONTH(S.DateGame) = mois)
 OR YEAR(S.DateGame) IS NULL) AS 'Score moyen'
 FROM (
@@ -429,7 +430,5 @@ FROM (
    UNION SELECT '12'
 ) AS m
 LEFT JOIN Score AS S ON MONTH(S.DateGame) = m.mois
-WHERE YEAR(S.DateGame) = 2023
-OR YEAR(S.DateGame) IS NULL
 GROUP BY Mois
 ORDER BY Mois;
