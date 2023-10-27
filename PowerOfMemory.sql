@@ -275,7 +275,7 @@ SELECT
   U2.Pseudo AS "Pseudo du receveur",
   PM.PublichDate,
   PM.ReadDate,
-  PM.WathRead
+  PM.Readed
 FROM PrivedMessage AS PM
 LEFT JOIN Utilisateur AS U1 ON PM.IdUser1=U1.Id
 LEFT JOIN Utilisateur AS U2 ON PM.IdUser2=U2.Id
