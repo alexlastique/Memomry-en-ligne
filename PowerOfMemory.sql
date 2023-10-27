@@ -144,12 +144,8 @@ WHERE Id=1;
 --
 
 SELECT * FROM Utilisateur
-WHERE Email LIKE '%papatate2%'
+WHERE Email = 'papatate2@gmail.com'
 AND PasswordUser=4567;
-
---
---STORY 6
---
 
 --
 --STORY 7
@@ -167,9 +163,9 @@ ORDER BY IdGame, GameDifficult, GameScore ASC;
 SELECT Game.GameName, Utilisateur.Pseudo, GameDifficult, GameScore FROM Score
 LEFT JOIN Game ON Score.IdGame = Game.Id
 LEFT JOIN Utilisateur On Score.IdUser = Utilisateur.Id
-WHERE Game.GameName = 'Memory'
-OR Utilisateur.Pseudo = 'Alexlastique'
-OR GameDifficult = 2
+WHERE (Game.GameName = 'Memory'
+  OR Utilisateur.Pseudo = 'Alexlastique'
+  OR GameDifficult = 2)
 ORDER BY IdGame, GameDifficult, GameScore ASC;
 
 --
@@ -248,16 +244,16 @@ INSERT INTO PrivedMessage(IdUser1, IdUser2, MessageContente, PublichDate, ReadDa
 (3,1,'Ca va et toi?','2023-10-24 10:21:00.000','2023-10-24 10:26:00.000',TRUE),
 (1,3,'Ca va!','2023-10-24 10:31:00.000','2023-10-24 10:36:00.000',TRUE),
 (3,1,'Bon bah tant mieux.','2023-10-24 10:41:00.000','2023-10-24 10:46:00.000',TRUE),
-(2,4,'Salut!','2023-10-24 10:01:00.000','2023-10-24 10:06:00.000',FALSE),
-(4,2,'Salut, ça va?','2023-10-24 10:11:00.000','2023-10-24 10:16:00.000',FALSE),
-(2,4,'Ca va et toi?','2023-10-24 10:21:00.000','2023-10-24 10:26:00.000',FALSE),
-(4,2,'Ca va!','2023-10-24 10:31:00.000','2023-10-24 10:36:00.000',FALSE),
-(2,4,'Bon bah tant mieux.','2023-10-24 10:41:00.000','2023-10-24 10:46:00.000',FALSE),
-(1,4,'Salut!','2023-10-24 10:02:00.000','2023-10-24 10:07:00.000',FALSE),
-(4,1,'Salut, ça va?','2023-10-24 10:12:00.000','2023-10-24 10:17:00.000',FALSE),
-(1,4,'Ca va et toi?','2023-10-24 10:22:00.000','2023-10-24 10:27:00.000',FALSE),
-(4,1,'Ca va!','2023-10-24 10:32:00.000','2023-10-24 10:37:00.000',FALSE),
-(1,4,'Bon bah tant mieux.','2023-10-24 10:42:00.000','2023-10-24 10:47:00.000',FALSE);
+(2,4,'Salut!','2023-10-24 10:01:00.000','2023-10-24 10:06:00.000',TRUE),
+(4,2,'Salut, ça va?','2023-10-24 10:11:00.000','2023-10-24 10:16:00.000',TRUE),
+(2,4,'Ca va et toi?','2023-10-24 10:21:00.000','2023-10-24 10:26:00.000',TRUE),
+(4,2,'Ca va!','2023-10-24 10:31:00.000','2023-10-24 10:36:00.000',TRUE),
+(2,4,'Bon bah tant mieux.','2023-10-24 10:41:00.000','2023-10-24 10:46:00.000',TRUE),
+(1,4,'Salut!','2023-10-24 10:02:00.000','2023-10-24 10:07:00.000',TRUE),
+(4,1,'Salut, ça va?','2023-10-24 10:12:00.000','2023-10-24 10:17:00.000',TRUE),
+(1,4,'Ca va et toi?','2023-10-24 10:22:00.000','2023-10-24 10:27:00.000',TRUE),
+(4,1,'Ca va!','2023-10-24 10:32:00.000','2023-10-24 10:37:00.000',TRUE),
+(1,4,'Bon bah tant mieux.','2023-10-24 10:42:00.000','2023-10-24 10:47:00.000',TRUE);
 
 DELETE FROM PrivedMessage
 WHERE Id = 2
@@ -269,6 +265,9 @@ WHERE Id = 1
 --
 --STORY 15
 --
+
+
+SET @@sql_mode=REPLACE(@@sql_mode, 'ONLY_FULL_GROUP_BY', '');
 
 SELECT
   PM.MessageContente,
