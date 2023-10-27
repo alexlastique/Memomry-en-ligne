@@ -269,6 +269,7 @@ WHERE Id = 1
 --
 --STORY 15
 --
+SET @@sql_mode=REPLACE(@@sql_mode, 'ONLY_FULL_GROUP_BY', '');
 
 SELECT
   PM.MessageContente,
@@ -329,36 +330,49 @@ ORDER BY -PublichDate;
 --STORY 17
 --
 
-SELECT
-(SELECT YEAR(S.DateGame) FROM Score AS S
-WHERE S.DateGame IS NOT NULL
-LIMIT 1) AS Année, m.mois AS Mois,
+SELECT '2023'
+
+-- (SELECT YEAR(S.DateGame) FROM Score AS S
+-- WHERE S.DateGame IS NOT NULL
+-- LIMIT 1)
+
+AS Année, m.mois AS Mois,
 (SELECT U.Pseudo FROM Score AS S
 LEFT JOIN Utilisateur AS U ON S.IdUser = U.Id
-WHERE MONTH(S.DateGame)=mois
+WHERE (YEAR(S.DateGame) = 2023
+ AND MONTH(S.DateGame) = mois)
+OR YEAR(S.DateGame) IS NULL
 ORDER BY S.GameScore DESC
 LIMIT 1)
 AS 'Top 1',
 (SELECT U.Pseudo FROM Score AS S
 LEFT JOIN Utilisateur AS U ON S.IdUser = U.Id
-WHERE MONTH(S.DateGame)=mois
+WHERE ((YEAR(S.DateGame) = 2023
+ AND MONTH(S.DateGame) = mois)
+OR YEAR(S.DateGame) IS NULL)
  AND U.Pseudo != `TOP 1`
 ORDER BY S.GameScore DESC
 LIMIT 1 OFFSET 1)
 AS 'Top 2',
 (SELECT U.Pseudo FROM Score AS S
 LEFT JOIN Utilisateur AS U ON S.IdUser = U.Id
-WHERE MONTH(S.DateGame)=mois
+WHERE ((YEAR(S.DateGame) = 2023
+ AND MONTH(S.DateGame) = mois)
+OR YEAR(S.DateGame) IS NULL)
  AND U.Pseudo != `TOP 1`
  AND U.Pseudo != `TOP 2`
 ORDER BY S.GameScore DESC
 LIMIT 1 OFFSET 2)
 AS 'Top 3',
 (SELECT COUNT(DISTINCT S.DateGame) AS Total_parties FROM Score AS S
-WHERE MONTH(S.DateGame)=mois) AS 'Total parties',
+WHERE (YEAR(S.DateGame) = 2023
+ AND MONTH(S.DateGame) = mois)
+OR YEAR(S.DateGame) IS NULL) AS 'Total parties',
 (SELECT G.GameName FROM Score AS S
 LEFT JOIN Game AS G ON S.IdGame = G.Id
-WHERE MONTH(S.DateGame)=mois
+WHERE (YEAR(S.DateGame) = 2023
+ AND MONTH(S.DateGame) = mois)
+OR YEAR(S.DateGame) IS NULL
 ORDER BY 
  (SELECT COUNT(DISTINCT S.DateGame) AS NbParties FROM Score AS S) DESC
 LIMIT 1) AS 'Jeu le plus joué'
@@ -377,29 +391,31 @@ FROM (
    UNION SELECT '12'
 ) AS m
 LEFT JOIN Score AS S ON MONTH(S.DateGame) = m.mois
-WHERE YEAR(S.DateGame) = 2023
-OR YEAR(S.DateGame) IS NULL
-GROUP BY mois
-ORDER BY mois;
+GROUP BY Mois
+ORDER BY Mois;
 
 --
 --STORY 18
 --
 
-SELECT
-(SELECT YEAR(S.DateGame) FROM Score AS S
-WHERE S.DateGame IS NOT NULL
-LIMIT 1) AS Année,
+SELECT '2021' AS Année,
 m.mois AS Mois,
 (SELECT COUNT(DISTINCT S.DateGame) AS Total_parties FROM Score AS S
-WHERE MONTH(S.DateGame)=mois) AS 'Total parties',
+WHERE (YEAR(S.DateGame) = 2021
+ AND MONTH(S.DateGame) = mois)
+OR YEAR(S.DateGame) IS NULL) AS 'Total parties',
 (SELECT G.GameName FROM Score AS S
 LEFT JOIN Game AS G ON S.IdGame = G.Id
-WHERE MONTH(S.DateGame)=mois
+WHERE (YEAR(S.DateGame) = 2021
+ AND MONTH(S.DateGame) = mois)
+OR YEAR(S.DateGame) IS NULL
 ORDER BY 
  (SELECT COUNT(DISTINCT S.DateGame) AS NbParties FROM Score AS S) DESC
 LIMIT 1) AS 'Jeu le plus joué',
-AVG(S.GameScore) AS 'Score moyen'
+(SELECT AVG(S.GameScore) FROM Score AS S
+WHERE (YEAR(S.DateGame) = 2021
+ AND MONTH(S.DateGame) = mois)
+OR YEAR(S.DateGame) IS NULL) AS 'Score moyen'
 FROM (
    SELECT '01' AS mois
    UNION SELECT '02'
@@ -417,5 +433,5 @@ FROM (
 LEFT JOIN Score AS S ON MONTH(S.DateGame) = m.mois
 WHERE YEAR(S.DateGame) = 2023
 OR YEAR(S.DateGame) IS NULL
-GROUP BY Mois, Année
+GROUP BY Mois
 ORDER BY Mois;
