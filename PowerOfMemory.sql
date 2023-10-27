@@ -271,19 +271,19 @@ WHERE Id = 1
 --
 SET @@sql_mode=REPLACE(@@sql_mode, 'ONLY_FULL_GROUP_BY', '');
 
-SELECT
+SELECT 
   PM.MessageContente,
   U1.Pseudo AS "Pseudo de l'expéditeur",
   U2.Pseudo AS "Pseudo du receveur",
   PM.PublichDate,
   PM.ReadDate,
-  PM.Readed
+  PM.WathRead
 FROM PrivedMessage AS PM
 LEFT JOIN Utilisateur AS U1 ON PM.IdUser1=U1.Id
 LEFT JOIN Utilisateur AS U2 ON PM.IdUser2=U2.Id
 WHERE (U1.Id = 1 OR U2.Id = 1)
 GROUP BY (PM.IdUser1 + PM.IdUser2)
-ORDER BY (PM.IdUser1 + PM.IdUser2), PublichDate DESC;
+ORDER BY (PM.IdUser1 + PM.IdUser2), PublichDate DESC
 
 
 --
@@ -308,15 +308,15 @@ SELECT
     WHERE S2.IdUser = PM.IdUser2
   ) AS NbPartieJouer2,
   (SELECT G.GameName FROM Score AS S
-    LEFT JOIN Game AS G ON S.IdGame = G.Id
-    ORDER BY 
-      (SELECT COUNT(DISTINCT S.DateGame) AS NbParties FROM Score AS S) DESC
-      LIMIT 1) AS JeuLePlusJoué1,
+LEFT JOIN Game AS G ON S.IdGame = G.Id
+ORDER BY 
+ (SELECT COUNT(DISTINCT S.DateGame) AS NbParties FROM Score AS S) DESC
+LIMIT 1) AS JeuLePlusJoué1,
   (SELECT G.GameName FROM Score AS S
-    LEFT JOIN Game AS G ON S.IdGame = G.Id
-    ORDER BY 
-      (SELECT COUNT(DISTINCT S.DateGame) AS NbParties FROM Score AS S) DESC
-      LIMIT 1) AS JeuLePlusJoué2
+LEFT JOIN Game AS G ON S.IdGame = G.Id
+ORDER BY 
+ (SELECT COUNT(DISTINCT S.DateGame) AS NbParties FROM Score AS S) DESC
+LIMIT 1) AS JeuLePlusJoué2
 FROM PrivedMessage AS PM
 LEFT JOIN Utilisateur AS U1 ON PM.IdUser1=U1.Id
 LEFT JOIN Utilisateur AS U2 ON PM.IdUser2=U2.Id
