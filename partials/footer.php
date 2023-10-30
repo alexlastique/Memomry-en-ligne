@@ -17,8 +17,8 @@
             <article>
                 <h4>Space Memory</h4>
                 <ul>
-                    <li><a href="<?=PROJECT_FOLDER?>game/memory/index.php" > Jouer !</a></li>
-                    <li><a href="<?=PROJECT_FOLDER?>game/memory/Score.php" > Les scores</a></li>
+                    <li><a href="<?=PROJECT_FOLDER?>games/memory/index.php" > Jouer !</a></li>
+                    <li><a href="<?=PROJECT_FOLDER?>games/memory/Score.php" > Les scores</a></li>
                     <li><a href="<?=PROJECT_FOLDER?>contact.php" > Nous contacter</a></li>
                 </ul>
                 <a href="#backgroundHeader"><button class="upButton"></button></a>
