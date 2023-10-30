@@ -19,7 +19,7 @@
                     <input type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil">
                     <ul class="menu">
                         <li><a href="../../index.php" >Accueil</a></li>
-                        <li><a href="memory.php" >Jeu</a></li>
+                        <li><a href="index.php" >Jeu</a></li>
                         <li><a href="Scores.php" >Scores</a></li>
                         <li><a href="../../contact.php">Nous Contacter</a></li>
                         <li><a href="#" id="LienConditionnel">Mon Espace</a></li>
@@ -84,7 +84,7 @@
             <article>
                 <h4>Space Memory</h4>
                 <ul>
-                    <li><a href="memory.php" > Jouer !</a></li>
+                    <li><a href="index.php" > Jouer !</a></li>
                     <li><a href="Scores.php" > Les scores</a></li>
                     <li><a href="../../contact.php" > Nous contacter</a></li>
                 </ul>

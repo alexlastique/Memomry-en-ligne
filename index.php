@@ -17,7 +17,7 @@
                 <input type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil">
                     <ul class="menu">
                         <li><a href="index.php" >Accueil</a></li>
-                        <li><a href="games/memory/memory.php" >Jeu</a></li>
+                        <li><a href="games/memory/index.php" >Jeu</a></li>
                         <li><a href="games/memory/Score.php" >Score</a></li>
                         <li><a href="contact.php">Nous Contacter</a></li>
                         <li><a href="myAccount.php" id="LienConditionnel">Mon Espace</a></li>
@@ -25,7 +25,7 @@
                 </nav>
             <h1>BIENVENUE DANS NOTRE STUDIO !</h1>
         <p>Venez challenger les cerveaux les plus agiles !</p>
-        <a href="games/memory/memory.php" id="playButton"><button>Jouer !</button></a>
+        <a href="games/memory/index.php" id="playButton"><button>Jouer !</button></a>
         <audio controls preload="auto" autoplay loop>
             <source src="assets/musique/MusiqueTranquille.mp3" type="audio/mpeg" />
              votre navigateur ne suporte pas l'element audio
@@ -149,7 +149,7 @@
             <article>
                 <h4>Space Memory</h4>
                 <ul>
-                    <li><a href="games/memory/memory.php" > Jouer !</a></li>
+                    <li><a href="games/memory/index.php" > Jouer !</a></li>
                     <li><a href="Scores.php" > Les scores</a></li>
                     <li><a href="contact.php" > Nous contacter</a></li>
                 </ul>
