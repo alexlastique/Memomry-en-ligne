@@ -21,6 +21,7 @@
                     </ul>
                 </nav>
             <h1>BIENVENUE DANS NOTRE STUDIO !</h1>
+           
         <p>Venez challenger les cerveaux les plus agiles !</p>
         <a href="games/memory/index.php" id="playButton"><button>Jouer !</button></a>
         <audio controls preload="auto" autoplay loop>
