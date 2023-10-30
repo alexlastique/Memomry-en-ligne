@@ -38,7 +38,9 @@
         </form>
         </main>
         <!--footer-->
-        
+        <?php
+            require_once SITE_ROOT.'partials/footer.php';
+        ?>
         <!--fin footer-->
     </body>
 </html>
