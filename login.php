@@ -17,11 +17,11 @@
                     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
                     <input type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil">
                     <ul class="menu">
-                        <li><a href="index.html" >Accueil</a></li>
-                        <li><a href="memory.html" >Jeu</a></li>
-                        <li><a href="Score.html" >Score</a></li>
-                        <li><a href="contact.html">Nous Contacter</a></li>
-                        <li><a href="myAccount.html" id="LienConditionnel">Mon Espace</a></li>
+                        <li><a href="index.php" >Accueil</a></li>
+                        <li><a href="games/memory/memory.php" >Jeu</a></li>
+                        <li><a href="games/memory/Score.php" >Score</a></li>
+                        <li><a href="contact.php">Nous Contacter</a></li>
+                        <li><a href="#" id="LienConditionnel">Mon Espace</a></li>
                     </ul>
                 </nav>
             </div>
@@ -35,7 +35,7 @@
             <p class="pInput"><input type="email" placeholder="Email"></p>
             <p class="pInput"><input type="password" placeholder="Mot de passe"></p>
             <p class="pInput"><input type="submit" value="Connexion" class="Submit"></p>
-            <p class="pInput2">Pas encore de compte ? Créer en un <a href="register.html" style="color: orange;">ici</a></p>
+            <p class="pInput2">Pas encore de compte ? Créer en un <a href="register.php" style="color: orange;">ici</a></p>
         </form>
 
         
@@ -59,9 +59,9 @@
             <article>
                 <h4>Space Memory</h4>
                 <ul>
-                    <li><a href="" > Jouer !</a></li>
-                    <li><a href="Scores.html" > Les scores</a></li>
-                    <li><a href="contact.html" > Nous contacter</a></li>
+                    <li><a href="games/memory/memory.php" > Jouer !</a></li>
+                    <li><a href="games/memory/Scores.php" > Les scores</a></li>
+                    <li><a href="contact.php" > Nous contacter</a></li>
                 </ul>
                 <a href="#backgroundHeader"><button class="upButton"></button></a>
             </article>

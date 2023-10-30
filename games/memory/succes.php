@@ -3,10 +3,10 @@
     <head>
         <title>Space memory</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="assets/css/normalize.css">
-        <link rel="stylesheet" href="assets/css/footer.css">
-        <link rel="stylesheet" href="assets/css/header.css">
-        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="../../assets/css/normalize.css">
+        <link rel="stylesheet" href="../../assets/css/footer.css">
+        <link rel="stylesheet" href="../../assets/css/header.css">
+        <link rel="stylesheet" href="../../assets/css/main.css">
 
     </head>
     <body>
@@ -18,16 +18,16 @@
                     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
                     <input type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil">
                     <ul class="menu">
-                        <li><a href="index.html" >Accueil</a></li>
-                        <li><a href="memory.html" >Jeu</a></li>
-                        <li><a href="Scores.html" >Scores</a></li>
-                        <li><a href="contact.html">Nous Contacter</a></li>
+                        <li><a href="../../index.php" >Accueil</a></li>
+                        <li><a href="memory.php" >Jeu</a></li>
+                        <li><a href="Scores.php" >Scores</a></li>
+                        <li><a href="../../contact.php">Nous Contacter</a></li>
                         <li><a href="#" id="LienConditionnel">Mon Espace</a></li>
                     </ul>
                 </nav>
             </div>
             <audio controls preload="auto" autoplay loop>
-                <source src="assets/musique/MusiqueTranquille.mp3" type="audio/mpeg" />
+                <source src="../../assets/musique/MusiqueTranquille.mp3" type="audio/mpeg" />
                  votre navigateur ne suporte pas l'element audio
             </audio>
             <h2 class="connexion">Succes</h2>
@@ -73,20 +73,20 @@
                 <p><span>Email : </span> support@powerofmemory.com</p>
                 <p><span>Location : </span> Paris</p>
                 <div>
-                    <img src="assets/images/Facebook.png" alt="Facebook" id="facebook">
-                    <img src="assets/images/twitter-128.png" alt="twitter">
-                    <img src="assets/images/G-logo.png" alt="twitter">
-                    <img src="assets/images/pinterest2.png" alt="pinterest" id="pinterest">
-                    <img src="assets/images/instagram.png" alt="twitter">
+                    <img src="../../assets/images/Facebook.png" alt="Facebook" id="facebook">
+                    <img src="../../assets/images/twitter-128.png" alt="twitter">
+                    <img src="../../assets/images/G-logo.png" alt="twitter">
+                    <img src="../../assets/images/pinterest2.png" alt="pinterest" id="pinterest">
+                    <img src="../../assets/images/instagram.png" alt="twitter">
                 </div>
                 <p>Copyright © 2022 Tous droits réservés</p>
             </article>
             <article>
                 <h4>Space Memory</h4>
                 <ul>
-                    <li><a href="" > Jouer !</a></li>
-                    <li><a href="Scores.html" > Les scores</a></li>
-                    <li><a href="contact.html" > Nous contacter</a></li>
+                    <li><a href="memory.php" > Jouer !</a></li>
+                    <li><a href="Scores.php" > Les scores</a></li>
+                    <li><a href="../../contact.php" > Nous contacter</a></li>
                 </ul>
                 <button class="upButton"><a href="#backgroundHeader">^</a></button>
             </article>
