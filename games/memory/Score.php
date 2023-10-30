@@ -1,37 +1,15 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Space memory</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="../../assets/css/normalize.css">
-        <link rel="stylesheet" href="../../assets/css/footer.css">
-        <link rel="stylesheet" href="../../assets/css/header.css">
-        <link rel="stylesheet" href="../../assets/css/main.css">
+<?php
+        require_once '../../utils/common.php';
+        require_once SITE_ROOT.'partials/head.php'
+    ?>
+    <body id="memory">
+        <?php
+            require_once SITE_ROOT.'partials/header.php';
+        ?>
+    
 
-    </head>
-    <body>
-        <header class="login header">
-            <div id="backgroundHeader">
-                <nav>
-                    <div id="logo" class="logo">Space Memory</div>
-                    <input class="menu-btn" type="checkbox" id="menu-btn" />
-                    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-                    <input type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil">
-                    <ul class="menu">
-                        <li><a href="../../index.php" >Accueil</a></li>
-                        <li><a href="index.php" >Jeu</a></li>
-                        <li><a href="Score.php" >Score</a></li>
-                        <li><a href="../../contact.php">Nous Contacter</a></li>
-                        <li><a href="#" id="LienConditionnel">Mon Espace</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <audio controls preload="auto" autoplay loop>
-                <source src="../../assets/musique/MusiqueTranquille.mp3" type="audio/mpeg" />
-                 votre navigateur ne suporte pas l'element audio
-            </audio>
-            <h2 class="connexion">Score</h2>
-        </header>
         <table class="PageScores">
                 <tr>
                     <th>Nom du Jeu</th>
