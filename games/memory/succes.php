@@ -20,7 +20,7 @@
                     <ul class="menu">
                         <li><a href="../../index.php" >Accueil</a></li>
                         <li><a href="index.php" >Jeu</a></li>
-                        <li><a href="Scores.php" >Scores</a></li>
+                        <li><a href="Scores.php" >Score</a></li>
                         <li><a href="../../contact.php">Nous Contacter</a></li>
                         <li><a href="#" id="LienConditionnel">Mon Espace</a></li>
                     </ul>
