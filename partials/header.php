@@ -5,10 +5,10 @@
                     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
                     <input type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil">
                     <ul class="menu">
-                        <li><a href="<?=PROJECT_FOLDER?>index.html" >Accueil</a></li>
-                        <li><a href="<?=PROJECT_FOLDER?>games/memory/index.html" >Jeu</a></li>
-                        <li><a href="<?=PROJECT_FOLDER?>games/memory/Score.html" >Score</a></li>
-                        <li><a href="<?=PROJECT_FOLDER?>contact.html">Nous Contacter</a></li>
+                        <li><a href="<?=PROJECT_FOLDER?>index.php" >Accueil</a></li>
+                        <li><a href="<?=PROJECT_FOLDER?>games/memory/index.php" >Jeu</a></li>
+                        <li><a href="<?=PROJECT_FOLDER?>games/memory/Score.php" >Score</a></li>
+                        <li><a href="<?=PROJECT_FOLDER?>contact.php">Nous Contacter</a></li>
                         <li><a href="#" id="LienConditionnel">Mon Espace</a></li>
                     </ul>
                 </nav>
