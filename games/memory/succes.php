@@ -4,10 +4,15 @@
         require_once '../../utils/common.php';
         require_once SITE_ROOT.'partials/head.php'
     ?>
-    <body id="memory">
-        <?php
-            require_once SITE_ROOT.'partials/header.php';
-        ?>
+    <body>
+        <header class="login header">
+            <?php
+                require_once SITE_ROOT.'partials/header.php';
+            ?>
+            <h2 class="connexion">Succes</h2>
+        </header>
+
+
         <div class="PageScores">
             <div class="progression">
                 <p>Progression</p>

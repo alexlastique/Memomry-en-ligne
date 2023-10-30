@@ -4,10 +4,15 @@
         require_once 'utils/common.php';
         require_once SITE_ROOT.'partials/head.php'
     ?>
-    <body id="memory">
-        <?php
-            require_once SITE_ROOT.'partials/header.php';
-        ?>
+    <body>
+        <header class="login header">
+            <?php
+                require_once SITE_ROOT.'partials/header.php';
+            ?>
+            <h2 class="connexion">Nous Contacter</h2>
+        </header>
+
+
         <main id="mainContact">
         <section class="align">
             <div>

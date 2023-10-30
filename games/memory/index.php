@@ -5,9 +5,12 @@
         require_once SITE_ROOT.'partials/head.php'
     ?>
     <body id="memory">
-        <?php
-            require_once SITE_ROOT.'partials/header.php';
-        ?>
+        <header class="header login"> 
+            <?php
+                require_once SITE_ROOT.'partials/header.php';
+            ?>
+            <h2 class="connexion">Explorez l'univers du Memory Spatial</h2>
+        </header>
         <main>
             <article class="levelDifficult">
                 <h3>Choisissez votre niveau de difficulté :</h3>
