@@ -49,20 +49,20 @@ h4{
 }
 
 #mainAccueil section:nth-of-type(2) img{
-    width: 530px;
+    width: 40vw;
     border-radius: 5px;
 }
 #mainAccueil section:nth-of-type(2) div{
     display: flex;
     flex-wrap: wrap;
-    justify-content: end;
+    justify-content: center;
 }
 #mainAccueil section:nth-of-type(2) div article h5{
-    font-size: 38px;
+    font-size: 2.5vw;
     margin: 0;
 }
 #mainAccueil section:nth-of-type(2) div article p{
-    font-size: 18px;
+    font-size: 1.5vw;
     margin: 10px 0 0;
     font-weight: bolder;
 }
