@@ -4,11 +4,14 @@
         require_once '../../utils/common.php';
         require_once SITE_ROOT.'partials/head.php'
     ?>
+
     <body id="memory">
         <header class="header login"> 
+
             <?php
                 require_once SITE_ROOT.'partials/header.php';
             ?>
+
             <h2 class="connexion">Explorez l'univers du Memory Spatial</h2>
         </header>
         <main>
@@ -180,10 +183,11 @@
                 </tr>
             </table>
         </main>
-         <!--footer-->
+
          <?php
             require_once SITE_ROOT.'partials/footer.php';
          ?>
+         
         <script src="../../assets/js/scripts.js"></script>
     </body>
 </html>
