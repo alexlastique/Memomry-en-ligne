@@ -9,7 +9,7 @@ $MaPage=($_SERVER['REQUEST_URI']);
                         <div id="logo" class="logo">Space Memory</div>
                         <input class="menu-btn" type="checkbox" id="menu-btn" />
                         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-                        <input type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil">
+                        <!-- <input type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil"> -->
                         <ul class="menu">
                             <li><a href="<?=PROJECT_FOLDER?>index.php" >Accueil</a></li>
 
