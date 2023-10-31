@@ -6,9 +6,15 @@
         require_once SITE_ROOT.'partials/head.php';
         
         $pdo = connectToDbAndGetPdo();
-        $pdoStatement = $pdo->prepare('SELECT COUNT(DISTINCT Id) AS NbUser FROM Utilisateur');
+        $pdoStatement = $pdo->prepare('SELECT COUNT(Id) AS NbUser FROM Utilisateur');
         $pdoStatement->execute();
         $UserCount = $pdoStatement->fetch();
+        $pdoStatement = $pdo->prepare('SELECT COUNT(Id) AS NbPlayedGame FROM Score');
+        $pdoStatement->execute();
+        $PlayGame = $pdoStatement->fetch();
+        $pdoStatement = $pdo->prepare('SELECT MIN(GameScore) AS MinScore FROM Score');
+        $pdoStatement->execute();
+        $LowScore = $pdoStatement->fetch();
     ?>
     <body>
         <header id="headerAccueil" class="header">
@@ -54,7 +60,7 @@
                 <img src="assets/images/galaxy.jpeg" alt="galaxy">
                 <div>
                     <article>
-                        <h5>310</h5>
+                        <h5><?php echo($PlayGame->NbPlayedGame);?></h5>
                         <p>Parties Jouées</p>
                     </article>
                     <article>
@@ -62,7 +68,7 @@
                         <p>Joueurs Connectés</p>
                     </article>
                     <article>
-                        <h5>10 sec</h5>
+                        <h5><?php echo $LowScore->MinScore.' sec';?> </h5>
                         <p>Temps Record</p>
                     </article>
                     <article>
