@@ -4,7 +4,6 @@
         require_once 'utils/common.php';
         require_once SITE_ROOT.'utils/database.php';
         require_once SITE_ROOT.'partials/head.php';
-        
         $pdo = connectToDbAndGetPdo();
         $pdoStatement = $pdo->prepare('SELECT COUNT(Id) AS NbUser FROM Utilisateur');
         $pdoStatement->execute();

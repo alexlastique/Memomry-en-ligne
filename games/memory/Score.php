@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html>
 <?php
-        require_once '../../utils/common.php';
-        require_once SITE_ROOT.'partials/head.php'
-    ?>
-    <body>
-        <header class="login header">
-            <?php
-                require_once SITE_ROOT.'partials/header.php';
-            ?>
-            <h2 class="connexion">Score</h2>
-        </header>
-    
-<!--
+require_once '../../utils/common.php';
+require_once SITE_ROOT . 'partials/head.php';
+require_once SITE_ROOT . 'utils/database.php';
+$pdo = connectToDbAndGetPdo();
+$pdoStatement = $pdo->prepare('SELECT s.*, G.GameName as Game, u.Pseudo
+FROM score s 
+INNER JOIN game g 
+ON s.gameId = g.id 
+INNER JOIN user u ON s.userId = u.id 
+ORDER BY s.score ASC');
+$pdoStatement->execute();
+$scores = $pdoStatement->fetchAll();
+?>
+
+<body>
+    <header class="login header">
+        <?php
+        require_once SITE_ROOT . 'partials/header.php';
+        ?>
+        <h2 class="connexion">Score</h2>
+    </header>
+
+    <!--
         <table class="PageScores">
                 <tr>
                     <th>Nom du Jeu</th>
@@ -44,22 +55,19 @@
                 </tr>
         </table>
 -->
-<?php
-$pdo = connectToDbAndGetPdo();
-$pdoStatement = $pdo->prepare('SELECT s.*, g.name as game, u.nickName FROM score s INNER JOIN Game g ON s.gameId = g.id INNER JOIN Utilisateur u ON s.userId = u.id ORDER BY s.score ASC');
-$pdoStatement->execute();
-$score = $pdoStatement->fetchAll();
+    <?php
+    foreach ($scores as $score) {
+        echo $score->Pseudo;
+        echo $score->GameName;
+        echo $score->GameDifficult;
+        echo $score->GameScore;
+    }
+    ?>
+    <!--footer-->
+    <?php
+    require_once SITE_ROOT . 'partials/footer.php';
+    ?>
+    <!--fin footer-->
+</body>
 
-foreach ($scores as $score) {
-    echo $score->IdPlayer;
-    echo $score->IdGame;
-    echo $score->GameDifficult;
-}
-?>
-        <!--footer-->    
-        <?php
-            require_once SITE_ROOT.'partials/footer.php';
-        ?>
-        <!--fin footer-->
-    </body>
 </html>
