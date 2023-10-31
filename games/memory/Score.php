@@ -12,7 +12,7 @@
             <h2 class="connexion">Score</h2>
         </header>
     
-
+<!--
         <table class="PageScores">
                 <tr>
                     <th>Nom du Jeu</th>
@@ -43,6 +43,8 @@
                     <td>2023-10-15 10:45:00</td>
                 </tr>
         </table>
+-->
+<p><?php $Pseudo ?></p>
         <!--footer-->    
         <?php
             require_once SITE_ROOT.'partials/footer.php';
