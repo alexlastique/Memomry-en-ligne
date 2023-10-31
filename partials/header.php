@@ -36,11 +36,11 @@ $MaPage=($_SERVER['REQUEST_URI']);
                 <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
                 <input type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil">
                     <ul class="menu">
-                        <li><a style="color: orange;" href="accueil.php" >Accueil</a></li>
-                        <li><a href="games/memory/index.php" >Jeu</a></li>
-                        <li><a href="games/memory/Score.php" >Score</a></li>
-                        <li><a href="contact.php">Nous Contacter</a></li>
-                        <li><a href="myAccount.php" id="LienConditionnel">Mon Espace</a></li>
+                        <li><a style="color: orange;" href="<?=PROJECT_FOLDER?>index.php" >Accueil</a></li>
+                        <li><a href="<?=PROJECT_FOLDER?>games/memory/index.php" >Jeu</a></li>
+                        <li><a href="<?=PROJECT_FOLDER?>games/memory/Score.php" >Score</a></li>
+                        <li><a href="<?=PROJECT_FOLDER?>contact.php">Nous Contacter</a></li>
+                        <li><a href="<?=PROJECT_FOLDER?>myAccount.php" id="LienConditionnel">Mon Espace</a></li>
                     </ul>
                 </nav>
             <h1>BIENVENUE DANS NOTRE STUDIO !</h1>
