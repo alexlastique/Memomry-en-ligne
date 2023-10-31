@@ -1,6 +1,6 @@
 <?php
 function connectToDbAndGetPdo() {
-    $dbname = 'PowerOfMemory';
+    $dbname = 'SpaceMemory';
     $host = 'localhost';
 
     $dsn = "mysql:dbname=$dbname;host=$host;charset=utf8";

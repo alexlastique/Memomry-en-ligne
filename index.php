@@ -6,7 +6,7 @@
         require_once SITE_ROOT.'partials/head.php';
         
         $pdo = connectToDbAndGetPdo();
-        $pdoStatement = $pdo->prepare('SELECT COUNT(DISTINCT Id) FROM Utilisateur');
+        $pdoStatement = $pdo->prepare('SELECT COUNT(DISTINCT Id) AS NbUser FROM Utilisateur');
         $pdoStatement->execute();
         $UserCount = $pdoStatement->fetch();
     ?>
@@ -66,7 +66,7 @@
                         <p>Temps Record</p>
                     </article>
                     <article>
-                        <h5><?php var_dump($UserCount);?></h5>
+                        <h5><?php echo($UserCount->NbUser);?></h5>
                         <p>Joueurs Inscrits</p>
                     </article>
                 </div>
