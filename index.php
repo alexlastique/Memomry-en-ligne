@@ -4,6 +4,11 @@
         require_once 'utils/common.php';
         require_once SITE_ROOT.'utils/database.php';
         require_once SITE_ROOT.'partials/head.php';
+        
+        $pdo = connectToDbAndGetPdo();
+        $pdoStatement = $pdo->prepare('SELECT COUNT(DISTINCT Id) FROM Utilisateur');
+        $pdoStatement->execute();
+        $UserCount = $pdoStatement->fetch();
     ?>
     <body>
         <header id="headerAccueil" class="header">
@@ -61,7 +66,7 @@
                         <p>Temps Record</p>
                     </article>
                     <article>
-                        <h5>21 300</h5>
+                        <h5><?php var_dump($UserCount);?></h5>
                         <p>Joueurs Inscrits</p>
                     </article>
                 </div>
