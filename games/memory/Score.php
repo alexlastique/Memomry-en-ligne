@@ -44,7 +44,18 @@
                 </tr>
         </table>
 -->
-<p><?php $Pseudo ?></p>
+<?php
+$pdo = connectToDbAndGetPdo();
+$pdoStatement = $pdo->prepare('SELECT s.*, g.name as game, u.nickName FROM score s INNER JOIN Game g ON s.gameId = g.id INNER JOIN Utilisateur u ON s.userId = u.id ORDER BY s.score ASC');
+$pdoStatement->execute();
+$score = $pdoStatement->fetchAll();
+
+foreach ($scores as $score) {
+    echo $score->IdPlayer;
+    echo $score->IdGame;
+    echo $score->GameDifficult;
+}
+?>
         <!--footer-->    
         <?php
             require_once SITE_ROOT.'partials/footer.php';
