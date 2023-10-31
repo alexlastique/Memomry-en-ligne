@@ -11,7 +11,7 @@ $MaPage=($_SERVER['REQUEST_URI']);
                         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
                         <input type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil">
                         <ul class="menu">
-                            <li><a style="color: <?= $MaPage == "/Projet-Flash/index.php" ? "orange" : "";?>;" href="<?=PROJECT_FOLDER?>index.php" >Accueil</a></li>
+                            <li><a href="<?=PROJECT_FOLDER?>index.php" >Accueil</a></li>
 
                             <li><a style="color: <?=$MaPage == "/Projet-Flash/games/memory/index.php" ? "orange" : "";?>;" href="<?=PROJECT_FOLDER?>games/memory/index.php" >Jeu</a></li>
                             
