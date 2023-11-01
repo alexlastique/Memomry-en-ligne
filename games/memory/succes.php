@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <?php
-        require_once 'utils/common.php';
+        require_once '../../utils/common.php';
         require_once SITE_ROOT.'utils/database.php';
         require_once SITE_ROOT.'partials/head.php';
     ?>
