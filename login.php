@@ -2,7 +2,25 @@
 <html>
     <?php
         require_once 'utils/common.php';
-        require_once SITE_ROOT.'partials/head.php'
+        require_once SITE_ROOT.'partials/head.php';
+        require_once SITE_ROOT . 'utils/database.php';
+        $ValidityConnection ="";
+
+
+        if (isset($_POST['LoginEmail']) && isset($_POST['LoginPassword'])) {
+            $LoginEmail = $_POST['LoginEmail'];
+            $LoginPassword = $_POST['LoginPassword'];
+            $HashPassword = hash(
+                'sha512',
+                 $LoginPassword
+            );
+            $pdo = connectToDbAndGetPdo();
+            $pdoStatement = $pdo->prepare("SELECT Id, PasswordUser FROM Utilisateur
+            WHERE Email = '$LoginEmail';");
+            $pdoStatement->execute();
+            $Login = $pdoStatement->fetchAll();
+            $ValidityConnection = "Connection effectuer";
+        }
     ?>
     <body>
         <header class="login header">
@@ -11,10 +29,16 @@
             ?>
             <h2 class="connexion">Login</h2>
         </header>
-        <form class="divInput">
-            <p class="pInput"><input type="email" placeholder="Email"></p>
-            <p class="pInput"><input type="password" placeholder="Mot de passe"></p>
+        <form class="divInput" method="post">
+            <p class="pInput"><input name="LoginEmail" type="email" placeholder="Email"></p>
+            <p class="pInput"><input name="LoginPassword" type="password" placeholder="Mot de passe"></p>
             <p class="pInput"><input type="submit" value="Connexion" class="Submit"></p>
+            <?php foreach($Login as $user){
+                if ($user->PasswordUser==$HashPassword){
+                    $_SESSION['userId'] = $user->Id;
+                }
+            }
+            echo $ValidityConnection;?>
             <p class="pInput2">Pas encore de compte ? Créer en un <a href="register.php" style="color: orange;">ici</a></p>
         </form>
 

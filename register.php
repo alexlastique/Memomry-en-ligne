@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-        <?php
-            require_once 'utils/common.php';
-            require_once SITE_ROOT.'partials/head.php';
-            require_once SITE_ROOT . 'utils/database.php';
-            $passwordPattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$._%^&*]).{8,}$/'; 
-            $pseudoPattern = '/^.{4,}$/'; 
-            $ValidityConnection ="";
+    <?php
+        require_once 'utils/common.php';
+        require_once SITE_ROOT.'partials/head.php';
+        require_once SITE_ROOT . 'utils/database.php';
+        $passwordPattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$._%^&*]).{8,}$/'; 
+        $pseudoPattern = '/^.{4,}$/'; 
+        $ValidityConnection ="";
 
 
-            if (isset($_POST['RegisterEmail']) && isset($_POST['RegisterPseudo']) && isset($_POST['RegisterPassword']) && isset($_POST['RegisterPassword2'])) {
+        if (isset($_POST['RegisterEmail']) && isset($_POST['RegisterPseudo']) && isset($_POST['RegisterPassword']) && isset($_POST['RegisterPassword2'])) {
                 $RegisterEmail = $_POST['RegisterEmail'];
                 $RegisterPseudo = $_POST['RegisterPseudo'];
                 $RegisterPassword = $_POST['RegisterPassword'];
@@ -22,21 +22,20 @@
                         if($RegisterPassword == $RegisterPassword2){
                             $HashPassword = hash(
                                 'sha512',
-                                 $RegisterPassword,
+                                 $RegisterPassword
                             );
                             $pdo = connectToDbAndGetPdo();
                             $pdoStatement = $pdo->prepare("INSERT INTO Utilisateur (Email, PasswordUser, Pseudo)
                             VALUES
                                 ('$RegisterEmail', '$HashPassword', '$RegisterPseudo')");
                             $pdoStatement->execute();
-                            $scores = $pdoStatement->fetchAll();
                             $ValidityConnection = "Inscription effectuer";
                         }
                     }
                 }
 
-            }
-        ?>
+        }
+    ?>
     <body>
         <header class="login header">
             <?php

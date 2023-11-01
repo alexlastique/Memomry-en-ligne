@@ -19,7 +19,7 @@ $MaPage=($_SERVER['REQUEST_URI']);
                             
                             <li><a style="color: <?=$MaPage == "/Projet-Flash/contact.php" ? "orange" : "";?>;" href="<?=PROJECT_FOLDER?>contact.php">Nous Contacter</a></li>
 
-                            <li><a style="color: <?=$MaPage == "/Projet-Flash/myAccount.php" ? "orange" : "";?>;" href="#" id="LienConditionnel">Mon Espace</a></li>
+                            <li><a style="color: <?=$MaPage == "/Projet-Flash/myAccount.php" ? "orange" : "";?>;" href="#" id="LienConditionnel">Mon Espace(<?= $_SESSION['userId']?>)</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -40,7 +40,7 @@ $MaPage=($_SERVER['REQUEST_URI']);
                         <li><a href="<?=PROJECT_FOLDER?>games/memory/index.php" >Jeu</a></li>
                         <li><a href="<?=PROJECT_FOLDER?>games/memory/Score.php" >Score</a></li>
                         <li><a href="<?=PROJECT_FOLDER?>contact.php">Nous Contacter</a></li>
-                        <li><a href="<?=PROJECT_FOLDER?>myAccount.php" id="LienConditionnel">Mon Espace</a></li>
+                        <li><a href="<?=PROJECT_FOLDER?>myAccount.php" id="LienConditionnel">Mon Espace(<?= $_SESSION['userId']?>)</a></li>
                     </ul>
                 </nav>
             <h1>BIENVENUE DANS NOTRE STUDIO !</h1>
