@@ -1,5 +1,11 @@
 <?php
 $MaPage=($_SERVER['REQUEST_URI']);
+$IdUser = $_SESSION['userId'];
+$pdo = connectToDbAndGetPdo();
+$pdoStatement = $pdo->prepare("SELECT Pseudo FROM Utilisateur
+WHERE Id = '$IdUser';");
+$pdoStatement->execute();
+$PseudoUser = $pdoStatement->fetch();
 ?>
 
 <?php if ($MaPage != "/Projet-Flash/index.php"): ?>
@@ -19,7 +25,7 @@ $MaPage=($_SERVER['REQUEST_URI']);
                             
                             <li><a style="color: <?=$MaPage == "/Projet-Flash/contact.php" ? "orange" : "";?>;" href="<?=PROJECT_FOLDER?>contact.php">Nous Contacter</a></li>
 
-                            <li><a style="color: <?=$MaPage == "/Projet-Flash/myAccount.php" ? "orange" : "";?>;" href="#" id="LienConditionnel">Mon Espace(<?= $_SESSION['userId']?>)</a></li>
+                            <li><a style="color: <?=$MaPage == "/Projet-Flash/myAccount.php" ? "orange" : "";?>;" href="#" id="LienConditionnel">Mon Espace(<?=$PseudoUser->Pseudo?>)</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -40,7 +46,7 @@ $MaPage=($_SERVER['REQUEST_URI']);
                         <li><a href="<?=PROJECT_FOLDER?>games/memory/index.php" >Jeu</a></li>
                         <li><a href="<?=PROJECT_FOLDER?>games/memory/Score.php" >Score</a></li>
                         <li><a href="<?=PROJECT_FOLDER?>contact.php">Nous Contacter</a></li>
-                        <li><a href="<?=PROJECT_FOLDER?>myAccount.php" id="LienConditionnel">Mon Espace(<?= $_SESSION['userId']?>)</a></li>
+                        <li><a href="<?=PROJECT_FOLDER?>myAccount.php" id="LienConditionnel">Mon Espace(<?=$PseudoUser->Pseudo?>)</a></li>
                     </ul>
                 </nav>
             <h1>BIENVENUE DANS NOTRE STUDIO !</h1>

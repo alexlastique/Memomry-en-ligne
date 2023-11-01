@@ -2,8 +2,8 @@
 <html>
     <?php
         require_once 'utils/common.php';
+        require_once SITE_ROOT.'utils/database.php';
         require_once SITE_ROOT.'partials/head.php';
-        require_once SITE_ROOT . 'utils/database.php';
         $passwordPattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$._%^&*]).{8,}$/'; 
         $pseudoPattern = '/^.{4,}$/'; 
         $ValidityConnection ="";
