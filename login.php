@@ -12,7 +12,7 @@
             $LoginPassword = $_POST['LoginPassword'];
             $HashPassword = hash(
                 'sha512',
-                 $LoginPassword
+                $LoginPassword
             );
             $pdo = connectToDbAndGetPdo();
             $pdoStatement = $pdo->prepare("SELECT Id, PasswordUser FROM Utilisateur
