@@ -6,6 +6,7 @@
             require_once SITE_ROOT . 'utils/database.php';
             $passwordPattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$._%^&*]).{8,}$/'; 
             $pseudoPattern = '/^.{4,}$/'; 
+            $ValidityConnection ="";
 
 
             if (isset($_POST['RegisterEmail']) && isset($_POST['RegisterPseudo']) && isset($_POST['RegisterPassword']) && isset($_POST['RegisterPassword2'])) {
@@ -29,6 +30,7 @@
                                 ('$RegisterEmail', '$HashPassword', '$RegisterPseudo')");
                             $pdoStatement->execute();
                             $scores = $pdoStatement->fetchAll();
+                            $ValidityConnection = "Inscription effectuer";
                         }
                     }
                 }
@@ -48,6 +50,7 @@
             <p class="pInput"><input name="RegisterPassword" type="password" placeholder="Mot de passe"></p>
             <p class="pInput"><input name="RegisterPassword2" type="password" placeholder="Confirmer le mot de passe"></p>
             <p class="pInput"><input type="submit" value="Inscription" class="Submit"></p>
+            <?php echo $ValidityConnection?>
             <p class="pInput2" >Déjà un compte ? Connecte-toi <a href="login.php" style="color: orange;">ici</a></p>
         </form>
 
