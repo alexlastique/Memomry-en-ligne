@@ -10,29 +10,51 @@
 
 
         if (isset($_POST['RegisterEmail']) && isset($_POST['RegisterPseudo']) && isset($_POST['RegisterPassword']) && isset($_POST['RegisterPassword2'])) {
-                $RegisterEmail = $_POST['RegisterEmail'];
-                $RegisterPseudo = $_POST['RegisterPseudo'];
-                $RegisterPassword = $_POST['RegisterPassword'];
-                $RegisterPassword2 = $_POST['RegisterPassword2'];
-                if(preg_match($passwordPattern, $RegisterPassword) && preg_match($passwordPattern, $RegisterPassword2) && preg_match($pseudoPattern, $RegisterPseudo)){
-                    if (!filter_var($RegisterEmail, FILTER_VALIDATE_EMAIL)) {
-                        throw new Exception("Le format de l'email n'est pas valide");
-                    }
-                    else{
-                        if($RegisterPassword == $RegisterPassword2){
-                            $HashPassword = hash(
-                                'sha512',
-                                 $RegisterPassword
-                            );
-                            $pdo = connectToDbAndGetPdo();
-                            $pdoStatement = $pdo->prepare("INSERT INTO Utilisateur (Email, PasswordUser, Pseudo)
-                            VALUES
-                                ('$RegisterEmail', '$HashPassword', '$RegisterPseudo')");
-                            $pdoStatement->execute();
-                            $ValidityConnection = "Inscription effectuer";
-                        }
+            $RegisterEmail = $_POST['RegisterEmail'];
+            $RegisterPseudo = $_POST['RegisterPseudo'];
+            $RegisterPassword = $_POST['RegisterPassword'];
+            $RegisterPassword2 = $_POST['RegisterPassword2'];
+            if(preg_match($passwordPattern, $RegisterPassword) && preg_match($passwordPattern, $RegisterPassword2) && preg_match($pseudoPattern, $RegisterPseudo)){
+                if (!filter_var($RegisterEmail, FILTER_VALIDATE_EMAIL)) {
+                    throw new Exception("Le format de l'email n'est pas valide");
+                }
+                else{
+                    if($RegisterPassword == $RegisterPassword2){
+                        $HashPassword = hash(
+                            'sha512',
+                                $RegisterPassword
+                        );
+                        $pdo = connectToDbAndGetPdo();
+                        $pdoStatement = $pdo->prepare("INSERT INTO Utilisateur (Email, PasswordUser, Pseudo)
+                        VALUES
+                            ('$RegisterEmail', '$HashPassword', '$RegisterPseudo')");
+                        $pdoStatement->execute();
+                        $ValidityConnection = "Inscription effectuer";
+
+                        $pdo2 = connectToDbAndGetPdo();
+                        $pdoStatement2 = $pdo->prepare("SELECT Id FROM Utilisateur
+                        WHERE Email = '$RegisterEmail';");
+                        $pdoStatement2->execute();
+                        $Login = $pdoStatement2->fetchAll();
+
+                        foreach($Login as $user){
+                                $_SESSION['userId'] = $user->Id;
+                                $IdUser = $_SESSION['userId'];
+                                
+                                $nom_dossier = "userFiles/$IdUser";
+                                if (!is_dir($nom_dossier)) {
+                                    mkdir($nom_dossier); 
+                                }
+                                $targetDirectory = "userFiles/$IdUser/"; 
+                                $targetFile = $targetDirectory . basename("PP");
+                                if(!file_exists($targetFile)){
+                                    copy("assets/images/IconeParDéfaut.png", $targetFile);
+                                }
+                            }
+                        header('Location: myAccount.php');
                     }
                 }
+            }
 
         }
     ?>

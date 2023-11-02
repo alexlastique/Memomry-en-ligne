@@ -74,12 +74,6 @@
             }
         }
         if($_SERVER["REQUEST_METHOD"]=="POST"){
-            $nom_dossier = "userFiles/$IdUser";
-
-            if (!is_dir($nom_dossier)) {
-                mkdir($nom_dossier); 
-            }
-
             if (isset($_FILES["image"])) {
                 $TailleImage = getimagesize($_FILES["image"]["tmp_name"]);
                 if($TailleImage[0]==$TailleImage[1]){

@@ -36,9 +36,22 @@
             <?php foreach($Login as $user){
                 if ($user->PasswordUser==$HashPassword){
                     $_SESSION['userId'] = $user->Id;
+                    $IdUser = $_SESSION['userId'];
+                    
+                    $nom_dossier = "userFiles/$IdUser";
+                    if (!is_dir($nom_dossier) && !file_exists($nom_dossier)) {
+                        mkdir($nom_dossier); 
+                    }
+                    $targetDirectory = "userFiles/$IdUser/"; 
+                    $targetFile = $targetDirectory . basename("PP");
+                    if(!file_exists($targetFile)){
+                        copy("assets/images/IconeParDéfaut.png", $targetFile);
+                    }
+                        
+
                 }
             }
-            header('Location: index.php');?>
+            header('Location: myAccount.php');?>
             <?php endif?>
             <p class="pInput2">Pas encore de compte ? Créer en un <a href="register.php" style="color: orange;">ici</a></p>
         </form>
