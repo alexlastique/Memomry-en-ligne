@@ -9,11 +9,11 @@
         }
 
         $pdo = connectToDbAndGetPdo();
-        $pdoStatement = $pdo->prepare("SELECT M.Chat, M.MessageDate, U.Pseudo, M.IdUser FROM `Message` AS M
-        LEFT JOIN Utilisateur as U On M.IdUser = U.Id
+        $pdoStatement = $pdo->prepare("SELECT M.Chat, M.MessageDate, U.Pseudo, M.IdUser FROM `Message` as M
+        LEFT JOIN Utilisateur as U ON M.IdUser = U.Id
         ORDER BY MessageDate ASC");
         $pdoStatement->execute();
-        $chats = $pdoStatement->fetchAll();
+        $messages = $pdoStatement->fetchAll();
 ?>
 <div id="pos_chat">
     <input type="checkbox" id="toggle" class="toggle-checkbox">
