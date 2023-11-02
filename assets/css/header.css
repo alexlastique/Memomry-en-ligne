@@ -95,15 +95,12 @@ nav{
 }
 .btn{
     color: white;
+    font-size: 14px;
     border: none;
     background-color: transparent;
     cursor: pointer;
     text-transform: uppercase;
     font-weight: bold;
-
-}
-.deconnexion{
-    padding: 12px 0;
 }
 header.login h2{
     width: 75%;
@@ -187,7 +184,7 @@ footer li{
     overflow: hidden;
   }
   
-  .header li a {
+  .header li a, li .btn {
     display: block;
     padding: 12px 20px;
     text-decoration: none;
@@ -195,7 +192,7 @@ footer li{
     transition: 1s;
   }
   
-  #headerAccueil a:hover, .login li a:hover {
+  #headerAccueil a:hover, .login li a:hover, li .btn:hover {
     color: #EC9123;
     transition: 0.5s;
   }
@@ -298,7 +295,7 @@ footer li{
     .header li {
       float: left;
     }
-    .header li a {
+    .header li a, li .btn {
       padding: 20px 0;
     }
     .header .menu {
@@ -309,7 +306,7 @@ footer li{
     .header .menu-icon {
       display: none;    
     }
-    #headerAccueil ul li a:hover, header.login ul li a:hover{
+    #headerAccueil ul li a:hover, header.login ul li a:hover, li .btn:hover{
         color: #EC9123;
         transition: 1s;
         border-top: 2px solid #EC9123;
