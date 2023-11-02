@@ -26,7 +26,7 @@
     <label for="toggle" class="floating-button"></label>
     <div id="chat">
         <div id="head">
-            <img src="../../assets/images/AvataBot.png"width="36px"height="36px">
+            <img src="<?=PROJECT_FOLDER?>userFiles/<?=$UserId?>/PP"class="icone">
             <p>Chat générale</p>
         </div>
         <div id="messages">
@@ -47,7 +47,11 @@
                 <?php else:?>
 
                     <div class="flex">
-                        <img src="../../assets/images/AvataBot.png"width="36px"height="36px">
+                        <?php if(file_exists("<?=PROJECT_FOLDER?>userFiles/<?=$chat->IdUser?>")){?>
+                            <img src="<?=PROJECT_FOLDER?>userFiles/<?=$chat->IdUser?>/PP"class="icone">
+                        <?php }else{?>
+                            <img src="<?=PROJECT_FOLDER?>assets/images/IconeParDéfaut.png"class="icone">
+                        <?php }?>
                         <div class="column">
                             <p><?php echo $chat->Pseudo ?></p>
                             <div class="message">

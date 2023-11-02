@@ -404,6 +404,11 @@ body{
     background-size: 80%;
     cursor: pointer;
 }
+.icone {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
 .floating-button:hover{
     width: 70px;
     height: 70px;
