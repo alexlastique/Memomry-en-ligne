@@ -1,3 +1,21 @@
+<?php
+        require_once '../../utils/common.php';
+        require_once SITE_ROOT . 'partials/head.php';
+        require_once SITE_ROOT . 'utils/database.php';
+        $PseudoShearch = '';
+        if(!empty($_SESSION['userId'])){$IdUser = $_SESSION['userId'];}
+
+        if (isset($_POST['name'])) {
+            $PseudoShearch = $_POST['name'];
+        }
+
+        $pdo = connectToDbAndGetPdo();
+        $pdoStatement = $pdo->prepare("SELECT Chat, MessageDate, U.Pseudo, IdUser, FROM `Message`
+        LEFT JOIN Utilisateur as U On Score.IdUser = U.Id
+        ORDER BY MessageDate ASC");
+        $pdoStatement->execute();
+        $scores = $pdoStatement->fetchAll();
+?>
 <div id="pos_chat">
     <input type="checkbox" id="toggle" class="toggle-checkbox">
     <label for="toggle" class="floating-button"></label>
