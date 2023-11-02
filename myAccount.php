@@ -7,6 +7,7 @@
         $ValidityChange ="";
         $ChangeInfo = "";
         $ChangeInfo2 = "";
+        $Output = "";
         if (!empty($_SESSION['userId'])){$IdUser = $_SESSION['userId'];}
 
 
@@ -80,15 +81,20 @@
             }
 
             if (isset($_FILES["image"])) {
-                $targetDirectory = "userFiles/$IdUser/"; 
-                $targetFile = $targetDirectory . basename("PP");
-                if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
-                    echo "L'image a été téléversée avec succès.";
-                } else {
-                    echo "Une erreur est survenue lors du téléversement de l'image.";
+                $TailleImage = getimagesize($_FILES["image"]["tmp_name"]);
+                if($TailleImage[0]==$TailleImage[1]){
+                    $targetDirectory = "userFiles/$IdUser/"; 
+                    $targetFile = $targetDirectory . basename("PP");
+                    if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
+                        $Output = "L'image a été changée avec succès.";
+                    } else {
+                        $Output = "Une erreur est survenue lors du chargement de l'image.";
+                    }
+                } else{
+                    $Output = "L'image n'est pas carre";
                 }
         }else{
-            echo "Erreur";
+            $Output = "Erreur";
         }
         }
 
@@ -109,6 +115,7 @@
             <form method="post" enctype="multipart/form-data">
                 <input type="file" name="image">
                 <input type="submit" value="Uploader">
+                <?=$Output?>
             </form>
         </section>
         <form method="post">
