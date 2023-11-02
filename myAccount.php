@@ -72,7 +72,22 @@
                 $ChangeInfo2 = 'Mots de passe incorect';
             }
         }
-    ?>
+        if($_SERVER["REQUEST_METHOD"]=="POST"){
+            if (isset($_FILES["image"])) {
+                $targetDirectory = "userFiles/$IdUser/"; 
+                $targetFile = $targetDirectory . basename("PP");
+                if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
+                    echo "L'image a été téléversée avec succès.";
+                } else {
+                    echo "Une erreur est survenue lors du téléversement de l'image.";
+                }
+        }else{
+            echo "Erreur";
+        }
+        }
+
+?>
+
     <body>
     <header class="login header">
         <?php
@@ -84,9 +99,13 @@
     <main id="mainAccount">
         <section>
             <h2>Ta photo</h2>
-            <button><img class="rounded-circle mt-5" width="150px" src="userFiles/<?php $IdUser?>"></button>
+            <img class="rounded-circle mt-5" width="150px" src="userFiles/<?=$IdUser?>/PP">
+            <form method="post" enctype="multipart/form-data">
+                <input type="file" name="image">
+                <input type="submit" value="Uploader">
+            </form>
         </section>
-        <form method="post" action="">
+        <form method="post">
             <fieldset>
                 <h3>Changer l'adresse email</h3>
                 <input name="ChangeLastEmail" type="email" placeholder=" &nbsp; Ancien email">
@@ -96,7 +115,7 @@
                 <?= $ChangeInfo?>
             </fieldset>
         </form>
-        <form method="post" action="">
+        <form method="post">
             <fieldset>
                 <h3>Changer le mot de passe</h3>
                 <input name="ChangeLastPassword" type="password" placeholder=" &nbsp; Ancien mot de passe">
@@ -106,7 +125,7 @@
                 <?= $ChangeInfo2?>
             </fieldset>
         </form>
-        <button>Deconnexion<?php session_destroy()?></button>
+
     </main>
 
     <?php

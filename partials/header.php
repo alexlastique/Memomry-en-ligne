@@ -27,6 +27,8 @@
                                 <li><a style="color: <?=$MaPage == "/Projet-Flash/contact.php" ? "orange" : "";?>;" href="<?=PROJECT_FOLDER?>contact.php">Nous Contacter</a></li>
 
                                 <li><a style="color: <?=$MaPage == "/Projet-Flash/myAccount.php" ? "orange" : "";?>;" href="#" id="LienConditionnel">Mon Espace(<?=$PseudoUser->Pseudo?>)</a></li>
+                                
+                                <li><form action="<?=PROJECT_FOLDER?>deconnexion.php" method="post"><input type="submit" value="Deconnexion"></form></li>
                             </ul>
                         </nav>
                     </div>
@@ -48,6 +50,7 @@
                             <li><a href="<?=PROJECT_FOLDER?>games/memory/Score.php" >Score</a></li>
                             <li><a href="<?=PROJECT_FOLDER?>contact.php">Nous Contacter</a></li>
                             <li><a href="<?=PROJECT_FOLDER?>myAccount.php" id="LienConditionnel">Mon Espace(<?=$PseudoUser->Pseudo?>)</a></li>
+                            <li><form action="<?=PROJECT_FOLDER?>deconnexion.php" method="post"><input type="submit" value="Deconnexion"></form></li>
                         </ul>
                     </nav>
                 <h1>BIENVENUE DANS NOTRE STUDIO !</h1>
