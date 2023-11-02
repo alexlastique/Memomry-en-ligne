@@ -32,6 +32,7 @@
             <p class="pInput"><input name="LoginEmail" type="email" placeholder="Email"></p>
             <p class="pInput"><input name="LoginPassword" type="password" placeholder="Mot de passe"></p>
             <p class="pInput"><input type="submit" value="Connexion" class="Submit"></p>
+            <?php if(!empty($Login)):?>
             <?php foreach($Login as $user){
                 if ($user->PasswordUser==$HashPassword){
                     $ValidityConnection = "Connection effectuer";
@@ -39,6 +40,7 @@
                 }
             }
             echo $ValidityConnection;?>
+            <?php endif?>
             <p class="pInput2">Pas encore de compte ? Créer en un <a href="register.php" style="color: orange;">ici</a></p>
         </form>
 
