@@ -35,11 +35,10 @@
             <?php if(!empty($Login)):?>
             <?php foreach($Login as $user){
                 if ($user->PasswordUser==$HashPassword){
-                    $ValidityConnection = "Connection effectuer";
                     $_SESSION['userId'] = $user->Id;
                 }
             }
-            echo $ValidityConnection;?>
+            header('Location: index.php');?>
             <?php endif?>
             <p class="pInput2">Pas encore de compte ? Créer en un <a href="register.php" style="color: orange;">ici</a></p>
         </form>
