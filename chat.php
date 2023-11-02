@@ -20,6 +20,10 @@
             VALUES (1,$UserId,'$ChatMessage');");
             $pdoStatement->execute();
         }
+        $GIFChatLien = "https://api.thecatapi.com/v1/images/search?mime_types=gif";
+        $GIFChat=file_get_contents($GIFChatLien);
+        $GIFChat2=json_decode($GIFChat, true);
+        $URLChat = $GIFChat2[0]['url'];
 ?>
 <div id="pos_chat">
     <input type="checkbox" id="toggle" class="toggle-checkbox">
@@ -37,8 +41,11 @@
                     <div class="flex">
                         <div class="column user">
                             <p><?php echo $chat->Pseudo ?></p>
-                            <div class="message usersmessage">
-                                <p><?php echo $Message = $chat->Chat ?></p>
+                            <div id="flexChat">
+                                <div class="message usersmessage">
+                                    <p><?php echo $Message = $chat->Chat ?></p>
+                                </div>
+                                <img src="<?=$URLChat?>" id="imageApi">
                             </div>
                             <p><?php echo $chat->MessageDate ?></p>
                         </div>

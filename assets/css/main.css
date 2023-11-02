@@ -386,7 +386,16 @@ body{
 }
 
 /*chat*/
-
+#imageApi{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+#flexChat{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
 #pos_chat{
     position: absolute;
 }.toggle-checkbox {
