@@ -10,8 +10,8 @@
         }
 
         $pdo = connectToDbAndGetPdo();
-        $pdoStatement = $pdo->prepare("SELECT Chat, MessageDate, U.Pseudo, IdUser, FROM `Message`
-        LEFT JOIN Utilisateur as U On Score.IdUser = U.Id
+        $pdoStatement = $pdo->prepare("SELECT Chat, MessageDate, U.Pseudo, IdUser FROM `Message`
+        LEFT JOIN Utilisateur as U ON M.IdUser = U.Id
         ORDER BY MessageDate ASC");
         $pdoStatement->execute();
         $chats = $pdoStatement->fetchAll();
