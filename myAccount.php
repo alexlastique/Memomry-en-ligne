@@ -7,7 +7,7 @@
         $ValidityChange ="";
         $ChangeInfo = "";
         $ChangeInfo2 = "";
-        $IdUser = $_SESSION['userId'];
+        if (!empty($_SESSION['userId'])){$IdUser = $_SESSION['userId'];}
 
 
         if (isset($_POST['ChangeLastEmail']) && isset($_POST['ChangeNewEmail']) && isset($_POST['ChangePassword'])) {
