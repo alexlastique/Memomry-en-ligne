@@ -83,8 +83,8 @@
 
     <main id="mainAccount">
         <section>
-            <h2>Alexis</h2>
-            <img class="rounded-circle mt-5" width="150px" src="assets/images/alexis.jpg">
+            <h2>Ta photo</h2>
+            <button><img class="rounded-circle mt-5" width="150px" src="userFiles/<?php $IdUser?>"></button>
         </section>
         <form method="post" action="">
             <fieldset>
@@ -106,6 +106,7 @@
                 <?= $ChangeInfo2?>
             </fieldset>
         </form>
+        <button>Deconnexion<?php session_destroy()?></button>
     </main>
 
     <?php

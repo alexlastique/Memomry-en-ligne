@@ -19,7 +19,6 @@
             WHERE Email = '$LoginEmail';");
             $pdoStatement->execute();
             $Login = $pdoStatement->fetchAll();
-            $ValidityConnection = "Connection effectuer";
         }
     ?>
     <body>
@@ -35,6 +34,7 @@
             <p class="pInput"><input type="submit" value="Connexion" class="Submit"></p>
             <?php foreach($Login as $user){
                 if ($user->PasswordUser==$HashPassword){
+                    $ValidityConnection = "Connection effectuer";
                     $_SESSION['userId'] = $user->Id;
                 }
             }

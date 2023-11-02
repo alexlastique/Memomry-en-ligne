@@ -5,7 +5,7 @@
         require_once SITE_ROOT . 'partials/head.php';
         require_once SITE_ROOT . 'utils/database.php';
         $PseudoShearch = '';
-        $IdUser = $_SESSION['userId'];
+        if(!empty($_SESSION['userId'])){$IdUser = $_SESSION['userId'];}
 
         if (isset($_POST['name'])) {
             $PseudoShearch = $_POST['name'];
@@ -45,7 +45,8 @@
                     </tr>
                     <?php
                         foreach ($scores as $score) {
-                            if($IdUser==$score->IdUser):
+                            if(!empty($IdUser)):
+                                if($IdUser==$score->IdUser):
                     ?>
                     <tr style="color: orange;">
                         <td><?php echo $score->GameName ?></td>
@@ -53,6 +54,7 @@
                         <td><?php echo $score->GameDifficult == 1 ? "Facile" : ($score->GameDifficult == 2 ? "Moyen" : "Difficile")?></td>
                         <td><?php echo $score->GameScore; ?></td>
                     </tr>
+                    <?php endif;?>
                     <?php else:?>
                     <tr>
                         <td><?php echo $score->GameName ?></td>
