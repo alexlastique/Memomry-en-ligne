@@ -2,16 +2,15 @@
         require_once '../../utils/common.php';
         require_once SITE_ROOT . 'partials/head.php';
         require_once SITE_ROOT . 'utils/database.php';
-        $PseudoShearch = '';
-        if(!empty($_SESSION['userId'])){$IdUser = $_SESSION['userId'];}
+        if(!empty($_SESSION['userId'])){$UserId = $_SESSION['userId'];}
 
         if (isset($_POST['name'])) {
             $PseudoShearch = $_POST['name'];
         }
 
         $pdo = connectToDbAndGetPdo();
-        $pdoStatement = $pdo->prepare("SELECT Chat, MessageDate, U.Pseudo, IdUser, FROM `Message`
-        LEFT JOIN Utilisateur as U On Score.IdUser = U.Id
+        $pdoStatement = $pdo->prepare("SELECT M.Chat, M.MessageDate, U.Pseudo, M.IdUser FROM `Message` AS M
+        LEFT JOIN Utilisateur as U On M.IdUser = U.Id
         ORDER BY MessageDate ASC");
         $pdoStatement->execute();
         $chats = $pdoStatement->fetchAll();
@@ -24,37 +23,37 @@
             <img src="../../assets/images/AvataBot.png"width="36px"height="36px">
             <p>Chat générale</p>
         </div>
+        <div id="messages">
         <?php 
             foreach($chats as $chat){
-                if(!empty($IdUser)):
-                    if($IdUser==$chat->IdUser):
+                if($chat->IdUser==1):
         ?>
-        <div id="messages">
-            <div class="flex">
-                <img src="../../assets/images/AvataBot.png"width="36px"height="36px">
-                <div class="column">
-                    <p>Quelqu'un</p>
-                    <div class="message">
-                        <p>Je sui qq</p>
+                    <div class="flex">
+                        <div class="column user">
+                            <p><?php echo $chat->Pseudo ?></p>
+                            <div class="message usersmessage">
+                                <p><?php echo $Message = $chat->Chat ?></p>
+                            </div>
+                            <p><?php echo $chat->MessageDate ?></p>
+                        </div>
                     </div>
-                    <p>Aujourd'hui à 16h15</p>
-                </div>
-            </div>
-            <?php endif;?>
-                    <?php else:?>
-            <div class="flex">
-                <div class="column user">
-                    <p>Moi</p>
-                    <div class="message usersmessage">
-                        <p>Je suis moi</p>
+
+                <?php else:?>
+
+                    <div class="flex">
+                        <img src="../../assets/images/AvataBot.png"width="36px"height="36px">
+                        <div class="column">
+                            <p><?php echo $chat->Pseudo ?></p>
+                            <div class="message">
+                                <p><?php echo $Message = $chat->Chat ?></p>
+                            </div>
+                            <p><?php echo $chat->MessageDate ?></p>
+                        </div>
                     </div>
-                    <p>Aujourd'hui à 16h17</p>
-                </div>
-            </div>
+
+                <?php endif;?>
+            <?php }?>
         </div>
-        <?php endif;?>
-        
-        <?php }?>
         <div id="input">
             <form>
                 <input type="text" name="chat" placeholder="Votre message...">
