@@ -14,7 +14,7 @@
         LEFT JOIN Utilisateur as U On Score.IdUser = U.Id
         ORDER BY MessageDate ASC");
         $pdoStatement->execute();
-        $scores = $pdoStatement->fetchAll();
+        $chats = $pdoStatement->fetchAll();
 ?>
 <div id="pos_chat">
     <input type="checkbox" id="toggle" class="toggle-checkbox">
@@ -24,6 +24,11 @@
             <img src="../../assets/images/AvataBot.png"width="36px"height="36px">
             <p>Chat générale</p>
         </div>
+        <?php 
+            foreach($chats as $chat){
+                if(!empty($IdUser)):
+                    if($IdUser==$chat->IdUser):
+        ?>
         <div id="messages">
             <div class="flex">
                 <img src="../../assets/images/AvataBot.png"width="36px"height="36px">
@@ -35,6 +40,8 @@
                     <p>Aujourd'hui à 16h15</p>
                 </div>
             </div>
+            <?php endif;?>
+                    <?php else:?>
             <div class="flex">
                 <div class="column user">
                     <p>Moi</p>
@@ -45,6 +52,9 @@
                 </div>
             </div>
         </div>
+        <?php endif;?>
+        
+        <?php }?>
         <div id="input">
             <form>
                 <input type="text" name="chat" placeholder="Votre message...">
