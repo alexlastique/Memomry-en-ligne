@@ -4,16 +4,12 @@
         require_once SITE_ROOT . 'utils/database.php';
         if(!empty($_SESSION['userId'])){$UserId = $_SESSION['userId'];}
 
-        if (isset($_POST['name'])) {
-            $PseudoShearch = $_POST['name'];
-        }
-
         $pdo = connectToDbAndGetPdo();
         $pdoStatement = $pdo->prepare("SELECT M.Chat, M.MessageDate, U.Pseudo, M.IdUser FROM `Message` as M
         LEFT JOIN Utilisateur as U ON M.IdUser = U.Id
         ORDER BY MessageDate ASC");
         $pdoStatement->execute();
-        $messages = $pdoStatement->fetchAll();
+        $chats = $pdoStatement->fetchAll();
 ?>
 <div id="pos_chat">
     <input type="checkbox" id="toggle" class="toggle-checkbox">
