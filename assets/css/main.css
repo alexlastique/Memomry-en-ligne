@@ -164,7 +164,7 @@ body{
     padding: 2.5px;
 }
 #playButton{
-    margin: 15px auto 30vh;
+    margin: 15px auto 10rem;
     background-color: orange;
     border: transparent;
     padding: 15px;
