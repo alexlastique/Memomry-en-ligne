@@ -73,6 +73,12 @@
             }
         }
         if($_SERVER["REQUEST_METHOD"]=="POST"){
+            $nom_dossier = "userFiles/$IdUser";
+
+            if (!is_dir($nom_dossier)) {
+                mkdir($nom_dossier); 
+            }
+
             if (isset($_FILES["image"])) {
                 $targetDirectory = "userFiles/$IdUser/"; 
                 $targetFile = $targetDirectory . basename("PP");
@@ -98,7 +104,7 @@
 
     <main id="mainAccount">
         <section>
-            <h2>Ta photo</h2>
+            <h2>Ta photo de profil</h2>
             <img class="rounded-circle mt-5" width="150px" src="userFiles/<?=$IdUser?>/PP">
             <form method="post" enctype="multipart/form-data">
                 <input type="file" name="image">
