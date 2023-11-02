@@ -14,7 +14,7 @@
         LEFT JOIN Utilisateur as U ON M.IdUser = U.Id
         ORDER BY MessageDate ASC");
         $pdoStatement->execute();
-        $chats = $pdoStatement->fetchAll();
+        $messages = $pdoStatement->fetchAll();
 ?>
 <div id="pos_chat">
     <input type="checkbox" id="toggle" class="toggle-checkbox">
@@ -25,7 +25,7 @@
             <p>Chat générale</p>
         </div>
         <?php 
-            foreach($chats as $chat){
+            foreach($messages as $message){
                 if(!empty($IdUser)):
                     if($IdUser==$chat->IdUser):
         ?>
@@ -33,20 +33,24 @@
             <div class="flex">
                 <img src="../../assets/images/AvataBot.png"width="36px"height="36px">
                 <div class="column">
-                    <p>Quelqu'un</p>
+                    <p><?php echo $message->Pseudo ?></p>
                     <div class="message">
-                        <p>Je sui qq</p>
+                        <p>Je suis <?php echo $message->Pseudo ?></p>
                     </div>
                     <p>Aujourd'hui à 16h15</p>
                 </div>
             </div>
+
+
             <?php endif;?>
-                    <?php else:?>
+            <?php else:?>
+
+
             <div class="flex">
                 <div class="column user">
-                    <p>Moi</p>
-                    <div class="message usersmessage">
-                        <p>Je suis moi</p>
+                    <p><?php echo $message->Pseudo ?></p>
+                    <div class="message">
+                        <p>Je suis <?php echo $message->Pseudo ?></p>
                     </div>
                     <p>Aujourd'hui à 16h17</p>
                 </div>

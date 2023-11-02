@@ -25,8 +25,8 @@
                                 <li><a style="color: <?=$MaPage == "/Projet-Flash/games/memory/Score.php" ? "orange" : "";?>;" href="<?=PROJECT_FOLDER?>games/memory/Score.php" >Score</a></li>
                                 
                                 <li><a style="color: <?=$MaPage == "/Projet-Flash/contact.php" ? "orange" : "";?>;" href="<?=PROJECT_FOLDER?>contact.php">Nous Contacter</a></li>
-
-                                <li><a style="color: <?=$MaPage == "/Projet-Flash/myAccount.php" ? "orange" : "";?>;" href="#" id="LienConditionnel">Mon Espace(<?=$PseudoUser->Pseudo?>)</a></li>
+                                
+                                <li><a style="color: <?=$MaPage == "/Projet-Flash/myAccount.php" ? "orange" : "";?>;" href="<?=PROJECT_FOLDER?>myAccount.php" id="LienConditionnel">Mon Espace(<?=$PseudoUser->Pseudo?>)</a></li>
                                 
                                 <li><form action="<?=PROJECT_FOLDER?>deconnexion.php" method="post"><input type="submit" value="Deconnexion"></form></li>
                             </ul>
@@ -79,13 +79,13 @@
                             <ul class="menu">
                                 <li><a href="<?=PROJECT_FOLDER?>index.php" >Accueil</a></li>
 
-                                <li><a style="color: <?=$MaPage == "/Projet-Flash/games/memory/index.php" ? "orange" : "";?>;" href="<?=PROJECT_FOLDER?>games/memory/index.php" >Jeu</a></li>
+                                <li><a style="color: <?=$MaPage == "/Projet-Flash/games/memory/index.php" ? "orange" : "";?>;" href="<?=PROJECT_FOLDER?>login.php" >Jeu</a></li>
                                 
                                 <li><a style="color: <?=$MaPage == "/Projet-Flash/games/memory/Score.php" ? "orange" : "";?>;" href="<?=PROJECT_FOLDER?>games/memory/Score.php" >Score</a></li>
                                 
                                 <li><a style="color: <?=$MaPage == "/Projet-Flash/contact.php" ? "orange" : "";?>;" href="<?=PROJECT_FOLDER?>contact.php">Nous Contacter</a></li>
 
-                                <li><a style="color: <?=$MaPage == "/Projet-Flash/myAccount.php" ? "orange" : "";?>;" href="#" id="LienConditionnel">Mon Espace</a></li>
+                                <li><a style="color: <?=$MaPage == "/Projet-Flash/myAccount.php" ? "orange" : "";?>;" href="<?=PROJECT_FOLDER?>login.php" id="LienConditionnel">Mon Espace</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -103,10 +103,10 @@
                     <!-- <input type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil"> -->
                         <ul class="menu">
                             <li><a style="color: orange;" href="<?=PROJECT_FOLDER?>index.php" >Accueil</a></li>
-                            <li><a href="<?=PROJECT_FOLDER?>games/memory/index.php" >Jeu</a></li>
+                            <li><a href="<?=PROJECT_FOLDER?>login.php" >Jeu</a></li>
                             <li><a href="<?=PROJECT_FOLDER?>games/memory/Score.php" >Score</a></li>
                             <li><a href="<?=PROJECT_FOLDER?>contact.php">Nous Contacter</a></li>
-                            <li><a href="<?=PROJECT_FOLDER?>myAccount.php" id="LienConditionnel">Mon Espace</a></li>
+                            <li><a href="<?=PROJECT_FOLDER?>login.php" id="LienConditionnel">Mon Espace</a></li>
                         </ul>
                     </nav>
                 <h1>BIENVENUE DANS NOTRE STUDIO !</h1>
