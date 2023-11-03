@@ -32,6 +32,7 @@
         <div id="head">
             <img src="<?=PROJECT_FOLDER?>userFiles/<?=$UserId?>/PP"class="icone">
             <p>Chat générale</p>
+            <img src="<?=$URLChat?>" id="imageApi">
         </div>
         <div id="messages">
         <?php 
@@ -40,12 +41,14 @@
         ?>
                     <div class="flex">
                         <div class="column user">
-                            <p><?php echo $chat->Pseudo ?></p>
-                            <div id="flexChat">
-                                <div class="message usersmessage">
-                                    <p><?php echo $Message = $chat->Chat ?></p>
+                            <div>
+                                <p><?php echo $chat->Pseudo ?></p>
+                                <div id="flexChat">
+                                    <div class="message usersmessage">
+                                        <p><?php echo $Message = $chat->Chat ?></p>
+                                    </div>
                                 </div>
-                                <img src="<?=$URLChat?>" id="imageApi">
+                            
                             </div>
                             <p><?php echo $chat->MessageDate ?></p>
                         </div>
