@@ -29,19 +29,18 @@
             ?>
             <h2 class="connexion">Score</h2>
         </header>
-            <form method="post">
+            <form method="post" id="formButtonSearch">
                 <div>
                     <input name="name" type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil">
                 </div>    
-                <button>Envoyer</button>
+                <input type="submit" class="btn"></button>
             </form>
-            
             <table class="PageScores">
                     <tr>
                         <th>Nom du Jeu</th>
                         <th>Pseudo du Joueur</th>
-                        <th>Score du Joueur</th>
                         <th>Niveau de Difficulté</th>
+                        <th>Score du Joueur</th>
                     </tr>
                     <?php
                         foreach ($scores as $score) {
