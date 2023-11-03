@@ -39,8 +39,8 @@
                     <tr>
                         <th>Nom du Jeu</th>
                         <th>Pseudo du Joueur</th>
-                        <th>Score du Joueur</th>
                         <th>Niveau de Difficulté</th>
+                        <th>Score du Joueur</th>
                     </tr>
                     <?php
                         foreach ($scores as $score) {
