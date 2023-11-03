@@ -57,7 +57,7 @@
                 <?php else:?>
 
                     <div class="flex">
-                        <?php if(file_exists("<?=PROJECT_FOLDER?>userFiles/<?=$chat->IdUser?>")){?>
+                        <?php if(file_exists(PROJECT_FOLDER."/userFiles/$chat->IdUser")){?>
                             <img src="<?=PROJECT_FOLDER?>userFiles/<?=$chat->IdUser?>/PP"class="icone">
                         <?php }else{?>
                             <img src="<?=PROJECT_FOLDER?>assets/images/IconeParDéfaut.png"class="icone">

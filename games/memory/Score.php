@@ -47,28 +47,28 @@
                             if(!empty($IdUser)):
                                 if($IdUser==$score->IdUser):
                     ?>
-                    <tr style="color: orange;">
-                        <td><?php echo $score->GameName ?></td>
-                        <td><?php echo $score->Pseudo ?></td>
-                        <td><?php echo $score->GameDifficult == 1 ? "Facile" : ($score->GameDifficult == 2 ? "Moyen" : "Difficile")?></td>
-                        <td><?php echo $score->GameScore; ?></td>
-                    </tr>
-                    <?php else:?>
-                    <tr>
-                        <td><?php echo $score->GameName ?></td>
-                        <td><?php echo $score->Pseudo ?></td>
-                        <td><?php echo $score->GameDifficult == 1 ? "Facile" : ($score->GameDifficult == 2 ? "Moyen" : "Difficile")?></td>
-                        <td><?php echo $score->GameScore; ?></td>
-                    </tr>
-                    <?php endif;?>
-                    <?php else:?>
-                    <tr>
-                        <td><?php echo $score->GameName ?></td>
-                        <td><?php echo $score->Pseudo ?></td>
-                        <td><?php echo $score->GameDifficult == 1 ? "Facile" : ($score->GameDifficult == 2 ? "Moyen" : "Difficile")?></td>
-                        <td><?php echo $score->GameScore; ?></td>
-                    </tr>
-                    <?php endif;?>
+                            <tr style="color: orange;">
+                                <td><?php echo $score->GameName ?></td>
+                                <td><?php echo $score->Pseudo ?></td>
+                                <td><?php echo $score->GameDifficult == 1 ? "Facile" : ($score->GameDifficult == 2 ? "Moyen" : "Difficile")?></td>
+                                <td><?php echo $score->GameScore; ?></td>
+                            </tr>
+                            <?php else:?>
+                            <tr>
+                                <td><?php echo $score->GameName ?></td>
+                                <td><?php echo $score->Pseudo ?></td>
+                                <td><?php echo $score->GameDifficult == 1 ? "Facile" : ($score->GameDifficult == 2 ? "Moyen" : "Difficile")?></td>
+                                <td><?php echo $score->GameScore; ?></td>
+                            </tr>
+                            <?php endif;?>
+                            <?php else:?>
+                            <tr>
+                                <td><?php echo $score->GameName ?></td>
+                                <td><?php echo $score->Pseudo ?></td>
+                                <td><?php echo $score->GameDifficult == 1 ? "Facile" : ($score->GameDifficult == 2 ? "Moyen" : "Difficile")?></td>
+                                <td><?php echo $score->GameScore; ?></td>
+                            </tr>
+                            <?php endif;?>
                     <?php }?>
             </table>
             
