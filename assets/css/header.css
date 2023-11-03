@@ -274,7 +274,7 @@ footer li{
     justify-content: center;
     margin: 50px 0 0 20px;
   }
-  #formButtonSearch button{
+  #formButtonSearch input[type=submit]{
     background-color: #EC9123;
     border-radius: 10px;
     padding: 5px 15px;

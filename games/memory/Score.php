@@ -33,7 +33,7 @@
                 <div>
                     <input name="name" type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil">
                 </div>    
-                <button class="btn">Envoyer</button>
+                <input type="submit" class="btn"></button>
             </form>
             <table class="PageScores">
                     <tr>
