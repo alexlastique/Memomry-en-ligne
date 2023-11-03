@@ -6,7 +6,8 @@
         require_once SITE_ROOT.'partials/head.php';
         $passwordPattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$._%^&*]).{8,}$/'; 
         $pseudoPattern = '/^.{4,}$/'; 
-        $ValidityConnection ="";
+        $FailEmail = "";
+        $UniqueValue = true;
 
 
         if (isset($_POST['RegisterEmail']) && isset($_POST['RegisterPseudo']) && isset($_POST['RegisterPassword']) && isset($_POST['RegisterPassword2'])) {
@@ -16,7 +17,7 @@
             $RegisterPassword2 = $_POST['RegisterPassword2'];
             if(preg_match($passwordPattern, $RegisterPassword) && preg_match($passwordPattern, $RegisterPassword2) && preg_match($pseudoPattern, $RegisterPseudo)){
                 if (!filter_var($RegisterEmail, FILTER_VALIDATE_EMAIL)) {
-                    throw new Exception("Le format de l'email n'est pas valide");
+                    $FailEmail= "Le format de l'email n'est pas valide";
                 }
                 else{
                     if($RegisterPassword == $RegisterPassword2){
@@ -24,34 +25,46 @@
                             'sha512',
                                 $RegisterPassword
                         );
-                        $pdo = connectToDbAndGetPdo();
-                        $pdoStatement = $pdo->prepare("INSERT INTO Utilisateur (Email, PasswordUser, Pseudo)
-                        VALUES
-                            ('$RegisterEmail', '$HashPassword', '$RegisterPseudo')");
-                        $pdoStatement->execute();
-                        $ValidityConnection = "Inscription effectuer";
 
-                        $pdo2 = connectToDbAndGetPdo();
-                        $pdoStatement2 = $pdo->prepare("SELECT Id FROM Utilisateur
-                        WHERE Email = '$RegisterEmail';");
-                        $pdoStatement2->execute();
-                        $Login = $pdoStatement2->fetchAll();
-
-                        foreach($Login as $user){
-                                $_SESSION['userId'] = $user->Id;
-                                $IdUser = $_SESSION['userId'];
-                                
-                                $nom_dossier = "userFiles/$IdUser";
-                                if (!is_dir($nom_dossier)) {
-                                    mkdir($nom_dossier); 
-                                }
-                                $targetDirectory = "userFiles/$IdUser/"; 
-                                $targetFile = $targetDirectory . basename("PP");
-                                if(!file_exists($targetFile)){
-                                    copy("assets/images/IconeParDéfaut.png", $targetFile);
-                                }
+                        $pdo0 = connectToDbAndGetPdo();
+                        $pdoStatement0 = $pdo0->prepare("SELECT Email, Pseudo FROM Utilisateur");
+                        $pdoStatement0->execute();
+                        $IsUnique = $pdoStatement0->fetchAll();
+                        foreach($IsUnique AS $Unique){
+                            if($Unique->Email==$RegisterEmail || $Unique->Pseudo==$RegisterPseudo){
+                                $UniqueValue=false;
                             }
-                        header('Location: myAccount.php');
+                        }
+
+                        if($UniqueValue){
+                            $pdo = connectToDbAndGetPdo();
+                            $pdoStatement = $pdo->prepare("INSERT INTO Utilisateur (Email, PasswordUser, Pseudo)
+                            VALUES
+                                ('$RegisterEmail', '$HashPassword', '$RegisterPseudo')");
+                            $pdoStatement->execute();
+
+                            $pdo2 = connectToDbAndGetPdo();
+                            $pdoStatement2 = $pdo->prepare("SELECT Id FROM Utilisateur
+                            WHERE Email = '$RegisterEmail';");
+                            $pdoStatement2->execute();
+                            $Login = $pdoStatement2->fetchAll();
+
+                            foreach($Login as $user){
+                                    $_SESSION['userId'] = $user->Id;
+                                    $IdUser = $_SESSION['userId'];
+                                    
+                                    $nom_dossier = "userFiles/$IdUser";
+                                    if (!is_dir($nom_dossier)) {
+                                        mkdir($nom_dossier); 
+                                    }
+                                    $targetDirectory = "userFiles/$IdUser/"; 
+                                    $targetFile = $targetDirectory . basename("PP");
+                                    if(!file_exists($targetFile)){
+                                        copy("assets/images/IconeParDéfaut.png", $targetFile);
+                                    }
+                                }
+                            header('Location: myAccount.php');
+                        }
                     }
                 }
             }
@@ -71,7 +84,8 @@
             <p class="pInput"><input name="RegisterPassword" type="password" placeholder="Mot de passe"></p>
             <p class="pInput"><input name="RegisterPassword2" type="password" placeholder="Confirmer le mot de passe"></p>
             <p class="pInput"><input type="submit" value="Inscription" class="Submit"></p>
-            <?php echo $ValidityConnection?>
+            <?= $UniqueValue==false? "Adresse mail ou Pseudo déjà utiliser": "";?>
+            <?php echo $FailEmail?>
             <p class="pInput2" >Déjà un compte ? Connecte-toi <a href="login.php" style="color: orange;">ici</a></p>
         </form>
 

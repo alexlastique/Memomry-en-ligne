@@ -8,34 +8,50 @@
         $ChangeInfo = "";
         $ChangeInfo2 = "";
         $Output = "";
+        $UniqueValue = true;
         if (!empty($_SESSION['userId'])){$IdUser = $_SESSION['userId'];}
 
 
-        if (isset($_POST['ChangeLastEmail']) && isset($_POST['ChangeNewEmail']) && isset($_POST['ChangePassword'])) {
-            $ChangeLastEmail = $_POST['ChangeLastEmail'];
-            $ChangeNewEmail = $_POST['ChangeNewEmail'];
-            $ChangePassword = $_POST['ChangePassword'];
-            $HashPassword = hash(
-                'sha512',
-                $ChangePassword
-            );
-            $pdo = connectToDbAndGetPdo();
-            $pdoStatement = $pdo->prepare("SELECT PasswordUser, Email FROM Utilisateur
-            WHERE Id='$IdUser';");
-            $pdoStatement->execute();
-            $ChangeLastInfo = $pdoStatement->fetch();
-
-            if($HashPassword==$ChangeLastInfo->PasswordUser && $ChangeLastEmail==$ChangeLastInfo->Email){
-                $pdoStatement = $pdo->prepare("UPDATE Utilisateur
-                SET Email='$ChangeNewEmail'
-                WHERE Id='$IdUser';");
-                $pdoStatement->execute();
-                $ChangeInfo = "Modification effectuer";
-            }
-            else{
-                $ChangeInfo = 'Email ou mots de passe faux';
+        $pdo0 = connectToDbAndGetPdo();
+        $pdoStatement0 = $pdo0->prepare("SELECT Email FROM Utilisateur");
+        $pdoStatement0->execute();
+        $IsUnique = $pdoStatement0->fetchAll();
+        foreach($IsUnique AS $Unique){
+            if($Unique->Email==$RegisterEmail){
+                $UniqueValue=false;
             }
         }
+
+        if($UniqueValue){
+            if (isset($_POST['ChangeLastEmail']) && isset($_POST['ChangeNewEmail']) && isset($_POST['ChangePassword'])) {
+                $ChangeLastEmail = $_POST['ChangeLastEmail'];
+                $ChangeNewEmail = $_POST['ChangeNewEmail'];
+                $ChangePassword = $_POST['ChangePassword'];
+                $HashPassword = hash(
+                    'sha512',
+                    $ChangePassword
+                );
+                if (!filter_var($ChangeNewEmail, FILTER_VALIDATE_EMAIL)) {
+                    $FailEmail= "Le format de l'email n'est pas valide";
+                }
+                $pdo = connectToDbAndGetPdo();
+                $pdoStatement = $pdo->prepare("SELECT PasswordUser, Email FROM Utilisateur
+                WHERE Id='$IdUser';");
+                $pdoStatement->execute();
+                $ChangeLastInfo = $pdoStatement->fetch();
+
+                if($HashPassword==$ChangeLastInfo->PasswordUser && $ChangeLastEmail==$ChangeLastInfo->Email){
+                    $pdoStatement = $pdo->prepare("UPDATE Utilisateur
+                    SET Email='$ChangeNewEmail'
+                    WHERE Id='$IdUser';");
+                    $pdoStatement->execute();
+                    $ChangeInfo = "Modification effectuer";
+                }
+                else{
+                    $ChangeInfo = 'Email ou mots de passe faux';
+                }
+            }
+            }
         if (isset($_POST['ChangeLastPassword']) && isset($_POST['ChangeNewPassword']) && isset($_POST['ChangeNewPassword2'])) {
             $ChangeLastPassword = $_POST['ChangeLastPassword'];
             $ChangeNewPassword = $_POST['ChangeNewPassword'];

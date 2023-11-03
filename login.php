@@ -15,8 +15,7 @@
                 $LoginPassword
             );
             $pdo = connectToDbAndGetPdo();
-            $pdoStatement = $pdo->prepare("SELECT Id, PasswordUser FROM Utilisateur
-            WHERE Email = '$LoginEmail';");
+            $pdoStatement = $pdo->prepare("SELECT Id, Email, PasswordUser FROM Utilisateur");
             $pdoStatement->execute();
             $Login = $pdoStatement->fetchAll();
         }
@@ -34,24 +33,28 @@
             <p class="pInput"><input type="submit" value="Connexion" class="Submit"></p>
             <?php if(!empty($Login)):?>
             <?php foreach($Login as $user){
-                if ($user->PasswordUser==$HashPassword){
-                    $_SESSION['userId'] = $user->Id;
-                    $IdUser = $_SESSION['userId'];
-                    
-                    $nom_dossier = "userFiles/$IdUser";
-                    if (!is_dir($nom_dossier) && !file_exists($nom_dossier)) {
-                        mkdir($nom_dossier); 
-                    }
-                    $targetDirectory = "userFiles/$IdUser/"; 
-                    $targetFile = $targetDirectory . basename("PP");
-                    if(!file_exists($targetFile)){
-                        copy("assets/images/IconeParDéfaut.png", $targetFile);
-                    }
+                if($user->Email == $LoginEmail){
+                    if ($user->PasswordUser==$HashPassword){
+                        $_SESSION['userId'] = $user->Id;
+                        $IdUser = $_SESSION['userId'];
                         
-
-                }
+                        $nom_dossier = "userFiles/$IdUser";
+                        if (!is_dir($nom_dossier) && !file_exists($nom_dossier)) {
+                            mkdir($nom_dossier); 
+                        }
+                        $targetDirectory = "userFiles/$IdUser/"; 
+                        $targetFile = $targetDirectory . basename("PP");
+                        if(!file_exists($targetFile)){
+                            copy("assets/images/IconeParDéfaut.png", $targetFile);
+                        }
+                        header('Location: myAccount.php');
+                        
+                    }else{
+                        $Result='adresse mail ou mot de passe incorect';}
+                }else{
+                    $Result='adresse mail ou mot de passe incorect';}
             }
-            header('Location: myAccount.php');?>
+            echo $Result;?>
             <?php endif?>
             <p class="pInput2">Pas encore de compte ? Créer en un <a href="register.php" style="color: orange;">ici</a></p>
         </form>
