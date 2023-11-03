@@ -269,7 +269,16 @@ footer li{
   .header .menu-btn {
     display: none;
   }
-  
+  #formButtonSearch{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 0 20px;
+  }
+  #formButtonSearch button{
+    background-color: #EC9123;
+    border-radius: 10px;
+    padding: 5px 15px;
+  }
   .header .menu-btn:checked ~ .menu {
     max-height: 18rem;
   }

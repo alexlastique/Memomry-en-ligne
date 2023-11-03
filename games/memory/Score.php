@@ -29,13 +29,12 @@
             ?>
             <h2 class="connexion">Score</h2>
         </header>
-            <form method="post">
+            <form method="post" id="formButtonSearch">
                 <div>
                     <input name="name" type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil">
                 </div>    
-                <button>Envoyer</button>
+                <button class="btn">Envoyer</button>
             </form>
-            
             <table class="PageScores">
                     <tr>
                         <th>Nom du Jeu</th>
