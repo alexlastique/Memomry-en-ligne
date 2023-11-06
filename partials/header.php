@@ -55,7 +55,7 @@
                     </nav>
                 <h1>BIENVENUE DANS NOTRE STUDIO !</h1>
             <p>Venez challenger les cerveaux les plus agiles !</p>
-            <a href="games/memory/index.php" id="playButton"><button class="btn">Jouer !</button></a>
+            <a href="<?=PROJECT_FOLDER?>games/memory/index.php" id="playButton"><button class="btn">Jouer !</button></a>
             <audio controls preload="auto" autoplay loop>
                 <source src="assets/musique/MusiqueTranquille.mp3" type="audio/mpeg" />
                 votre navigateur ne suporte pas l'element audio
@@ -111,7 +111,7 @@
                     </nav>
                 <h1>BIENVENUE DANS NOTRE STUDIO !</h1>
             <p>Venez challenger les cerveaux les plus agiles !</p>
-            <a href="<?=PROJECT_FOLDER?>games/memory/index.php" id="playButton"><button class="btn">Jouer</button></a>
+            <a href="<?=PROJECT_FOLDER?>login.php" id="playButton"><button class="btn">Jouer</button></a>
             <audio controls preload="auto" autoplay loop>
                 <source src="assets/musique/MusiqueTranquille.mp3" type="audio/mpeg" />
                 votre navigateur ne suporte pas l'element audio
