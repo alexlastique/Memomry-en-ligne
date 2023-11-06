@@ -1,5 +1,6 @@
 <?php
 $MaPage=($_SERVER['REQUEST_URI']);
+
 ?>
 
 <?php if ($MaPage != "/Projet-Flash/index.php"): ?>
@@ -23,7 +24,7 @@ $MaPage=($_SERVER['REQUEST_URI']);
             <article>
                 <h4>Space Memory</h4>
                 <ul>
-                    <li><a href="<?=PROJECT_FOLDER?>games/memory/index.php" > Jouer !</a></li>
+                    <li><a href="<?= !empty($_SESSION['userId']) ? PROJECT_FOLDER."games/memory/index.php" : PROJECT_FOLDER."login.php";?>" > Jouer !</a></li>
                     <li><a href="<?=PROJECT_FOLDER?>games/memory/Score.php" > Les scores</a></li>
                     <li><a href="<?=PROJECT_FOLDER?>contact.php" > Nous contacter</a></li>
                 </ul>
@@ -52,7 +53,7 @@ $MaPage=($_SERVER['REQUEST_URI']);
             <article>
                 <h4>Space Memory</h4>
                 <ul>
-                    <li><a href="<?=PROJECT_FOLDER?>games/memory/index.php" > Jouer !</a></li>
+                    <li><a href="<?= !empty($_SESSION['userId']) ? PROJECT_FOLDER."games/memory/index.php" : PROJECT_FOLDER."login.php";?>" > Jouer !</a></li>
                     <li><a href="<?=PROJECT_FOLDER?>games/memory/Score.php" > Les scores</a></li>
                     <li><a href="<?=PROJECT_FOLDER?>contact.php" > Nous contacter</a></li>
                 </ul>
