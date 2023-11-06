@@ -19,9 +19,9 @@
         <article class="themeChoice">
                 <h3>Choisissez votre thème de jeu :</h3>
                 <div>
-                    <button id="easy">Thème dessin</button>
-                    <button id="normal">Thème réel</button>
-                    <button id="difficile">Thème </button>
+                    <button id="theme1">Thème dessin</button>
+                    <button id="theme2">Thème réel</button>
+                    <button id="theme3">Thème constellation</button>
                 </div>
             </article>
             <article class="levelDifficult">
