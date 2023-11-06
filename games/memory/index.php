@@ -16,6 +16,14 @@
             <h2 class="connexion">Explorez l'univers du Memory Spatial</h2>
         </header>
         <main>
+        <article class="themeChoice">
+                <h3>Choisissez votre thème de jeu :</h3>
+                <div>
+                    <button id="easy">Thème dessin</button>
+                    <button id="normal">Thème réel</button>
+                    <button id="difficile">Thème </button>
+                </div>
+            </article>
             <article class="levelDifficult">
                 <h3>Choisissez votre niveau de difficulté :</h3>
                 <div>
