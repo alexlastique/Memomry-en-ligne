@@ -23,10 +23,10 @@
         <main id="mainAccueil">
             <section>
                 <div id="blockImg">
-                    <img src="assets/images/headerBackground.jpg" alt="montagneSpace">
+                    <img src="assets/images/espace/headerBackground.jpg" alt="montagneSpace">
                     <div id="doubleImgBlock">
-                        <img src="assets/images/black-hole.avif" alt="meteore">
-                        <img src="assets/images/space.webp" alt="space">
+                        <img src="assets/images/espace/black-hole.avif" alt="meteore">
+                        <img src="assets/images/espace/space.webp" alt="space">
                     </div>
                 
                 </div>
@@ -55,7 +55,7 @@
                 </div>
             </section>
             <section>
-                <img src="assets/images/galaxy.jpeg" alt="galaxy">
+                <img src="assets/images/espace/galaxy.jpeg" alt="galaxy">
                 <div>
                     <article>
                         <h5><?php echo($PlayGame);?></h5>

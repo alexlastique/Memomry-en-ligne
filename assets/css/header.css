@@ -1,7 +1,7 @@
 #headerAccueil{
     display: flex;
     flex-direction: column;
-    background: url(../images/montagneSpace.jpeg) no-repeat;
+    background: url(../images/espace/montagneSpace.jpeg) no-repeat;
     background-size: cover;
     background-position: center;
     text-align: center;
