@@ -11,6 +11,8 @@ let theme2 = document.getElementById('theme2');
 let theme3 = document.getElementById('theme3');
 let levelDifficult = document.querySelectorAll('.levelDifficult');
 let themeChoice = document.querySelectorAll('.themeChoice');
+let container = document.querySelector('.container');
+const startButton = document.getElementById('start');
 
 themeChoice.forEach(themeChoice =>{
     levelDifficult.forEach(levelDifficult => {
@@ -41,6 +43,7 @@ levelDifficult.forEach(levelDifficult => {
         table1.classList.add('flexBlock');
         levelDifficult.classList.remove('flexBlock');
         levelDifficult.classList.add('none');
+        container.classList.add('flexBlock');
     });
 });
 levelDifficult.forEach(levelDifficult => {
@@ -48,12 +51,50 @@ levelDifficult.forEach(levelDifficult => {
         table2.classList.add('flexBlock');
         levelDifficult.classList.remove('flexBlock');
         levelDifficult.classList.add('none');
+        container.classList.add('flexBlock');
     });
 });
 levelDifficult.forEach(levelDifficult => {
     difficile.addEventListener('click',() =>{
         table3.classList.add('flexBlock');
+        container.classList.add('flexBlock');
         levelDifficult.classList.remove('flexBlock');
         levelDifficult.classList.add('none');
     });
 });
+
+const counterText = document.getElementById('counter')
+
+var hour = 0
+var minute = 0
+var second = 0
+var mill = 1000
+
+var counter 
+
+var validate = true
+
+const start = () =>{
+    if(validate){
+        counter = setInterval(timer, mill)
+        validate = false
+    }
+}
+
+const timer = () =>{
+
+    second++
+    if(second == 59){
+        second = 0
+        minute++
+        if(minute == 59){
+            minute = 0
+            hour++
+        }
+    }
+
+    let time = (hour < 10 ? '0' + hour : hour ) + ':' + (minute < 10 ? '0' + minute : minute )+ ':' + (second < 10 ? '0' + second : second)
+    counterText.innerText = time
+}
+
+startButton.addEventListener('click', start)
