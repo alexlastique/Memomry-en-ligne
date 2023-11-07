@@ -18,7 +18,6 @@
         <main>
         <div class="container">
             <h2 id="counter">00:00:00</h1>
-            <button class="button" id="start">Jouer</button>
         </div>
         <article class="themeChoice">
                 <h3>Choisissez votre thème de jeu :</h3>

@@ -12,7 +12,6 @@ let theme3 = document.getElementById('theme3');
 let levelDifficult = document.querySelectorAll('.levelDifficult');
 let themeChoice = document.querySelectorAll('.themeChoice');
 let container = document.querySelector('.container');
-const startButton = document.getElementById('start');
 
 themeChoice.forEach(themeChoice =>{
     levelDifficult.forEach(levelDifficult => {
@@ -97,8 +96,6 @@ const timer = () =>{
     counterText.innerText = time
 }
 
-startButton.addEventListener('click', start)
-
 
 
 const symbols = ['1', '2', '3', '4', '5', '6', '7', '8'];
@@ -179,6 +176,7 @@ cards.forEach((symbol, index) => {
     const card = document.createElement('div');
     card.classList.add('memory-card');
     card.dataset.symbol = symbol;
+    card.addEventListener('click', start);
     card.addEventListener('click', () => flipCard(card));
     gameContainer.appendChild(card);
 }
@@ -232,6 +230,7 @@ cards2.forEach((symbol2, index2) => {
     const card2 = document.createElement('div');
     card2.classList.add('memory-card');
     card2.dataset.symbol2 = symbol2;
+    card2.addEventListener('click', start);
     card2.addEventListener('click', () => flipCard2(card2));
     gameContainer2.appendChild(card2);
 });
@@ -284,6 +283,7 @@ cards3.forEach((symbol3, index3) => {
     const card3 = document.createElement('div');
     card3.classList.add('memory-card');
     card3.dataset.symbol3 = symbol3;
+    card3.addEventListener('click', start);
     card3.addEventListener('click', () => flipCard3(card3));
     gameContainer3.appendChild(card3);
 });
