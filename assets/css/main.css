@@ -710,3 +710,48 @@ audio{
         height: 52px;
     }
 }
+
+
+
+#memory-game{
+    display: flex;
+    flex-wrap: wrap;
+    width: 448px;
+    height: 448px;
+}
+#memory-game2{
+    display: flex;
+    flex-wrap: wrap;
+    width: 672px;
+    height: 672px;
+}
+#memory-game3{
+    display: flex;
+    flex-wrap: wrap;
+    width: 896px;
+    height: 896px;
+}
+.memory-card {
+    width: 100px;
+    height: 100px;
+    background-image: url('../images/DosDeCarte.png');
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+img.memory-carte{
+    width: 100px;
+    height: 100px;
+}
+.flipped {
+    transform: rotateY(360deg);
+    transition: transform 0.6s;
+}
+.flipped2 {
+    transform: rotateY(-360deg);
+    transition: transform 0.6s;
+}

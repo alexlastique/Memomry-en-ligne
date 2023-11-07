@@ -18,7 +18,6 @@
         <main>
         <div class="container">
             <h2 id="counter">00:00:00</h1>
-            <button class="button" id="start">Jouer</button>
         </div>
         <article class="themeChoice">
                 <h3>Choisissez votre thème de jeu :</h3>
@@ -43,164 +42,22 @@
                 </div>
             </article>
             <?php require_once SITE_ROOT.'chat.php';?>
+
             <table class="Scores" id="TableMemory1">
-              
                 <tr>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                </tr>
-                <tr>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                </tr>
-                <tr>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                </tr>
-                <tr>
-                    
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
+                    <td><div id="memory-game"></div></td>
                 </tr>
             </table>
+
             <table class="Scores medium"  id="TableMemory2">
                 <tr>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                </tr>
-                <tr>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                </tr>
-                <tr>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                </tr>
-                <tr>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                </tr>
-                <tr>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                </tr>
-                <tr>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
+                    <td><div id="memory-game2"></div></td>
                 </tr>
             </table>
+            
             <table class="Scores hard"  id="TableMemory3">
                 <tr>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                </tr>
-                <tr>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                </tr>
-                <tr>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                </tr>
-                <tr>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                </tr>
-                <tr>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                </tr>
-                <tr>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                </tr>
-                <tr>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                </tr>
-                <tr>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
-                    <td><img src="../../assets/images/DosDeCarte.png" alt="galaxie"></td>
+                    <td><div id="memory-game3"></div></td>
                 </tr>
             </table>
         </main>
