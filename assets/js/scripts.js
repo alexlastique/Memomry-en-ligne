@@ -145,8 +145,9 @@ function flipCard(card) {
         return;
     }
 
-    card.innerHTML = images[card.dataset.symbol-1];;
+    card.innerHTML = images[card.dataset.symbol-1];
     card.classList.add('flipped');
+    card.classList.remove('flipped2');
     flippedCards++;
 
     if (flippedCards === 2) {
@@ -161,11 +162,13 @@ function checkForMatch() {
         flipped.forEach(card => {
             card.removeEventListener('click', () => flipCard(card));
             card.classList.remove('flipped');
+card.classList.add('flipped2');
         });
     } else {
         flipped.forEach(card => {
             card.innerHTML = '';
             card.classList.remove('flipped');
+card.classList.add('flipped2');
         });
     }
     flippedCards = 0;
@@ -201,6 +204,7 @@ function flipCard2(card) {
 
     card.innerHTML = images[card.dataset.symbol2 - 1];
     card.classList.add('flipped');
+    card.classList.remove('flipped2');
     flippedCards2++;
 
     if (flippedCards2 === 2) {
@@ -215,11 +219,13 @@ function checkForMatch2() {
         flipped.forEach(card => {
             card.removeEventListener('click', () => flipCard2(card));
             card.classList.remove('flipped');
+card.classList.add('flipped2');
         });
     } else {
         flipped.forEach(card => {
             card.innerHTML = '';
             card.classList.remove('flipped');
+card.classList.add('flipped2');
         });
     }
     flippedCards2 = 0;
@@ -254,6 +260,7 @@ function flipCard3(card3) {
 
     card3.innerHTML = images[card3.dataset.symbol3 - 1];
     card3.classList.add('flipped');
+card3.classList.remove('flipped2');
     flippedCards3++;
 
     if (flippedCards3 === 2) {
@@ -268,11 +275,13 @@ function checkForMatch3() {
         flipped3.forEach(card3 => {
             card3.removeEventListener('click', () => flipCard3(card3));
             card3.classList.remove('flipped');
+card3.classList.add('flipped2');
         });
     } else {
         flipped3.forEach(card3 => {
             card3.innerHTML = '';
             card3.classList.remove('flipped');
+card3.classList.add('flipped2');
         });
     }
     flippedCards3 = 0;

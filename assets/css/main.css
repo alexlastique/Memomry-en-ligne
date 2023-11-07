@@ -747,3 +747,11 @@ img.memory-carte{
     width: 100px;
     height: 100px;
 }
+.flipped {
+    transform: rotateY(360deg);
+    transition: transform 0.5s;
+}
+.flipped2 {
+    transform: rotateY(-360deg);
+    transition: transform 0.5s;
+}
