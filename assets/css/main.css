@@ -411,7 +411,7 @@ body{
     background-color: #373367;
     border-radius: 5px;
     color: white;
-    padding: 10px 0;
+    padding: 10px;
     margin: 7px 0;
     border: none;
     width: 100%;
@@ -563,7 +563,9 @@ audio{
 #mainAccount form fieldset input{
     margin: 5px;
     border: transparent;
-    padding: 10px 0;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
     background-color: #373367;
 }
 #mainAccount form fieldset input[type=submit]{

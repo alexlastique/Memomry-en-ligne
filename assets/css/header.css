@@ -83,6 +83,9 @@ nav{
     margin: 7px 0;
     border: none;
 }
+#inputPetit input::-ms-value, .inputgrand::-ms-value{
+    padding: 0 10px;
+}
 #headerAccueil ul, .login ul{
     display: flex;
     margin: 0;
