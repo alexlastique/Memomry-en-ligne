@@ -162,13 +162,13 @@ function checkForMatch() {
         flipped.forEach(card => {
             card.removeEventListener('click', () => flipCard(card));
             card.classList.remove('flipped');
-card.classList.add('flipped2');
+            card.classList.add('flipped2');
         });
     } else {
         flipped.forEach(card => {
             card.innerHTML = '';
             card.classList.remove('flipped');
-card.classList.add('flipped2');
+            card.classList.add('flipped2');
         });
     }
     flippedCards = 0;
@@ -219,13 +219,13 @@ function checkForMatch2() {
         flipped.forEach(card => {
             card.removeEventListener('click', () => flipCard2(card));
             card.classList.remove('flipped');
-card.classList.add('flipped2');
+            card.classList.add('flipped2');
         });
     } else {
         flipped.forEach(card => {
             card.innerHTML = '';
             card.classList.remove('flipped');
-card.classList.add('flipped2');
+            card.classList.add('flipped2');
         });
     }
     flippedCards2 = 0;

@@ -749,9 +749,9 @@ img.memory-carte{
 }
 .flipped {
     transform: rotateY(360deg);
-    transition: transform 0.5s;
+    transition: transform 0.6s;
 }
 .flipped2 {
     transform: rotateY(-360deg);
-    transition: transform 0.5s;
+    transition: transform 0.6s;
 }
