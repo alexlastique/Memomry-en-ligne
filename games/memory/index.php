@@ -23,9 +23,15 @@
         <article class="themeChoice">
                 <h3>Choisissez votre thème de jeu :</h3>
                 <div>
-                    <button id="theme1">Thème dessin</button>
-                    <button id="theme2">Thème réel</button>
-                    <button id="theme3">Thème constellation</button>
+                        <div id="photo1">
+                            <h2 id="photo1H2">Dessin</h2>
+                        </div>
+                        <div id="photo2">
+                            <h2 id="photo2H2">L'espace</h2>
+                        </div>
+                        <div id="photo3">
+                            <h2 id="photo3H2">Constellation</h2>
+                        </div>
                 </div>
             </article>
             <article class="levelDifficult">

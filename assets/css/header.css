@@ -36,21 +36,29 @@ nav{
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    padding: 10px;
+    padding: 10px 0;
     color: white;
-    width: 30%;
+    width: 100%;
     margin: 2rem auto;
 }
 .none{
     display: none;
 }
-.levelDifficult div, .themeChoice div{
+.levelDifficult div{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.levelDifficult div button, .themeChoice div button{
+.themeChoice div{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 100%;
+}
+
+.levelDifficult div button, .themeChoice div div{
     border-radius: 5px;
     padding: 15px;
     border: black 1Px solid;
@@ -59,13 +67,69 @@ nav{
     width: 200px;
     cursor: pointer;
 }
-.levelDifficult div button:first-of-type, .themeChoice div button:first-of-type{
+.themeChoice div article{
+    border: transparent;
+    width: auto;
+}
+#photo1{
+    background-image: url(../images/illustrationDessin.jpeg);
+}
+#photo2{
+    background-image: url(../images/illustrationReel.jpeg);;
+}
+#photo3{
+    background-image: url(../images/illustrationsConstellations.jpeg);;
+}
+.themeChoice div div{
+    width: 30vw;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    padding: 0;
+}
+#photo1:hover {
+    filter: brightness(0.5);
+    transition: 0.5s;
+}
+#photo2:hover {
+    filter: brightness(0.5);
+    transition: 0.5s;
+}
+#photo3:hover {
+    filter: brightness(0.5);
+    transition: 0.5s;
+}
+
+
+#photo1H2{
+    display: none;
+}
+#photo2H2{
+    display: none;
+}
+#photo3H2{
+    display: none;
+}
+#photo1:hover #photo1H2{
+    display: block;
+    transition: 0.5s;
+}
+#photo2:hover #photo2H2{
+    display: block;
+    transition: 0.5s;
+    filter: brightness(1);
+}
+#photo3:hover #photo3H2{
+    display: block;
+    transition: 0.5s;
+}
+.levelDifficult div button:first-of-type{
     background-color: greenyellow;
 }
-.levelDifficult div button:nth-of-type(2), .themeChoice div button:nth-of-type(2){
+.levelDifficult div button:nth-of-type(2){
     background-color: cornflowerblue;
 }
-.levelDifficult div button:last-of-type, .themeChoice div button:last-of-type{
+.levelDifficult div button:last-of-type{
     background-color: red;
 }
 #headerAccueil a, .login a{

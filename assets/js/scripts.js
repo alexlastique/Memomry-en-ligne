@@ -6,13 +6,17 @@ let table3 = document.getElementById('TableMemory3');
 let easy = document.getElementById('easy');
 let normal = document.getElementById('normal');
 let difficile = document.getElementById('difficile');
-let theme1 = document.getElementById('theme1');
-let theme2 = document.getElementById('theme2');
-let theme3 = document.getElementById('theme3');
+let theme1 = document.getElementById('photo1');
+let theme2 = document.getElementById('photo2');
+let theme3 = document.getElementById('photo3');
+let photo1H2 = document.getElementById('photo1H2');
+let photo2H2 = document.getElementById('photo2H2');
+let photo3H2 = document.getElementById('photo3H2');
 let levelDifficult = document.querySelectorAll('.levelDifficult');
 let themeChoice = document.querySelectorAll('.themeChoice');
 let container = document.querySelector('.container');
 const startButton = document.getElementById('start');
+
 
 themeChoice.forEach(themeChoice =>{
     levelDifficult.forEach(levelDifficult => {
@@ -38,6 +42,7 @@ themeChoice.forEach(themeChoice =>{
         });
     });
 });
+
 levelDifficult.forEach(levelDifficult => {
     easy.addEventListener('click',() =>{
         table1.classList.add('flexBlock');
@@ -63,7 +68,7 @@ levelDifficult.forEach(levelDifficult => {
     });
 });
 
-const counterText = document.getElementById('counter')
+const counterText = document.getElementById('counter');
 
 var hour = 0
 var minute = 0
