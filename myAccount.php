@@ -136,16 +136,6 @@
         </section>
         <form method="post">
             <fieldset>
-                <h3>Changer l'adresse email</h3>
-                <input name="ChangeLastEmail" type="email" placeholder="Ancien email">
-                <input name="ChangeNewEmail" type="pseudo" placeholder="Nouveau email">
-                <input name="ChangePassword" type="password" placeholder="Mot de passe">
-                <input type="submit" value="Changer l'adresse mail" class="SubmitEspace">
-                <?= $ChangeInfo?>
-            </fieldset>
-        </form>
-        <form method="post">
-            <fieldset>
                 <h3>Changer le mot de passe</h3>
                 <input name="ChangeLastPassword" type="password" placeholder="Ancien mot de passe">
                 <input name="ChangeNewPassword" type="password" placeholder="Nouveau mot de passe">
@@ -154,6 +144,17 @@
                 <?= $ChangeInfo2?>
             </fieldset>
         </form>
+        <form method="post">
+            <fieldset>
+                <h3>Changer l'adresse email</h3>
+                <input name="ChangeLastEmail" type="email" placeholder="Ancien email">
+                <input name="ChangeNewEmail" type="pseudo" placeholder="Nouveau email">
+                <input name="ChangePassword" type="password" placeholder="Mot de passe">
+                <input type="submit" value="Changer l'adresse mail" class="SubmitEspace">
+                <?= $ChangeInfo?>
+            </fieldset>
+        </form>
+  
 
     </main>
 
