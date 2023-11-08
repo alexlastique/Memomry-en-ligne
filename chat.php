@@ -13,13 +13,7 @@
         $pdoStatement->execute();
         $chats = $pdoStatement->fetchAll();
 
-        if (isset($_POST['chat'])) {
-            $ChatMessage = $_POST['chat'];
-            $pdo = connectToDbAndGetPdo();
-            $pdoStatement = $pdo->prepare("INSERT INTO `Message` (IdGame, IdUser, Chat)
-            VALUES (1,$UserId,'$ChatMessage');");
-            $pdoStatement->execute();
-        }
+        
         $GIFChatLien = "https://api.thecatapi.com/v1/images/search?mime_types=gif";
         $GIFChat=file_get_contents($GIFChatLien);
         $GIFChat2=json_decode($GIFChat, true);
@@ -35,10 +29,10 @@
             <img src="<?=$URLChat?>" id="imageApi">
         </div>
         <div id="messages">
-        <?php 
+            <?php 
             foreach($chats as $chat){
                 if($chat->IdUser==$UserId):
-        ?>
+            ?>
                     <div class="flex">
                         <div class="column user">
                             <div>
@@ -70,15 +64,16 @@
                             <p><?php echo $chat->MessageDate ?></p>
                         </div>
                     </div>
-
                 <?php endif;?>
             <?php }?>
         </div>
         <div id="input">
             <form method="post">
-                <input type="text" name="chat" placeholder="Votre message...">
-                <button><strong>Envoyer</strong></button>
+                <input id="messageInput" type="text" name="chat" placeholder="Votre message...">
+                <button onclick="envoyerMessage()"><strong>Envoyer</strong></button>
             </form>
+            <script>
+            </script>
         </div>
     </div>
 </div>
