@@ -383,7 +383,6 @@ function envoyerMessage(){
         data: {"messageInput":message}
     });
     request.done(function (response) {
-        // Code à exécuter lorsque le message est envoyé avec succès
-        // Par exemple, tu peux actualiser la liste des messages ou afficher un message de confirmation
+        document.getElementById("messageInput").value="";
     });
 }
