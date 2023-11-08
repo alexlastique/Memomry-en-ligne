@@ -72,8 +72,6 @@
                 <input id="messageInput" type="text" name="chat" placeholder="Votre message...">
                 <input id="sendButton" type="button" value="Envoyer" onclick="envoyerMessage()">
             </form>
-            <script>
-            </script>
         </div>
     </div>
 </div>
