@@ -588,7 +588,7 @@ audio{
     margin-top: 15px;
     margin-bottom: 15px;
 }
-#input form input{
+#messageInput{
     flex: 1;
     background-color: white;
     color: black;
@@ -598,7 +598,7 @@ audio{
     margin: 0;
     border-radius: 5px;
 }
-#input form button{
+#sendButton{
     margin-left: 5px;
     border: none;
     outline: none;
@@ -607,7 +607,7 @@ audio{
     color: black;
     cursor: pointer;
 }
-#input form button:hover{
+#sendButton:hover{
     background-color: dodgerblue;
     color: white;
 }
