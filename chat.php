@@ -70,7 +70,7 @@
         <div id="input">
             <form method="post">
                 <input id="messageInput" type="text" name="chat" placeholder="Votre message...">
-                <button onclick="envoyerMessage()"><strong>Envoyer</strong></button>
+                <input type="button" value="Envoyer" onclick="envoyerMessage()">
             </form>
             <script>
             </script>
