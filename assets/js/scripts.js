@@ -15,6 +15,9 @@ let photo3H2 = document.getElementById('photo3H2');
 let levelDifficult = document.querySelectorAll('.levelDifficult');
 let themeChoice = document.querySelectorAll('.themeChoice');
 let container = document.querySelector('.container');
+let arrowBack = document.querySelector('.arrowBack');
+let registerPassword = document.querySelector('#registerPassword');
+
 
 
 themeChoice.forEach(themeChoice =>{
@@ -22,6 +25,16 @@ themeChoice.forEach(themeChoice =>{
         theme1.addEventListener('click',() =>{
             levelDifficult.classList.add('flexBlock');
             themeChoice.classList.add('none');
+            arrowBack.classList.add('flexBlock');
+        });
+    });
+});
+themeChoice.forEach(themeChoice =>{
+    levelDifficult.forEach(levelDifficult => {
+        arrowBack.addEventListener('click',() =>{
+            levelDifficult.classList.add('flexBlock');
+            themeChoice.classList.add('none');
+            arrowBack.classList.add('flexBlock');
         });
     });
 });
@@ -30,6 +43,7 @@ themeChoice.forEach(themeChoice =>{
         theme2.addEventListener('click',() =>{
             levelDifficult.classList.add('flexBlock');
             themeChoice.classList.add('none');
+            arrowBack.classList.add('none');
         });
     });
 });
@@ -38,6 +52,7 @@ themeChoice.forEach(themeChoice =>{
         theme3.addEventListener('click',() =>{
             levelDifficult.classList.add('flexBlock');
             themeChoice.classList.add('none');
+            arrowBack.classList.add('flexBlock');
         });
     });
 });

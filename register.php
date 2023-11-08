@@ -81,7 +81,7 @@
         <form class="divInput" method="post">
             <p class="pInput"><input name="RegisterEmail" type="email" placeholder="Email"></p>
             <p class="pInput"><input name="RegisterPseudo" type="pseudo" placeholder="Pseudo"></p>
-            <p class="pInput"><input name="RegisterPassword" type="password" placeholder="Mot de passe"></p>
+            <p class="pInput"><input name="RegisterPassword" type="password" placeholder="Mot de passe" id="registerPassword"></p>
             <p class="pInput"><input name="RegisterPassword2" type="password" placeholder="Confirmer le mot de passe"></p>
             <p class="pInput"><input type="submit" value="Inscription" class="Submit"></p>
             <?= $UniqueValue==false? "Adresse mail ou Pseudo déjà utiliser": "";?>

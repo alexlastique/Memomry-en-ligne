@@ -28,6 +28,7 @@ nav{
     padding: 10px;
     color: white;
     width: 30%;
+    
     margin: 2rem auto;
 }
 .themeChoice{
@@ -61,9 +62,9 @@ nav{
 .levelDifficult div button, .themeChoice div div{
     border-radius: 5px;
     padding: 15px;
-    border: black 1Px solid;
     font-weight: bold;
     margin: 10px;
+    border: 0;
     width: 200px;
     cursor: pointer;
 }
@@ -99,8 +100,6 @@ nav{
     filter: brightness(0.5);
     transition: 0.5s;
 }
-
-
 #photo1H2{
     display: none;
 }
