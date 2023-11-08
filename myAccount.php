@@ -134,7 +134,7 @@
                 <?=$Output?>
             </form>
         </section>
-        <form method="post">
+              <form method="post">
             <fieldset>
                 <h3>Changer le mot de passe</h3>
                 <input name="ChangeLastPassword" type="password" placeholder="Ancien mot de passe">

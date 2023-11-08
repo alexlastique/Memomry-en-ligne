@@ -79,11 +79,31 @@
             <h2 class="connexion">Inscription</h2>
         </header>
         <form class="divInput" method="post">
-            <p class="pInput"><input name="RegisterEmail" type="email" placeholder="Email"></p>
-            <p class="pInput"><input name="RegisterPseudo" type="pseudo" placeholder="Pseudo"></p>
-            <p class="pInput"><input name="RegisterPassword" type="password" placeholder="Mot de passe" id="registerPassword"></input></p>
-            <p class="pInput"><input name="RegisterPassword2" type="password" placeholder="Confirmer le mot de passe"></p>
-            <p class="pInput"><input type="submit" value="Inscription" class="Submit" id="submitRegister"></p>  
+            <div class="pInput">
+                <input name="RegisterEmail" type="email" placeholder="Email">
+
+            </div>
+
+            <div class="pInput">
+                <input name="RegisterPseudo" type="pseudo" placeholder="Pseudo">
+
+            </div>
+            
+            <div class="pInput"  id="divRegisterPassword">
+                <input name="RegisterPassword" type="text" placeholder="Mot de passe" id="registerPassword">
+
+            </div>
+            
+            <div class="pInput">
+                <input name="RegisterPassword2" type="password" placeholder="Confirmer le mot de passe">
+
+            </div>
+
+            <div class="pInput">
+                <input type="submit" value="Inscription" class="Submit" id="submitRegister">
+
+            </div> 
+
             <?= $UniqueValue==false? "Adresse mail ou Pseudo déjà utiliser": "";?>
             <?php echo $FailEmail?>
             <p class="pInput2" >Déjà un compte ? Connecte-toi <a href="login.php" style="color: orange;">ici</a></p>

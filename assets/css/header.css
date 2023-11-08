@@ -42,6 +42,48 @@ nav{
     width: 100%;
     margin: 2rem auto;
 }
+.weak{
+    margin: 0;
+    color: red;
+}
+.mid{
+    margin: 0;
+    color: #EAD319;
+}
+.top{
+    margin: 0;
+    color: green;
+}
+.barreWeak, .barreMid, .barreTop{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 0;
+    margin: 5px 0 3px 0;
+    background-color: lightgrey;
+    width: 100%;
+    padding: 0 17px 0 0;
+    border-radius: 3px;
+}
+.div30{
+    background-color: red;
+    height: 10px;
+    width: 33%;
+    border-radius: 3px;
+}
+.div60{
+    background-color: #EAD319;
+    height: 10px;
+    width: 66%;
+    border-radius: 3px;
+}
+.div100{
+    background-color: green;
+    height: 10px;
+    width: 100%;
+    padding: 0 9px;
+    border-radius: 3px;
+}
 .none{
     display: none;
 }
