@@ -21,7 +21,7 @@
         $pdoStatement->execute();
         $scores = $pdoStatement->fetchAll();
 
-        if(isset($data) && isset($difficult)){
+        if(isset($_POST['Score']) && isset($_POST['difficult'])){
             $data = $_POST['Score'];
             $difficult = $_POST['difficult'];
             $pdoScore = connectToDbAndGetPdo();
