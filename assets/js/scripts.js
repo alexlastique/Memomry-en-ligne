@@ -15,9 +15,6 @@ let photo3H2 = document.getElementById('photo3H2');
 let levelDifficult = document.querySelectorAll('.levelDifficult');
 let themeChoice = document.querySelectorAll('.themeChoice');
 let container = document.querySelector('.container');
-let arrowBack = document.querySelector('.arrowBack');
-let registerPassword = document.querySelector('#registerPassword');
-
 
 
 themeChoice.forEach(themeChoice =>{
@@ -25,16 +22,6 @@ themeChoice.forEach(themeChoice =>{
         theme1.addEventListener('click',() =>{
             levelDifficult.classList.add('flexBlock');
             themeChoice.classList.add('none');
-            arrowBack.classList.add('flexBlock');
-        });
-    });
-});
-themeChoice.forEach(themeChoice =>{
-    levelDifficult.forEach(levelDifficult => {
-        arrowBack.addEventListener('click',() =>{
-            levelDifficult.classList.add('flexBlock');
-            themeChoice.classList.add('none');
-            arrowBack.classList.add('flexBlock');
         });
     });
 });
@@ -43,7 +30,6 @@ themeChoice.forEach(themeChoice =>{
         theme2.addEventListener('click',() =>{
             levelDifficult.classList.add('flexBlock');
             themeChoice.classList.add('none');
-            arrowBack.classList.add('none');
         });
     });
 });
@@ -52,7 +38,6 @@ themeChoice.forEach(themeChoice =>{
         theme3.addEventListener('click',() =>{
             levelDifficult.classList.add('flexBlock');
             themeChoice.classList.add('none');
-            arrowBack.classList.add('flexBlock');
         });
     });
 });
@@ -87,7 +72,9 @@ const counterText = document.getElementById('counter');
 var hour = 0
 var minute = 0
 var second = 0
-var mill = 1000
+var milli = 0
+var mill = 10
+var timeTotal = 0 
 
 var counter 
 
@@ -99,20 +86,29 @@ const start = () =>{
         validate = false
     }
 }
+const stop = () => {
+    clearInterval(counter);
+    validate = true;
+};
 
 const timer = () =>{
 
-    second++
-    if(second == 59){
-        second = 0
-        minute++
-        if(minute == 59){
-            minute = 0
-            hour++
+    milli++
+    if(milli==100){
+        milli=0
+        second++
+        if(second == 60){
+            second = 0
+            minute++
+            if(minute == 60){
+                minute = 0
+                hour++
+            }
         }
     }
 
-    let time = (hour < 10 ? '0' + hour : hour ) + ':' + (minute < 10 ? '0' + minute : minute )+ ':' + (second < 10 ? '0' + second : second)
+    let time = (hour < 10 ? '0' + hour : hour ) + ':' + (minute < 10 ? '0' + minute : minute )+ ':' + (second < 10 ? '0' + second : second)+ ':' + (milli < 10 ? '0' + milli : milli)
+    timeTotal = ((hour * 60 + minute) * 60 + second )*100 +milli
     counterText.innerText = time
 }
 
@@ -125,6 +121,7 @@ cards.sort(() => 0.5 - Math.random());
 const gameContainer = document.getElementById('memory-game');
 let flippedCards = 0;
 let canFlip = true;
+var Victory = 0;
 const images = [
     "<img class='memory-carte' src='../../assets/images/espace/black-hole.avif'>",
     "<img class='memory-carte' src='../../assets/images/espace/black-hole.jpeg'>",
@@ -183,6 +180,20 @@ function checkForMatch() {
             card.removeEventListener('click', () => flipCard(card));
             card.classList.remove('flipped');
             card.classList.add('flipped2');
+            Victory++;
+            if (Victory==16){
+                if(window.confirm('Votre score est de :'+timeTotal+'\nVoulez-vous rejouez ?')){
+                    location.replace("../../games/memory/index.php", "");
+                }else{
+                    location.replace("../../index.php")
+                }
+                // alert("votre score est de : "+timeTotal)
+                console.log(timeTotal)
+                setTimeout(()=>{
+                    stop();
+                }, 1);
+                Victory = 0
+            }
         });
     } else {
         flipped.forEach(card => {
@@ -240,6 +251,15 @@ function checkForMatch2() {
             card.removeEventListener('click', () => flipCard2(card));
             card.classList.remove('flipped');
             card.classList.add('flipped2');
+            Victory++;
+            if (Victory==36){
+                alert("votre score est de : "+timeTotal)
+                console.log(timeTotal)
+                setTimeout(()=>{
+                    stop();
+                }, 1);
+                Victory=0
+            }
         });
     } else {
         flipped.forEach(card => {
@@ -280,7 +300,7 @@ function flipCard3(card3) {
 
     card3.innerHTML = images[card3.dataset.symbol3 - 1];
     card3.classList.add('flipped');
-card3.classList.remove('flipped2');
+    card3.classList.remove('flipped2');
     flippedCards3++;
 
     if (flippedCards3 === 2) {
@@ -295,13 +315,23 @@ function checkForMatch3() {
         flipped3.forEach(card3 => {
             card3.removeEventListener('click', () => flipCard3(card3));
             card3.classList.remove('flipped');
-card3.classList.add('flipped2');
+            card3.classList.add('flipped2');
+            Victory++;
+            if (Victory==64){
+                alert("votre score est de :"+timeTotal);
+
+                console.log(timeTotal)
+                setTimeout(()=>{
+                    stop();
+                }, 1);
+                Victory=0
+            }
         });
     } else {
         flipped3.forEach(card3 => {
             card3.innerHTML = '';
             card3.classList.remove('flipped');
-card3.classList.add('flipped2');
+            card3.classList.add('flipped2');
         });
     }
     flippedCards3 = 0;

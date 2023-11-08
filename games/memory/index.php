@@ -17,7 +17,7 @@
         </header>
         <main>
         <div class="container">
-            <h2 id="counter">00:00:00</h1>
+            <h2 id="counter">00:00:00:00</h1>
         </div>
         <img src="../../assets/images/arrowBack.png" class="arrowBack" alt="">
         <article class="themeChoice">
