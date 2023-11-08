@@ -387,4 +387,3 @@ function envoyerMessage(){
         // Par exemple, tu peux actualiser la liste des messages ou afficher un message de confirmation
     });
 }
-envoyerMessage()
