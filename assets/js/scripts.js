@@ -377,11 +377,13 @@ function ajaxEnvoieScore(){
 
 function envoyerMessage(){
     var message = document.getElementById("messageInput").value;
-    let request = $.ajax({
-        type: "POST",             //Méthode à employer POST ou GET 
-        url: "../../myPage.php",  //Cible du script coté serveur à appeler 
-        data: {"messageInput":message}
-    });
+    if(message!=""){
+        let request = $.ajax({
+            type: "POST",             //Méthode à employer POST ou GET 
+            url: "../../myPage.php",  //Cible du script coté serveur à appeler 
+            data: {"messageInput":message}
+            })
+    };
     request.done(function (response) {
         document.getElementById("messageInput").value="";
     });
