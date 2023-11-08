@@ -15,6 +15,7 @@ let photo3H2 = document.getElementById('photo3H2');
 let levelDifficult = document.querySelectorAll('.levelDifficult');
 let themeChoice = document.querySelectorAll('.themeChoice');
 let container = document.querySelector('.container');
+var difficult = 1
 let arrowBack = document.querySelector('.arrowBack');
 let registerPassword = document.querySelector('#registerPassword');
 
@@ -51,6 +52,7 @@ levelDifficult.forEach(levelDifficult => {
         levelDifficult.classList.remove('flexBlock');
         levelDifficult.classList.add('none');
         container.classList.add('flexBlock');
+        difficult = 1;
     });
 });
 levelDifficult.forEach(levelDifficult => {
@@ -59,6 +61,7 @@ levelDifficult.forEach(levelDifficult => {
         levelDifficult.classList.remove('flexBlock');
         levelDifficult.classList.add('none');
         container.classList.add('flexBlock');
+        difficult = 2;
     });
 });
 levelDifficult.forEach(levelDifficult => {
@@ -67,6 +70,7 @@ levelDifficult.forEach(levelDifficult => {
         container.classList.add('flexBlock');
         levelDifficult.classList.remove('flexBlock');
         levelDifficult.classList.add('none');
+        difficult = 3;
     });
 });
 
@@ -185,16 +189,16 @@ function checkForMatch() {
             card.classList.add('flipped2');
             Victory++;
             if (Victory==16){
-                if(window.confirm('Votre score est de :'+timeTotal+'\nVoulez-vous rejouez ?')){
-                    location.replace("../../games/memory/index.php", "");
-                }else{
-                    location.replace("../../index.php")
-                }
-                // alert("votre score est de : "+timeTotal)
                 console.log(timeTotal)
                 setTimeout(()=>{
                     stop();
                 }, 1);
+                ajaxEnvoieScore()
+                if(window.confirm('Votre score est de : '+timeTotal+'\nVoulez-vous rejouez ?')){
+                    location.replace("../../games/memory/index.php", "");
+                }else{
+                    location.replace("../../index.php")
+                }
                 Victory = 0
             }
         });
@@ -256,11 +260,16 @@ function checkForMatch2() {
             card.classList.add('flipped2');
             Victory++;
             if (Victory==36){
-                alert("votre score est de : "+timeTotal)
                 console.log(timeTotal)
                 setTimeout(()=>{
                     stop();
                 }, 1);
+                ajaxEnvoieScore()
+                if(window.confirm('Votre score est de : '+timeTotal+'\nVoulez-vous rejouez ?')){
+                    location.replace("../../games/memory/index.php", "");
+                }else{
+                    location.replace("../../index.php")
+                }
                 Victory=0
             }
         });
@@ -321,12 +330,16 @@ function checkForMatch3() {
             card3.classList.add('flipped2');
             Victory++;
             if (Victory==64){
-                alert("votre score est de :"+timeTotal);
-
                 console.log(timeTotal)
                 setTimeout(()=>{
                     stop();
                 }, 1);
+                ajaxEnvoieScore()
+                if(window.confirm('Votre score est de : '+timeTotal+'\nVoulez-vous rejouez ?')){
+                    location.replace("../../games/memory/index.php", "");
+                }else{
+                    location.replace("../../index.php")
+                }
                 Victory=0
             }
         });
@@ -349,3 +362,29 @@ cards3.forEach((symbol3, index3) => {
     card3.addEventListener('click', () => flipCard3(card3));
     gameContainer3.appendChild(card3);
 });
+
+
+function ajaxEnvoieScore(){
+    let request = $.ajax({
+    type: "POST",             //Méthode à employer POST ou GET 
+    url: "../../games/memory/Score.php",  //Cible du script coté serveur à appeler 
+    data: {'Score': timeTotal, 'difficult': difficult}
+    });
+    request.done(function (output) {
+    //Code à jouer en cas d'éxécution sans erreur du script du PHP
+    });
+}
+
+function envoyerMessage(){
+    var message = document.getElementById("messageInput").value;
+    if(message!=""){
+        let request = $.ajax({
+            type: "POST",             //Méthode à employer POST ou GET 
+            url: "../../myPage.php",  //Cible du script coté serveur à appeler 
+            data: {"messageInput":message}
+            });
+        request.done(function (response) {
+            document.getElementById("messageInput").value="";
+        });
+    }
+}

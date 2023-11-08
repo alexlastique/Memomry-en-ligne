@@ -20,6 +20,18 @@
         ORDER BY IdGame, GameDifficult, GameScore ASC");
         $pdoStatement->execute();
         $scores = $pdoStatement->fetchAll();
+
+        if(isset($_POST['Score']) && isset($_POST['difficult'])){
+            $data = $_POST['Score'];
+            $difficult = $_POST['difficult'];
+            $pdoScore = connectToDbAndGetPdo();
+            $pdoStatementScore = $pdoScore->prepare("INSERT INTO Score (IdUser, IdGame, GameDifficult, GameScore)
+            VALUES ($IdUser,1,'$difficult',$data)");
+            $pdoStatementScore->execute();
+            // $db->insert('insert into ') //etc...
+        }
+
+
     ?>
 
     <body>
