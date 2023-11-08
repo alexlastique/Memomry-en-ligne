@@ -16,7 +16,6 @@ let levelDifficult = document.querySelectorAll('.levelDifficult');
 let themeChoice = document.querySelectorAll('.themeChoice');
 let container = document.querySelector('.container');
 let arrowBack = document.querySelector('.arrowBack');
-let registerPassword = document.querySelector('#registerPassword');
 
 
 
