@@ -19,19 +19,19 @@
         <div class="container">
             <h2 id="counter">00:00:00:00</h1>
         </div>
-        <img src="../../assets/images/arrowBack.png" class="arrowBack" alt="">
+        <a href=""><img src="../../assets/images/arrowBack.png" class="arrowBack" alt=""></a>
         <article class="themeChoice">
                 <h3>Choisissez votre thème de jeu :</h3>
                 <div>
-                        <div id="photo1">
-                            <h2 id="photo1H2">Dessin</h2>
-                        </div>
-                        <div id="photo2">
-                            <h2 id="photo2H2">L'espace</h2>
-                        </div>
-                        <div id="photo3">
-                            <h2 id="photo3H2">Constellation</h2>
-                        </div>
+                    <div id="photo1">
+                        <h2 id="photo1H2">Dessin</h2>
+                    </div>
+                    <div id="photo2">
+                        <h2 id="photo2H2">L'espace</h2>
+                    </div>
+                    <div id="photo3">
+                        <h2 id="photo3H2">Constellation</h2>
+                    </div>
                 </div>
             </article>
             <article class="levelDifficult">

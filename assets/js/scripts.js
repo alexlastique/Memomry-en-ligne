@@ -20,13 +20,12 @@ var theme = 1;
 let arrowBack = document.querySelector('.arrowBack');
 let registerPassword = document.querySelector('#registerPassword');
 
-
-
 themeChoice.forEach(themeChoice =>{
     levelDifficult.forEach(levelDifficult => {
         theme1.addEventListener('click',() =>{
             levelDifficult.classList.add('flexBlock');
             themeChoice.classList.add('none');
+            arrowBack.classList.add('flexBlock');
             theme=1;
         });
     });
