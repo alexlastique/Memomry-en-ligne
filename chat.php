@@ -12,7 +12,6 @@
         ORDER BY MessageDate ASC");
         $pdoStatement->execute();
         $chats = $pdoStatement->fetchAll();
-
         
         $GIFChatLien = "https://api.thecatapi.com/v1/images/search?mime_types=gif";
         $GIFChat=file_get_contents($GIFChatLien);
@@ -35,14 +34,9 @@
             ?>
                     <div class="flex">
                         <div class="column user">
-                            <div>
-                                <p><?php echo $chat->Pseudo ?></p>
-                                <div id="flexChat">
-                                    <div class="message usersmessage">
-                                        <p><?php echo $Message = $chat->Chat ?></p>
-                                    </div>
-                                </div>
-                            
+                            <p><?php echo $chat->Pseudo ?></p>
+                            <div class="message usersmessage">
+                                <p><?php echo $Message = $chat->Chat ?></p>
                             </div>
                             <p><?php echo $chat->MessageDate ?></p>
                         </div>
@@ -51,11 +45,7 @@
                 <?php else:?>
 
                     <div class="flex">
-                        <?php if(file_exists(PROJECT_FOLDER."/userFiles/$chat->IdUser")){?>
-                            <img src="<?=PROJECT_FOLDER?>userFiles/<?=$chat->IdUser?>/PP"class="icone">
-                        <?php }else{?>
-                            <img src="<?=PROJECT_FOLDER?>assets/images/IconeParDéfaut.png"class="icone">
-                        <?php }?>
+                        <img src="<?=PROJECT_FOLDER?>userFiles/<?=$chat->IdUser?>/PP"class="icone">
                         <div class="column">
                             <p><?php echo $chat->Pseudo ?></p>
                             <div class="message">
@@ -73,6 +63,31 @@
                 <input id="sendButton" type="button" value="Envoyer" onclick="envoyerMessage()">
             </form>
             <script>
+                function displayajax(){
+                    let chat = document.getElementById("messages");
+
+                    let flex = document.createElement('div');
+                        flex.classList.add('flex');
+                    let columnUser = document.createElement('div');
+                        columnUser.classList.add('column');
+                        columnUser.classList.add('user');
+                    let Pseudo = document.createElement('p');
+                        Pseudo.textContent = '<?php echo $chatajax->Pseudo ?>';
+                    let message = document.createElement('div');
+                        message.classList.add('message');
+                        message.classList.add('usersmessage');
+                    let messagecontent = document.createElement('p');
+                        messagecontent.textContent = '<?php echo $Message = $chatajax->Chat ?>';
+                    let messageDate = document.createElement('p');
+                        messageDate.textContent = '<?php echo $chatajax->MessageDate ?>';
+
+                    message.appendChild(messagecontent);
+                    columnUser.appendChild(Pseudo);
+                    columnUser.appendChild(message);
+                    columnUser.appendChild(messageDate);
+                    flex.appendChild(columnUser);
+                    chat.appendChild(flex);
+                }
             </script>
         </div>
     </div>

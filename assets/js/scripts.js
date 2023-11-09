@@ -383,8 +383,10 @@ function envoyerMessage(){
             url: "../../myPage.php",  //Cible du script coté serveur à appeler 
             data: {"messageInput":message}
             })
+        request.done(function (response) {
+            let inputmessage = document.getElementById("messageInput").value = "";
+
+            displayajax();
+        });
     };
-    request.done(function (response) {
-        document.getElementById("messageInput").value="";
-    });
 }
