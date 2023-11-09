@@ -59,11 +59,18 @@
         </div>
         <div id="input">
             <form method="post">
-                <input id="messageInput" type="text" name="chat" placeholder="Votre message...">
+                <input id="messageInput" type="text" name="chat" placeholder="Votre message..." onkeydown="handleKeyPress(event)">
                 <input id="sendButton" type="button" value="Envoyer" onclick="envoyerMessage()">
             </form>
             <script>
+                function handleKeyPress(event) {
+                    if (event.keyCode === 13) {
+                    event.preventDefault();
+                    envoyerMessage()
+                    }
+                }
                 function displayajax(){
+                    let messagetxt = document.getElementById("messageInput").value;
                     let chat = document.getElementById("messages");
 
                     let flex = document.createElement('div');
@@ -72,14 +79,14 @@
                         columnUser.classList.add('column');
                         columnUser.classList.add('user');
                     let Pseudo = document.createElement('p');
-                        Pseudo.textContent = '<?php echo $chatajax->Pseudo ?>';
+                        Pseudo.textContent = '<?php echo $Pseudo = $chat->Pseudo?>';
                     let message = document.createElement('div');
                         message.classList.add('message');
                         message.classList.add('usersmessage');
                     let messagecontent = document.createElement('p');
-                        messagecontent.textContent = '<?php echo $Message = $chatajax->Chat ?>';
+                        messagecontent.textContent = '<?php echo $Message = $chat->Chat ?>';
                     let messageDate = document.createElement('p');
-                        messageDate.textContent = '<?php echo $chatajax->MessageDate ?>';
+                        messageDate.textContent = '<?php echo $chat->MessageDate ?>';
 
                     message.appendChild(messagecontent);
                     columnUser.appendChild(Pseudo);
