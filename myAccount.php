@@ -97,17 +97,19 @@
         }
         if($_SERVER["REQUEST_METHOD"]=="POST"){
             if (isset($_FILES["image"])) {
-                $TailleImage = getimagesize($_FILES["image"]["tmp_name"]);
-                if($TailleImage[0]==$TailleImage[1]){
-                    $targetDirectory = "userFiles/$IdUser/"; 
-                    $targetFile = $targetDirectory . basename("PP");
-                    if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
-                        $Output = "L'image a été changée avec succès.";
-                    } else {
-                        $Output = "Une erreur est survenue lors du chargement de l'image.";
+                if(!empty($_FILES["image"]["tmp_name"])){
+                    $TailleImage = getimagesize($_FILES["image"]["tmp_name"]);
+                    if($TailleImage[0]==$TailleImage[1]){
+                        $targetDirectory = "userFiles/$IdUser/"; 
+                        $targetFile = $targetDirectory . basename("PP");
+                        if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
+                            $Output = "L'image a été changée avec succès.";
+                        } else {
+                            $Output = "Une erreur est survenue lors du chargement de l'image.";
+                        }
+                    } else{
+                        $Output = "L'image n'est pas carre";
                     }
-                } else{
-                    $Output = "L'image n'est pas carre";
                 }
         }else{
             $Output = "Erreur";
