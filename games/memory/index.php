@@ -22,13 +22,13 @@
         </div>
         <a href=""><img src="../../assets/images/arrowBack.png" class="arrowBack" alt=""></a>
         <article class="themeChoice">
-                <h3>Choisissez votre thème de jeu :</h3>
+                <h3>Choisissez le thème de jeu :</h3>
                 <div>
                     <div id="photo1">
                         <h2 id="photo1H2">Dessin</h2>
                     </div>
                     <div id="photo2">
-                        <h2 id="photo2H2">L'espace</h2>
+                        <h2 id="photo2H2">Réalité</h2>
                     </div>
                     <div id="photo3">
                         <h2 id="photo3H2">Constellation</h2>
