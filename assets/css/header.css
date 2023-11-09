@@ -13,9 +13,7 @@ nav{
     width: 85%;
     margin: auto;
 }
-.flexBlox{
-    display: flex;
-}
+
 .Scores tr,.Scores img{
     height: 100px;
     width: 100px;
@@ -95,7 +93,6 @@ nav{
     align-items: center;
     justify-content: center;
 }
-
 .themeChoice div{
     display: flex;
     align-items: center;

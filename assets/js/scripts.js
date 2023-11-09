@@ -20,31 +20,22 @@ var theme = 1;
 let arrowBack = document.querySelector('.arrowBack');
 let registerPassword = document.querySelector('#registerPassword');
 
-themeChoice.forEach(themeChoice =>{
-    levelDifficult.forEach(levelDifficult => {
-        arrowBack.addEventListener('click',() =>{
-            levelDifficult.remove;
-            themeChoice.classList.add('flexBlox');
-            arrowBack.remove;
-        });
-    });
-});
+
+
 themeChoice.forEach(themeChoice =>{
     levelDifficult.forEach(levelDifficult => {
         theme1.addEventListener('click',() =>{
-            levelDifficult.classList.toggle('flexBlox');
-            themeChoice.classList.none('none');
+            levelDifficult.classList.add('flexBlock');
+            themeChoice.classList.add('none');
             theme=1;
-            arrowBack.classList.toggle('flexBlock');
         });
     });
 });
 themeChoice.forEach(themeChoice =>{
     levelDifficult.forEach(levelDifficult => {
         theme2.addEventListener('click',() =>{
-            levelDifficult.classList.toggle('flexBlox');
-            themeChoice.classList.toggle('none');
-            arrowBack.classList.toggle('flexBlock');
+            levelDifficult.classList.add('flexBlock');
+            themeChoice.classList.add('none');
             theme=2;
         });
     });
@@ -52,9 +43,8 @@ themeChoice.forEach(themeChoice =>{
 themeChoice.forEach(themeChoice =>{
     levelDifficult.forEach(levelDifficult => {
         theme3.addEventListener('click',() =>{
-            levelDifficult.classList.toggle('flexBlox');
-            themeChoice.classList.toggle('none');
-            arrowBack.classList.toggle('flexBlock');
+            levelDifficult.classList.add('flexBlock');
+            themeChoice.classList.add('none');
             theme=3;
         });
     });
@@ -62,28 +52,28 @@ themeChoice.forEach(themeChoice =>{
 
 levelDifficult.forEach(levelDifficult => {
     easy.addEventListener('click',() =>{
-        table1.classList.toggle('flexBlo');
-        levelDifficult.classList.toggle('flexBlock');
-        levelDifficult.classList.toggle('none');
-        container.classList.toggle('flexBlock');
+        table1.classList.add('flexBlock');
+        levelDifficult.classList.remove('flexBlock');
+        levelDifficult.classList.add('none');
+        container.classList.add('flexBlock');
         difficult = 1;
     });
 });
 levelDifficult.forEach(levelDifficult => {
     normal.addEventListener('click',() =>{
-        table2.classList.toggle('flexBlock');
-        levelDifficult.classList.toggle('flexBlock');
-        levelDifficult.classList.toggle('none');
-        container.classList.toggle('flexBlock');
+        table2.classList.add('flexBlock');
+        levelDifficult.classList.remove('flexBlock');
+        levelDifficult.classList.add('none');
+        container.classList.add('flexBlock');
         difficult = 2;
     });
 });
 levelDifficult.forEach(levelDifficult => {
     difficile.addEventListener('click',() =>{
-        table3.classList.toggle('flexBlock');
-        container.classList.toggle('flexBlock');
-        levelDifficult.classList.toggle('flexBlock');
-        levelDifficult.classList.toggle('none');
+        table3.classList.add('flexBlock');
+        container.classList.add('flexBlock');
+        levelDifficult.classList.remove('flexBlock');
+        levelDifficult.classList.add('none');
         difficult = 3;
     });
 });
