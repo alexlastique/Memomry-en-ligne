@@ -763,3 +763,29 @@ img.memory-carte{
     transform: rotateY(-360deg);
     transition: transform 0.6s;
 }
+
+
+.ScoresAccount{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5%;
+}
+.ScoresAccount tr{
+    outline: 2px solid #EC9123;
+}
+
+.ScoresAccount th, .ScoresAccount td{
+    outline: 1px solid #EC9123;
+    padding: 10px;
+    text-align: center;
+}
+.ScoresAccount .Fait{
+    height: 40px;
+    width: 200px;
+    font-size: 40px;
+}
+.ScoresAccount .FaitBase{
+    height: 40px;
+    width: 200px;
+}
