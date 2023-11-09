@@ -137,9 +137,15 @@
               <form method="post">
             <fieldset>
                 <h3>Changer le mot de passe</h3>
-                <input name="ChangeLastPassword" type="password" placeholder="Ancien mot de passe">
-                <input name="ChangeNewPassword" type="password" placeholder="Nouveau mot de passe">
-                <input name="ChangeNewPassword2" type="password" placeholder="Confirmer le mot de passe">
+                <div class="pInput">
+                    <input name="ChangeLastPassword" type="password" placeholder="Ancien mot de passe">
+                </div>
+                <div class="pInput" id="divRegisterPassword">
+                    <input name="ChangeNewPassword" type="password" placeholder="Nouveau mot de passe" id="registerPassword">
+                </div>
+                <div class="pInput">
+                    <input name="ChangeNewPassword2" type="password" placeholder="Confirmer le mot de passe">
+                </div>
                 <input type="submit" value="Changer le mot de passe" class="SubmitEspace">
                 <?= $ChangeInfo2?>
             </fieldset>
@@ -147,20 +153,25 @@
         <form method="post">
             <fieldset>
                 <h3>Changer l'adresse email</h3>
-                <input name="ChangeLastEmail" type="email" placeholder="Ancien email">
-                <input name="ChangeNewEmail" type="pseudo" placeholder="Nouveau email">
-                <input name="ChangePassword" type="password" placeholder="Mot de passe">
+                <div class="pInput">
+                    <input name="ChangeLastEmail" type="email" placeholder="Ancien email">
+                </div>
+                <div class="pInput">
+                    <input name="ChangeNewEmail" type="pseudo" placeholder="Nouveau email">
+                </div>
+                <div class="pInput">
+                    <input name="ChangePassword" type="password" placeholder="Mot de passe">
+                </div>
                 <input type="submit" value="Changer l'adresse mail" class="SubmitEspace">
                 <?= $ChangeInfo?>
             </fieldset>
         </form>
-  
 
     </main>
 
     <?php
         require_once SITE_ROOT.'partials/footer.php';
     ?>
-    
+    <script src="assets/js/register.js"></script>
     </body>
 </html>
