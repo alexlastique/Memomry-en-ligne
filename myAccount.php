@@ -116,7 +116,15 @@
         }
         }
 
-?>
+        $pdo = connectToDbAndGetPdo();
+        $pdoStatement = $pdo->prepare("SELECT Game.GameName, GameDifficult, GameScore, IdUser FROM Score
+        LEFT JOIN Game ON Score.IdGame = Game.Id
+        LEFT JOIN Utilisateur On Score.IdUser = Utilisateur.Id
+        Where IdUser = $IdUser
+        ORDER BY IdGame, GameDifficult, GameScore ASC");
+        $pdoStatement->execute();
+        $scores = $pdoStatement->fetchAll();
+    ?>
 
     <body>
     <header class="login header">
@@ -170,6 +178,24 @@
         </form>
 
     </main>
+        <div>
+            <table class="ScoresAccount">
+                        <tr>
+                            <th>Nom du Jeu</th>
+                            <th>Niveau de Difficulté</th>
+                            <th>Score du Joueur</th>
+                        </tr>
+                        <?php
+                            foreach ($scores as $score) {
+                        ?>
+                                <tr>
+                                    <td><?php echo $score->GameName ?></td>
+                                    <td><?php echo $score->GameDifficult == 1 ? "Facile" : ($score->GameDifficult == 2 ? "Moyen" : "Difficile")?></td>
+                                    <td><?php echo $score->GameScore; ?></td>
+                                </tr>
+                        <?php }?>
+                </table>
+            </div>
 
     <?php
         require_once SITE_ROOT.'partials/footer.php';
