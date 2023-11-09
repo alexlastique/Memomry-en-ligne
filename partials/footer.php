@@ -19,7 +19,7 @@ $MaPage=($_SERVER['REQUEST_URI']);
                     <img src="<?=PROJECT_FOLDER?>assets/images/pinterest2.png" alt="pinterest" id="pinterest">
                     <img src="<?=PROJECT_FOLDER?>assets/images/instagram.png" alt="twitter">
                 </div>
-                <p>Copyright © 2022 Tous droits réservés</p>
+                <p>Copyright © 2023 Tous droits réservés</p>
             </article>
             <article>
                 <h4>Space Memory</h4>
@@ -48,7 +48,7 @@ $MaPage=($_SERVER['REQUEST_URI']);
                     <img src="<?=PROJECT_FOLDER?>assets/images/pinterest2.png" alt="pinterest" id="pinterest">
                     <img src="<?=PROJECT_FOLDER?>assets/images/instagram.png" alt="twitter">
                 </div>
-                <p>Copyright © 2022 Tous droits réservés</p>
+                <p>Copyright © 2023 Tous droits réservés</p>
             </article>
             <article>
                 <h4>Space Memory</h4>
