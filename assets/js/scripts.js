@@ -15,7 +15,8 @@ let photo3H2 = document.getElementById('photo3H2');
 let levelDifficult = document.querySelectorAll('.levelDifficult');
 let themeChoice = document.querySelectorAll('.themeChoice');
 let container = document.querySelector('.container');
-var difficult = 1
+var difficult = 1;
+var theme = 1;
 let arrowBack = document.querySelector('.arrowBack');
 let registerPassword = document.querySelector('#registerPassword');
 
@@ -26,6 +27,7 @@ themeChoice.forEach(themeChoice =>{
         theme1.addEventListener('click',() =>{
             levelDifficult.classList.add('flexBlock');
             themeChoice.classList.add('none');
+            theme=1;
         });
     });
 });
@@ -34,6 +36,7 @@ themeChoice.forEach(themeChoice =>{
         theme2.addEventListener('click',() =>{
             levelDifficult.classList.add('flexBlock');
             themeChoice.classList.add('none');
+            theme=2;
         });
     });
 });
@@ -42,6 +45,7 @@ themeChoice.forEach(themeChoice =>{
         theme3.addEventListener('click',() =>{
             levelDifficult.classList.add('flexBlock');
             themeChoice.classList.add('none');
+            theme=3;
         });
     });
 });
@@ -133,7 +137,7 @@ const images = [
     "<img class='memory-carte' src='../../assets/images/espace/black-hole.avif'>",
     "<img class='memory-carte' src='../../assets/images/espace/black-hole.jpeg'>",
     "<img class='memory-carte' src='../../assets/images/espace/comete1.jpeg'>",
-    "<img class='memory-carte' src='../../assets/images/espace/constellation1.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/espace/headerWallpaper.webp'>",
     "<img class='memory-carte' src='../../assets/images/espace/etoile1.jpeg'>",
     "<img class='memory-carte' src='../../assets/images/espace/etoile2.webp'>",
     "<img class='memory-carte' src='../../assets/images/espace/galaxie1.jpeg'>",
@@ -163,13 +167,50 @@ const images = [
     "<img class='memory-carte' src='../../assets/images/espace/TrouDeVer1.jpeg'>",
     "<img class='memory-carte' src='../../assets/images/espace/VoieLactee.jpg'>"
 ];
+const imagesCartoon = [
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon1.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon2.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon3.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon4.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon5.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon6.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon7.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon8.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon9.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon10.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon11.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon12.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon13.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon14.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon15.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon16.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon17.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon18.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon19.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon20.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon21.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon22.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon23.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon24.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon25.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon26.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon27.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon28.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon29.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon30.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon31.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/cartoon/cartoon32.jpeg'>"
+];
 
 function flipCard(card) {
     if (!canFlip || card.innerHTML !== '' || card.classList.contains('flipped')) {
         return;
     }
-
-    card.innerHTML = images[card.dataset.symbol-1];
+    if(theme==1){
+        card.innerHTML = imagesCartoon[card.dataset.symbol-1];
+    }else if(theme==2){
+        card.innerHTML = images[card.dataset.symbol-1];
+    }
     card.classList.add('flipped');
     card.classList.remove('flipped2');
     flippedCards++;
@@ -235,14 +276,18 @@ const gameContainer2 = document.getElementById('memory-game2');
 let flippedCards2 = 0;
 let canFlip2 = true;
 
-function flipCard2(card) {
-    if (!canFlip2 || card.innerHTML !== '' || card.classList.contains('flipped')) {
+function flipCard2(card2) {
+    if (!canFlip2 || card2.innerHTML !== '' || card2.classList.contains('flipped')) {
         return;
     }
 
-    card.innerHTML = images[card.dataset.symbol2 - 1];
-    card.classList.add('flipped');
-    card.classList.remove('flipped2');
+    if(theme==1){
+        card2.innerHTML = imagesCartoon[card2.dataset.symbol2-1];
+    }else if(theme==2){
+        card2.innerHTML = images[card2.dataset.symbol2-1];
+    }
+    card2.classList.add('flipped');
+    card2.classList.remove('flipped2');
     flippedCards2++;
 
     if (flippedCards2 === 2) {
@@ -252,12 +297,12 @@ function flipCard2(card) {
 }
 
 function checkForMatch2() {
-    const flipped = document.querySelectorAll('.flipped');
-    if (flipped[0].dataset.symbol2 === flipped[1].dataset.symbol2) {
-        flipped.forEach(card => {
-            card.removeEventListener('click', () => flipCard2(card));
-            card.classList.remove('flipped');
-            card.classList.add('flipped2');
+    const flipped2 = document.querySelectorAll('.flipped');
+    if (flipped2[0].dataset.symbol2 === flipped2[1].dataset.symbol2) {
+        flipped2.forEach(card2 => {
+            card2.removeEventListener('click', () => flipCard2(card2));
+            card2.classList.remove('flipped');
+            card2.classList.add('flipped2');
             Victory++;
             if (Victory==36){
                 console.log(timeTotal)
@@ -274,10 +319,10 @@ function checkForMatch2() {
             }
         });
     } else {
-        flipped.forEach(card => {
-            card.innerHTML = '';
-            card.classList.remove('flipped');
-            card.classList.add('flipped2');
+        flipped2.forEach(card2 => {
+            card2.innerHTML = '';
+            card2.classList.remove('flipped');
+            card2.classList.add('flipped2');
         });
     }
     flippedCards2 = 0;
@@ -310,7 +355,11 @@ function flipCard3(card3) {
         return;
     }
 
-    card3.innerHTML = images[card3.dataset.symbol3 - 1];
+    if(theme==1){
+        card3.innerHTML = imagesCartoon[card3.dataset.symbol3-1];
+    }else if(theme==2){
+        card3.innerHTML = images[card3.dataset.symbol3-1];
+    }
     card3.classList.add('flipped');
     card3.classList.remove('flipped2');
     flippedCards3++;
