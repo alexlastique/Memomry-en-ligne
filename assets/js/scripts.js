@@ -35,6 +35,7 @@ themeChoice.forEach(themeChoice =>{
         theme2.addEventListener('click',() =>{
             levelDifficult.classList.add('flexBlock');
             themeChoice.classList.add('none');
+            arrowBack.classList.add('flexBlock');
             theme=2;
         });
     });
@@ -44,6 +45,7 @@ themeChoice.forEach(themeChoice =>{
         theme3.addEventListener('click',() =>{
             levelDifficult.classList.add('flexBlock');
             themeChoice.classList.add('none');
+            arrowBack.classList.add('flexBlock');
             theme=3;
         });
     });
