@@ -69,8 +69,10 @@
                     envoyerMessage()
                     }
                 }
-                function displayajax(){
-                    let messagetxt = document.getElementById("messageInput").value;
+                function displayajax(messagetxt){
+                    let now = new Date();
+                    let heure   = now.getHours();
+                    let minute  = now.getMinutes();
                     let chat = document.getElementById("messages");
 
                     let flex = document.createElement('div');
@@ -84,9 +86,9 @@
                         message.classList.add('message');
                         message.classList.add('usersmessage');
                     let messagecontent = document.createElement('p');
-                        messagecontent.textContent = '<?php echo $Message = $chat->Chat ?>';
+                        messagecontent.textContent = messagetxt;
                     let messageDate = document.createElement('p');
-                        messageDate.textContent = '<?php echo $chat->MessageDate ?>';
+                        messageDate.textContent = "Aujourd'hui à "+heure+":"+minute;
 
                     message.appendChild(messagecontent);
                     columnUser.appendChild(Pseudo);
