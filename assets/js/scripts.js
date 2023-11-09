@@ -15,6 +15,7 @@ let photo3H2 = document.getElementById('photo3H2');
 let levelDifficult = document.querySelectorAll('.levelDifficult');
 let themeChoice = document.querySelectorAll('.themeChoice');
 let container = document.querySelector('.container');
+let arrowBack2 = document.querySelector('.arrowBack2');
 var difficult = 1;
 var theme = 1;
 let arrowBack = document.querySelector('.arrowBack');
@@ -57,6 +58,8 @@ levelDifficult.forEach(levelDifficult => {
         levelDifficult.classList.remove('flexBlock');
         levelDifficult.classList.add('none');
         container.classList.add('flexBlock');
+        arrowBack.style.display = "none";
+        container.classList.add('row');
         difficult = 1;
     });
 });
@@ -66,6 +69,8 @@ levelDifficult.forEach(levelDifficult => {
         levelDifficult.classList.remove('flexBlock');
         levelDifficult.classList.add('none');
         container.classList.add('flexBlock');
+        arrowBack.style.display = "none";
+        container.classList.add('row');
         difficult = 2;
     });
 });
@@ -75,6 +80,8 @@ levelDifficult.forEach(levelDifficult => {
         container.classList.add('flexBlock');
         levelDifficult.classList.remove('flexBlock');
         levelDifficult.classList.add('none');
+        arrowBack.style.display = "none";
+        container.classList.add('row');
         difficult = 3;
     });
 });

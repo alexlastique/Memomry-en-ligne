@@ -17,6 +17,7 @@
         </header>
         <main>
         <div class="container">
+        <a href=""><img src="../../assets/images/arrowBack.png" class="arrowBack2" alt=""></a>
             <h2 id="counter">00:00:00:00</h1>
         </div>
         <a href=""><img src="../../assets/images/arrowBack.png" class="arrowBack" alt=""></a>

@@ -293,10 +293,11 @@ body{
 .container{
     display: none;
 }
+
 #counter{
     font-size: 3em;
-    letter-spacing: 4px;
-    
+    letter-spacing: 3px;
+    margin: 3rem auto 0 auto;
 }
 
 .button{
@@ -367,6 +368,15 @@ body{
     cursor: pointer;
     display: none;
     position: absolute;
+    margin-top: 3.5px;
+}
+.arrowBack2{
+    width: 50px;
+    filter: invert(1);
+    transform: rotateY(180deg);
+    margin: 0 30px 0;
+    cursor: pointer;
+    position: absolute;
 }
 .remplissage {
     height: 100%;
@@ -392,8 +402,11 @@ body{
     width: 100%;
     margin: 10%;
 }
-.levelDifficult h3{
+.levelDifficult h3, .themeChoice h3{
     text-align: center;
+    font-size: 25px;
+    margin-top: 0;
+    width: 100%;
 }
 .formEspace div input{
     background-color: #373367;
@@ -566,6 +579,9 @@ audio{
     border: 0;
     padding: 0;
     margin: 30px;
+}
+.row{
+    flex-direction: row;
 }
 #mainAccount form fieldset input{
     margin: 5px;
