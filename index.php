@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <?php
         require_once 'utils/common.php';
         require_once SITE_ROOT.'utils/database.php';
@@ -62,7 +62,7 @@
                         <p>Parties Jouées</p>
                     </article>
                     <article>
-                        <h5>1020</h5>
+                        <h5>3</h5>
                         <p>Joueurs Connectés</p>
                     </article>
                     <article>
