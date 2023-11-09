@@ -211,6 +211,40 @@ const imagesCartoon = [
     "<img class='memory-carte' src='../../assets/images/cartoon/cartoon31.jpeg'>",
     "<img class='memory-carte' src='../../assets/images/cartoon/cartoon32.jpeg'>"
 ];
+const imagesConstellation = [
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation1.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation2.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation3.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation4.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation5.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation6.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation7.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation8.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation9.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation10.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation11.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation12.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation13.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation14.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation15.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation16.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation17.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation18.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation19.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation20.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation21.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation22.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation23.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation24.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation25.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation26.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation27.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation28.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation29.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation30.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation31.jpeg'>",
+    "<img class='memory-carte' src='../../assets/images/constellation/constellation32.jpeg'>"
+];
 
 function flipCard(card) {
     if (!canFlip || card.innerHTML !== '' || card.classList.contains('flipped')) {
@@ -220,6 +254,8 @@ function flipCard(card) {
         card.innerHTML = imagesCartoon[card.dataset.symbol-1];
     }else if(theme==2){
         card.innerHTML = images[card.dataset.symbol-1];
+    }else{
+        card.innerHTML = imagesConstellation[card.dataset.symbol-1]
     }
     card.classList.add('flipped');
     card.classList.remove('flipped2');
@@ -295,6 +331,8 @@ function flipCard2(card2) {
         card2.innerHTML = imagesCartoon[card2.dataset.symbol2-1];
     }else if(theme==2){
         card2.innerHTML = images[card2.dataset.symbol2-1];
+    }else{
+        card2.innerHTML = imagesConstellation[card2.dataset.symbol2-1]
     }
     card2.classList.add('flipped');
     card2.classList.remove('flipped2');
@@ -369,6 +407,8 @@ function flipCard3(card3) {
         card3.innerHTML = imagesCartoon[card3.dataset.symbol3-1];
     }else if(theme==2){
         card3.innerHTML = images[card3.dataset.symbol3-1];
+    }else{
+        card3.innerHTML = imagesConstellation[card3.dataset.symbol3-1]
     }
     card3.classList.add('flipped');
     card3.classList.remove('flipped2');
