@@ -8,6 +8,7 @@
     WHERE Id = '$IdUser';");
     $pdoStatement->execute();
     $PseudoUser = $pdoStatement->fetch();
+    $_SESSION['Pseudo']=$PseudoUser->Pseudo;
     ?>
 
     <?php if ($MaPage != "/Projet-Flash/index.php"): ?>
@@ -27,7 +28,7 @@
                                 
                                 <li><a style="color: <?=$MaPage == "/Projet-Flash/contact.php" ? "orange" : "";?>;" href="<?=PROJECT_FOLDER?>contact.php">Nous Contacter</a></li>
                                 
-                                <li><a style="color: <?=$MaPage == "/Projet-Flash/myAccount.php" ? "orange" : "";?>;" href="<?=PROJECT_FOLDER?>myAccount.php" id="LienConditionnel">Mon Espace (<?=$PseudoUser->Pseudo?>)</a></li>
+                                <li><a style="color: <?=$MaPage == "/Projet-Flash/myAccount.php" ? "orange" : "";?>;" href="<?=PROJECT_FOLDER?>myAccount.php" id="LienConditionnel">Mon Espace (<?=$_SESSION['Pseudo']?>)</a></li>
                                 
                                 <li><form action="<?=PROJECT_FOLDER?>disconnect.php" method="post" class="deconnexion"><input type="submit" class="btn" value="Deconnexion"></form></li>
                             </ul>
