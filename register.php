@@ -88,9 +88,9 @@
                 <input name="RegisterPseudo" type="pseudo" placeholder="Pseudo">
 
             </div>
-            
+
             <div class="pInput"  id="divRegisterPassword">
-                <input name="RegisterPassword" type="text" placeholder="Mot de passe" id="registerPassword">
+                <input name="RegisterPassword" type="password" placeholder="Mot de passe" id="registerPassword">
 
             </div>
             
