@@ -207,12 +207,7 @@ body{
 .divInput{
     margin: 50px;
     text-align: left;
-    margin-left: 40%;
-    margin-right: 40%;
-
-}
-.pInput{
-    margin: 3px;
+    margin: 0 40%;
 }
 .pInput2{
     margin: 10px;
@@ -568,7 +563,6 @@ audio{
     border: 0;
     padding: 0;
     margin: 30px;
-    text-align: center;
 }
 #mainAccount form fieldset input{
     margin: 5px;
