@@ -17,6 +17,7 @@
         $GIFChat=file_get_contents($GIFChatLien);
         $GIFChat2=json_decode($GIFChat, true);
         $URLChat = $GIFChat2[0]['url'];
+        $today = date('j');
 ?>
 <div id="pos_chat">
     <input type="checkbox" id="toggle" class="toggle-checkbox">
@@ -30,7 +31,12 @@
         <div id="messages">
             <?php 
             foreach($chats as $chat){
+                $datemsg = $chat->MessageDate;
+                $heureMinutes = date('H:i', strtotime($datemsg));
+                $jour = date('d', strtotime($datemsg));
                 if($chat->IdUser==$UserId):
+                    
+
             ?>
                     <div class="flex">
                         <div class="column user">
@@ -38,7 +44,7 @@
                             <div class="message usersmessage">
                                 <p><?php echo $Message = $chat->Chat ?></p>
                             </div>
-                            <p><?php echo $chat->MessageDate ?></p>
+                            <p><?php echo($today == $jour ? "Aujourd'hui à " : "Hier à "). $heureMinutes ?></p>
                         </div>
                     </div>
 
@@ -51,7 +57,7 @@
                             <div class="message">
                                 <p><?php echo $Message = $chat->Chat ?></p>
                             </div>
-                            <p><?php echo $chat->MessageDate ?></p>
+                            <p><?php echo($today == $jour ? "Aujourd'hui à " : "Hier à "). $heureMinutes ?></p>
                         </div>
                     </div>
                 <?php endif;?>
