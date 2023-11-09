@@ -22,7 +22,6 @@ function RegisterPasswordCorrect (){
         faible.classList.add('weak');
         barreWeak.classList.add('barreWeak'); 
         divWeak.classList.add('div30');
-        
     } else{
         faible.classList.add('none');
         barreWeak.classList.remove('barreWeak'); 
