@@ -435,7 +435,7 @@ function envoyerMessage(){
         request.done(function (response) {
             let inputmessage = document.getElementById("messageInput").value = "";
 
-            displayajax();
+            displayajax(message);
         });
     };
 }
