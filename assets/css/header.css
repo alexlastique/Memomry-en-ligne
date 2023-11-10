@@ -319,7 +319,8 @@ footer li{
   }
   
   .header .logo {
-    display: block;
+    display: flex;
+    align-items: center;
     float: left;
     font-size: 2em;
     padding: 10px 20px;

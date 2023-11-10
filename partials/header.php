@@ -2,7 +2,7 @@
 <?php if(!empty($_SESSION)):?>
     <?php
     $MaPage=($_SERVER['REQUEST_URI']);
-    $IdUser = $_SESSION['userId'];
+    if(!empty($_SESSION['userId'])){$IdUser = $_SESSION['userId'];}
     $pdo = connectToDbAndGetPdo();
     $pdoStatement = $pdo->prepare("SELECT Pseudo FROM Utilisateur
     WHERE Id = '$IdUser';");
@@ -14,10 +14,13 @@
         
         <div id="backgroundHeader">
                         <nav>
-                            <div id="logo" class="logo">Space Memory</div>
+                            <div id="logo" class="logo">Space Memory
+                                <form action="<?=PROJECT_FOLDER?>profil.php" method="post">
+                                    <input name="searchProfil" type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil">
+                                </form>
+                            </div>
                             <input class="menu-btn" type="checkbox" id="menu-btn" />
                             <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-                            <!-- <input type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil"> -->
                             <ul class="menu">
                                 <li><a href="<?=PROJECT_FOLDER?>index.php" >Accueil</a></li>
 
@@ -41,10 +44,14 @@
     <?php else: ?>
 
         <nav>
-                    <div id="logo" class="logo">Space Memory</div>
+                    <div id="logo" class="logo">Space Memory
+                        <form action="<?=PROJECT_FOLDER?>profil.php" method="post">
+                            <input name="searchProfil" type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil">
+                        </form>
+                    </div>
                     <input class="menu-btn" type="checkbox" id="menu-btn" />
                     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-                    <!-- <input type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil"> -->
+                    
                         <ul class="menu">
                             <li><a style="color: orange;" href="<?=PROJECT_FOLDER?>index.php" >Accueil</a></li>
                             <li><a href="<?=PROJECT_FOLDER?>games/memory/index.php" >Jeu</a></li>
@@ -73,10 +80,14 @@
         
         <div id="backgroundHeader">
                         <nav>
-                            <div id="logo" class="logo">Space Memory</div>
+                            <div id="logo" class="logo">Space Memory
+                                <form action="<?=PROJECT_FOLDER?>profil.php" method="post" class="searchProfil">
+                                    <input name="searchProfil" type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil">
+                                </form>
+                            </div>
                             <input class="menu-btn" type="checkbox" id="menu-btn" />
                             <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-                            <!-- <input type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil"> -->
+                            
                             <ul class="menu">
                                 <li><a href="<?=PROJECT_FOLDER?>index.php" >Accueil</a></li>
 
@@ -98,10 +109,14 @@
     <?php else: ?>
 
         <nav>
-                    <div id="logo" class="logo">Space Memory</div>
+                    <div id="logo" class="logo">Space Memory
+                        <form action="<?=PROJECT_FOLDER?>profil.php" method="post">
+                            <input name="searchProfil" type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil">
+                        </form>
+                    </div>
                     <input class="menu-btn" type="checkbox" id="menu-btn" />
                     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-                    <!-- <input type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil"> -->
+                    
                         <ul class="menu">
                             <li><a style="color: orange;" href="<?=PROJECT_FOLDER?>index.php" >Accueil</a></li>
                             <li><a href="<?=PROJECT_FOLDER?>login.php" >Jeu</a></li>
