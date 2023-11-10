@@ -35,7 +35,7 @@
                 $heureMinutes = date('H:i', strtotime($datemsg));
                 $jour = date('d', strtotime($datemsg));
                 if($chat->IdUser==$UserId):
-                    
+                    $Pseudo = $chat->Pseudo;
 
             ?>
                     <div class="flex">
@@ -87,7 +87,7 @@
                         columnUser.classList.add('column');
                         columnUser.classList.add('user');
                     let Pseudo = document.createElement('p');
-                        Pseudo.textContent = '<?php echo $Pseudo = $chat->Pseudo?>';
+                        Pseudo.textContent = '<?php echo $Pseudo?>';
                     let message = document.createElement('div');
                         message.classList.add('message');
                         message.classList.add('usersmessage');

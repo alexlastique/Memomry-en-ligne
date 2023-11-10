@@ -157,7 +157,6 @@ nav{
 #photo2:hover #photo2H2{
     display: block;
     transition: 0.5s;
-    filter: brightness(1);
 }
 #photo3:hover #photo3H2{
     display: block;
@@ -328,7 +327,7 @@ footer li{
   }
 
   .header #logo {
-    margin: 9px;
+    margin: 13px;
   }
   
   /* menu */
@@ -457,10 +456,11 @@ footer article:last-of-type{
     width: 25%;
 }
 .searchProfil{
-    padding: 10px;
+    padding: 12px 20px 12px 5px;
     background-color: rgba(17, 14, 46, 0.8);
     color: rgba(255, 255, 255, 0.5);
     width: auto;
+    height: 10px;
     margin: 0 10px;
     border: 1px solid;
 }
@@ -499,9 +499,6 @@ footer article{
     #mainAccueil section:first-of-type div img:first-of-type:not(#mainAccueil section:first-of-type div div img) {
         height: auto;
         margin: 2rem;
-    }
-    .searchProfil{
-        padding: 10px 35px 10px 20px;
     }
     #mainAccueil section:last-of-type #blockArticle {
         flex-direction: column;

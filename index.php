@@ -62,7 +62,7 @@
                         <p>Parties Jouées</p>
                     </article>
                     <article>
-                        <h5>3</h5>
+                        <h5>X</h5>
                         <p>Joueurs Connectés</p>
                     </article>
                     <article>
