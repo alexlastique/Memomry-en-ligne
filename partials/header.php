@@ -81,7 +81,7 @@
         <div id="backgroundHeader">
                         <nav>
                             <div id="logo" class="logo">Space Memory
-                                <form action="<?=PROJECT_FOLDER?>profil.php" method="post" class="searchProfil">
+                                <form action="<?=PROJECT_FOLDER?>profil.php" method="post">
                                     <input name="searchProfil" type="text" placeholder="Rechercher un Profil 🔎" class="searchProfil">
                                 </form>
                             </div>

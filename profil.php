@@ -39,27 +39,28 @@
             ?>
             <h2 class="connexion">Profil</h2>
         </header>
-        <h2 class="PseudoPageProfil"><?=$PseudoShearch?>
-        <?php if($IdSchearch != NULL): ?><br><br>
-        <img class="rounded-circle mt-5 " width="200px" src="userFiles/<?=$IdSchearch?>/PP"></h2>
-        <table class="PageScores">
-            <tr>
-                <th>Jeux</th>
-                <th>Niveau de Difficulté</th>
-                <th>Score du Joueur</th>
-            </tr>
-            <?php
-                foreach ($scores as $score) {
-            ?>
-            <tr>
-                <td><?php echo $score->GameName ?></td>
-                <td><?php echo $score->GameDifficult == 1 ? "Facile" : ($score->GameDifficult == 2 ? "Moyen" : "Difficile")?></td>
-                <td><?php echo $score->GameScore; ?></td>
-            </tr>
-            <?php }?>
-        </table>
+        <h2 class="PseudoPageProfil">
+        <?php if($IdSchearch != NULL): ?>
+            <?=$PseudoShearch?><br><br>
+            <img class="rounded-circle mt-5 " width="200px" src="userFiles/<?=$IdSchearch?>/PP"></h2>
+            <table class="PageScores">
+                <tr>
+                    <th>Jeux</th>
+                    <th>Niveau de Difficulté</th>
+                    <th>Score du Joueur</th>
+                </tr>
+                <?php
+                    foreach ($scores as $score) {
+                ?>
+                <tr>
+                    <td><?php echo $score->GameName ?></td>
+                    <td><?php echo $score->GameDifficult == 1 ? "Facile" : ($score->GameDifficult == 2 ? "Moyen" : "Difficile")?></td>
+                    <td><?php echo $score->GameScore; ?></td>
+                </tr>
+                <?php }?>
+            </table>
         <?php else:?>
-            <br>n'est pas un utilisateur existant</h2>
+            <br><?=$PseudoShearch?> n'est pas un utilisateur existant</h2>
         <?php endif?>
         <?php
             require_once SITE_ROOT.'partials/footer.php';
