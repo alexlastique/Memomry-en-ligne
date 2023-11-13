@@ -66,7 +66,7 @@
                         <p>Joueurs Connectés</p>
                     </article>
                     <article>
-                        <h5><?php echo $LowScore.' sec';?> </h5>
+                        <h5><?php echo $LowScore[0].$LowScore[1].','.$LowScore[2].$LowScore[3].' sec';?> </h5>
                         <p>Temps Record</p>
                     </article>
                     <article>
